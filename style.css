@@ -539,3 +539,17 @@ footer {
         font-size: 2rem;
     }
 }
+/* Styling for the new descriptions in Internships and Clubs */
+.project-desc, .club-desc {
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    max-width: 850px;
+}
+
+.club-desc {
+    margin-top: 10px;
+    border-left: 2px solid var(--primary);
+    padding-left: 15px;
+}
