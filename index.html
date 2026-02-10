@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+
     <nav class="sidebar">
         <div class="sidebar-logo">NY</div>
         <ul class="nav-menu">
@@ -372,8 +374,28 @@
             lbImg.src = currentSet[currentIdx].src;
         };
         document.querySelector('.close-lb').onclick = () => lb.style.display = 'none';
+
+        // Mobile Sidebar Toggle Logic
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        navToggle.onclick = () => {
+            sidebar.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        };
+
+        // Close sidebar when clicking links on mobile
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.onclick = () => {
+                if(window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    navToggle.querySelector('i').classList.add('fa-bars');
+                    navToggle.querySelector('i').classList.remove('fa-times');
+                }
+            };
+        });
     </script>
 </body>
-
 </html>
-
