@@ -20,13 +20,13 @@
     </div>
 
     <ul class="nav-menu">
-        <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Experience</span></a></li>
-        <li><a href="#projects"><i class="fas fa-laptop-code"></i> <span>Projects</span></a></li>
-        <li><a href="#university"><i class="fas fa-graduation-cap"></i> <span>University</span></a></li>
-        <li><a href="#services"><i class="fas fa-concierge-bell"></i> <span>Services</span></a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+        <li><a href="#home" class="active"><i class="fas fa-home"></i> <span class="nav-text" data-en="Home" data-fr="Accueil">Home</span></a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> <span class="nav-text" data-en="About" data-fr="À Propos">About</span></a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span class="nav-text" data-en="Experience" data-fr="Expérience">Experience</span></a></li>
+        <li><a href="#projects"><i class="fas fa-laptop-code"></i> <span class="nav-text" data-en="Projects" data-fr="Projets">Projects</span></a></li>
+        <li><a href="#university"><i class="fas fa-graduation-cap"></i> <span class="nav-text" data-en="Community" data-fr="Communauté">Community</span></a></li>
+        <li><a href="#services"><i class="fas fa-concierge-bell"></i> <span class="nav-text" data-en="Services" data-fr="Services">Services</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="nav-text" data-en="Contact" data-fr="Contact">Contact</span></a></li>
     </ul>
     
     <div class="sidebar-footer">
@@ -43,101 +43,122 @@
                 <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="hero-img">
             </div>
             <div class="hero-text">
-                <span class="badge">Full-Stack Software Developer</span>
+                <span class="badge" data-en="Full-Stack Software Developer" data-fr="Développeuse Full-Stack">Full-Stack Software Developer</span>
                 <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-                <p class="tagline">Digital Transformation Lead | Full-Stack Engineer | Information Systems Specialist</p>
-                <p class="hero-description">
-                    Expert in bridging the gap between complex technical logic and business operational efficiency. 
-                    Specialized in building high-performance web systems and data-driven solutions.
-                </p>
+                <p class="tagline" data-en="Digital Transformation Lead | Information Systems Specialist" data-fr="Responsable Transformation Digitale | Spécialiste Systèmes d'Information">Digital Transformation Lead | Information Systems Specialist</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Hire Me</a>
-                    <a href="https://github.com/nourheneyaakoubi7" target="_blank" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#contact" class="btn-primary" data-en="Contact Me" data-fr="Me Contacter">Contact Me</a>
+                    <a href="https://github.com/nourheneyaakoubi7" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
     </header>
 
     <section id="about" class="reveal">
-        <h2 class="section-title">Get To Know Me</h2>
+        <h2 class="section-title" data-en="Get To Know Me" data-fr="Apprenez à me connaître">Get To Know Me</h2>
         <div class="about-container">
             <div class="glass-card about-intro">
-                <p>
-                    Passionate about <strong>Digital Transformation</strong>, I am a Software Engineering graduate who doesn't just write code—I build solutions that matter. With a strong foundation in the <strong>MERN stack and Django</strong>, I focus on creating seamless user experiences powered by robust back-end systems.
+                <p data-en="Passionate about Digital Transformation, I hold a Licence degree in Software Engineering and Information Systems from ISIK Tunis. My academic journey has been driven by a desire to bridge technical complexity with business needs." 
+                   data-fr="Passionnée par la transformation digitale, je suis titulaire d'une Licence en Génie Logiciel et Systèmes d'Information de l'ISIK Tunis. Mon parcours académique est guidé par le désir de concilier complexité technique et besoins métier.">
+                    Passionate about Digital Transformation, I hold a Licence degree in Software Engineering and Information Systems from ISIK Tunis. My academic journey has been driven by a desire to bridge technical complexity with business needs.
                 </p>
-                <p>
-                    My approach combines technical rigor with a vision for <strong>Business Intelligence</strong>, ensuring that every project provides actionable insights and measurable value to the organization.
-                </p>
+                <div class="language-skills">
+                    <span class="lang-tag"><i class="fas fa-globe"></i> English (Fluent)</span>
+                    <span class="lang-tag"><i class="fas fa-globe"></i> French (Professional)</span>
+                    <span class="lang-tag"><i class="fas fa-globe"></i> Arabic (Native)</span>
+                </div>
             </div>
             
-            <div class="skills-marquee-wrapper">
-                <h3>Technical Mastery</h3>
-                <div class="marquee">
-                    <div class="marquee-content">
-                        <i class="fab fa-react"></i> <i class="fab fa-node-js"></i> <i class="fab fa-python"></i> 
-                        <i class="fab fa-js"></i> <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i>
-                        <i class="fas fa-database"></i> <i class="fab fa-git-alt"></i> <i class="fab fa-docker"></i>
-                        <i class="fab fa-react"></i> <i class="fab fa-node-js"></i> <i class="fab fa-python"></i> 
-                        <i class="fab fa-js"></i> <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i>
-                        <i class="fas fa-database"></i> <i class="fab fa-git-alt"></i> <i class="fab fa-docker"></i>
-                    </div>
+            <div class="technical-expertise-grid">
+                <div class="tech-category">
+                    <h4><i class="fas fa-code"></i> Frontend & Backend</h4>
+                    <ul>
+                        <li>MERN Stack (MongoDB, Express, React, Node.js)</li>
+                        <li>Django & Python</li>
+                        <li>Angular</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4><i class="fas fa-database"></i> Data Management</h4>
+                    <ul>
+                        <li>MySQL & NoSQL</li>
+                        <li>Data Visualization & Dashboards</li>
+                        <li>System Integration</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4><i class="fas fa-server"></i> IT Infrastructure</h4>
+                    <ul>
+                        <li>Server Administration & Recovery</li>
+                        <li>Cloud Hosting & Domain Management</li>
+                        <li>E-Learning Systems Admin</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="reveal">
-        <h2 class="section-title">Professional Path</h2>
+        <h2 class="section-title" data-en="Professional Path" data-fr="Parcours Professionnel">Professional Path</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-logo"><i class="fas fa-building"></i></div>
+                <div class="timeline-logo"><i class="fas fa-university"></i></div>
                 <div class="timeline-content highlight">
                     <span class="date-badge">March 2026 - Present</span>
-                    <h3>Digital Transformation Lead <span class="company">@ ESPAF Business School</span></h3>
-                    <p>
-                        Orchestrating the complete digital overhaul of the institution. Beyond technical maintenance, I act as the <strong>architect of the school's digital future</strong>: recovering critical server infrastructures (OVH), securing domains, and successfully onboarding ERP/LMS platforms that have automated 60% of administrative workflows.
-                    </p>
+                    <h3 data-en="Digital & IT Lead @ ESPAF Business School" data-fr="Responsable Digital & IT @ ESPAF Business School">Digital & IT Lead @ ESPAF Business School</h3>
+                    <ul class="exp-list" data-en="<li>System Administrator for the primary website (WordPress) and student management portal (Educated).</li><li>Administrator of the E-Learning platform; managing online courses, live sessions, and user access for both students and faculty.</li><li>Primary technical liaison between the school and development agencies for platform deployment and training.</li><li>Orchestrated server recovery and infrastructure restructuration to ensure 24/7 service continuity.</li>"
+                        data-fr="<li>Administratrice système du site web principal (WordPress) et du portail de gestion des étudiants (Educated).</li><li>Administratrice de la plateforme E-Learning ; gestion des cours en ligne et des accès pour étudiants et professeurs.</li><li>Lien technique principal entre l'école et les agences de développement pour le déploiement et la formation.</li><li>Orchestration de la récupération des serveurs et restructuration de l'infrastructure pour assurer un service 24/7.</li>">
+                        <li>System Administrator for the primary website (WordPress) and student management portal (Educated).</li>
+                        <li>Administrator of the E-Learning platform; managing online courses, live sessions, and user access for both students and faculty.</li>
+                        <li>Primary technical liaison between the school and development agencies for platform deployment and training.</li>
+                        <li>Orchestrated server recovery and infrastructure restructuration to ensure 24/7 service continuity.</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-logo"><img src="assets/logos/fouusa.png" alt=""></div>
+                <div class="timeline-logo"><i class="fas fa-chart-bar"></i></div>
                 <div class="timeline-content">
-                    <span class="date-badge">End of Study Internship</span>
-                    <h3>BI Developer Intern <span class="company">@ Fouusa Engineering</span></h3>
-                    <p>
-                        Designed and deployed a full-scale <strong>Business Intelligence Platform</strong>. I translated raw engineering data into strategic assets, creating interactive dashboards that allow management to monitor real-time KPIs and optimize resource allocation.
-                    </p>
+                    <span class="date-badge" data-en="Internship" data-fr="Stage">Internship</span>
+                    <h3 data-en="Developer Intern @ Fouusa Engineering" data-fr="Stagiaire Développeuse @ Fouusa Engineering">Developer Intern @ Fouusa Engineering</h3>
+                    <ul class="exp-list" data-en="<li>Developed the frontend using React for high-performance interactive dashboards.</li><li>Collaborated with senior developers to map complex data into strategic KPIs.</li><li>Optimized data flow between the backend and user interface for real-time updates.</li>"
+                        data-fr="<li>Développement du frontend avec React pour des tableaux de bord interactifs.</li><li>Collaboration avec les développeurs seniors pour transformer les données en KPIs stratégiques.</li><li>Optimisation du flux de données entre le backend et l'interface utilisateur.</li>">
+                        <li>Developed the frontend using React for high-performance interactive dashboards.</li>
+                        <li>Collaborated with senior developers to map complex data into strategic KPIs.</li>
+                        <li>Optimized data flow between the backend and user interface for real-time updates.</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-logo"><img src="assets/logos/webup-removebg-preview.png" alt=""></div>
+                <div class="timeline-logo"><i class="fas fa-code-branch"></i></div>
                 <div class="timeline-content">
-                    <span class="date-badge">Technician Internship</span>
-                    <h3>Full-Stack Intern <span class="company">@ WebUp</span></h3>
-                    <p>
-                        Built a comprehensive <strong>Cafe Management Ecosystem</strong>. Focused on solving real-world inventory leaks by developing a custom tracking algorithm using React and optimized MySQL queries.
-                    </p>
+                    <span class="date-badge" data-en="Internship" data-fr="Stage">Internship</span>
+                    <h3 data-en="Full-Stack Intern @ WebUp" data-fr="Stagiaire Full-Stack @ WebUp">Full-Stack Intern @ WebUp</h3>
+                    <ul class="exp-list" data-en="<li>Built a management system for the hospitality sector using React and Node.js.</li><li>Designed and optimized MySQL database structures for inventory tracking.</li><li>Implemented real-time stock management features to reduce operational errors.</li>"
+                        data-fr="<li>Création d'un système de gestion pour le secteur CHR avec React et Node.js.</li><li>Conception et optimisation des structures de base de données MySQL.</li><li>Mise en œuvre de fonctionnalités de gestion de stock en temps réel.</li>">
+                        <li>Built a management system for the hospitality sector using React and Node.js.</li>
+                        <li>Designed and optimized MySQL database structures for inventory tracking.</li>
+                        <li>Implemented real-time stock management features to reduce operational errors.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="dark-bg reveal">
-        <h2 class="section-title">Featured Repositories</h2>
+        <h2 class="section-title" data-en="Featured Projects" data-fr="Projets Phares">Featured Projects</h2>
         <div class="glass-grid">
             <div class="glass-card project-card">
                 <div class="repo-header">
-                    <i class="fab fa-js-square"></i>
-                    <span class="repo-badge">Public</span>
+                    <i class="fab fa-react"></i>
+                    <span class="repo-badge">GitHub</span>
                 </div>
                 <h3>BI-PLATFORME</h3>
-                <p>Full-cycle Business Intelligence platform development—from data architecture to visual implementation. Built with MERN.</p>
+                <p data-en="Full-cycle business tracking platform built with MERN." data-fr="Plateforme de suivi d'entreprise complète créée avec MERN.">Full-cycle business tracking platform built with MERN.</p>
                 <div class="project-btns">
-                    <a href="https://github.com/nourheneyaakoubi7/BI-PLATFORME" class="btn-small"><i class="fab fa-github"></i> Code</a>
-                    <button class="btn-small" onclick="openAlbum('fouusa-album')"><i class="fas fa-images"></i> Album</button>
+                    <a href="https://github.com/nourheneyaakoubi7/BI-PLATFORME" class="btn-project"><i class="fab fa-github"></i> Code</a>
+                    <button class="btn-project" onclick="openAlbum('fouusa-album')"><i class="fas fa-images"></i> Album</button>
                 </div>
                 <div id="fouusa-album" class="hidden-album">
                     <img src="assets/projects/fouusa/30.png" class="zoomable">
@@ -147,14 +168,14 @@
 
             <div class="glass-card project-card">
                 <div class="repo-header">
-                    <i class="fab fa-js-square"></i>
-                    <span class="repo-badge">Public</span>
+                    <i class="fab fa-node-js"></i>
+                    <span class="repo-badge">GitHub</span>
                 </div>
-                <h3>Cafe-Management-System</h3>
-                <p>Optimized full-stack ecosystem for daily operations, inventory tracking, and real-time order processing.</p>
+                <h3>Cafe-Management</h3>
+                <p data-en="Ecosystem for daily operations and inventory tracking." data-fr="Écosystème pour les opérations quotidiennes et le suivi des stocks.">Ecosystem for daily operations and inventory tracking.</p>
                 <div class="project-btns">
-                    <a href="https://github.com/nourheneyaakoubi7/Cafe-Management-System" class="btn-small"><i class="fab fa-github"></i> Code</a>
-                    <button class="btn-small" onclick="openAlbum('webup-album')"><i class="fas fa-images"></i> Album</button>
+                    <a href="https://github.com/nourheneyaakoubi7/Cafe-Management-System" class="btn-project"><i class="fab fa-github"></i> Code</a>
+                    <button class="btn-project" onclick="openAlbum('webup-album')"><i class="fas fa-images"></i> Album</button>
                 </div>
                 <div id="webup-album" class="hidden-album">
                     <img src="assets/projects/webup/1.png" class="zoomable">
@@ -165,160 +186,131 @@
             <div class="glass-card project-card">
                 <div class="repo-header">
                     <i class="fab fa-python"></i>
-                    <span class="repo-badge">Public</span>
+                    <span class="repo-badge">GitHub</span>
                 </div>
-                <h3>Django-Angular-UserManagement</h3>
-                <p>Cross-framework user management system featuring secure CRUD operations and RESTful API integration.</p>
+                <h3>User Management</h3>
+                <p data-en="Secure CRUD system using Django and Angular integration." data-fr="Système CRUD sécurisé utilisant Django et l'intégration Angular.">Secure CRUD system using Django and Angular integration.</p>
                 <div class="project-btns">
-                    <a href="https://github.com/nourheneyaakoubi7/Django-Angular-UserManagement" class="btn-small"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/nourheneyaakoubi7/Django-Angular-UserManagement" class="btn-project"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
 
             <div class="glass-card project-card">
                 <div class="repo-header">
-                    <i class="fab fa-node-js"></i>
-                    <span class="repo-badge">Public</span>
+                    <i class="fas fa-comments"></i>
+                    <span class="repo-badge">GitHub</span>
                 </div>
                 <h3>REALTIME-chat</h3>
-                <p>Scalable backend server for real-time messaging using Socket.io and Express. Focused on low-latency communication.</p>
+                <p data-en="Scalable backend for real-time messaging via Socket.io." data-fr="Backend évolutif pour la messagerie en temps réel via Socket.io.">Scalable backend for real-time messaging via Socket.io.</p>
                 <div class="project-btns">
-                    <a href="https://github.com/nourheneyaakoubi7/REALTIME-chat-" class="btn-small"><i class="fab fa-github"></i> Code</a>
-                </div>
-            </div>
-            
-            <div class="glass-card project-card">
-                <div class="repo-header">
-                    <i class="fab fa-html5"></i>
-                    <span class="repo-badge">Public</span>
-                </div>
-                <h3>Portfolio-V2</h3>
-                <p>This personal website—crafted with custom CSS/JS for high-end aesthetic performance.</p>
-                <div class="project-btns">
-                    <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/nourheneyaakoubi7/REALTIME-chat-" class="btn-project"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="university" class="reveal">
-        <h2 class="section-title">Academic & Community</h2>
+        <h2 class="section-title" data-en="Clubs & Soft Skills" data-fr="Clubs & Soft Skills">Clubs & Soft Skills</h2>
         
         <div class="sub-section">
-            <h3><i class="fas fa-graduation-cap"></i> Formation Académique</h3>
-            <div class="glass-card diploma-card">
-                <div class="diploma-info">
-                    <h4>ISIK Tunis - Licence</h4>
-                    <p>Software Engineering & Information Systems</p>
-                </div>
-                <div class="doc-preview">
-                    <img src="assets/diplomas/licence.jpg" class="private-doc zoomable">
-                    <div class="blur-overlay"><span>VIEW CERTIFIED DIPLOMA</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="sub-section mt-50">
-            <h3><i class="fas fa-users"></i> Community & Clubs</h3>
             <div class="glass-grid">
                 <div class="glass-card club-card">
-                    <h4>GDSC Member</h4>
-                    <p>Participated in Google Developer Student Clubs, exploring cutting-edge tech.</p>
-                    <button class="btn-small mt-15" onclick="openAlbum('gdsc-album')"><i class="fas fa-images"></i> Club Album</button>
-                    <div id="gdsc-album" class="hidden-album">
-                        <img src="assets/clubs/gdsc/1.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/2.jpg" class="zoomable">
-                    </div>
+                    <h4>GDSC ISIK</h4>
+                    <p data-en="Technical Lead & active member. Hosted workshops on modern web tech." data-fr="Lead technique & membre actif. Animation d'ateliers sur le web moderne.">Technical Lead & active member. Hosted workshops on modern web tech.</p>
+                    <button class="btn-small mt-15" onclick="openAlbum('gdsc-album')"><i class="fas fa-images"></i> Album</button>
                 </div>
                 <div class="glass-card club-card">
-                    <h4>Astrophilia Team</h4>
-                    <p>Lead logistics and team coordination for large-scale science events.</p>
-                    <button class="btn-small mt-15" onclick="openAlbum('astro-album')"><i class="fas fa-images"></i> Event Album</button>
-                    <div id="astro-album" class="hidden-album">
-                        <img src="assets/clubs/astro/1.jpg" class="zoomable">
-                    </div>
+                    <h4>Astrophilia</h4>
+                    <p data-en="Logistics & event organization for scientific university events." data-fr="Logistique & organisation d'événements scientifiques universitaires.">Logistics & event organization for scientific university events.</p>
+                    <button class="btn-small mt-15" onclick="openAlbum('astro-album')"><i class="fas fa-images"></i> Album</button>
+                </div>
+                <div class="glass-card club-card">
+                    <h4>University Events</h4>
+                    <p data-en="Coordinator for academic seminars and cultural integrations." data-fr="Coordinatrice pour les séminaires académiques et intégrations.">Coordinator for academic seminars and cultural integrations.</p>
+                    <button class="btn-small mt-15" onclick="openAlbum('uni-album')"><i class="fas fa-images"></i> Album</button>
                 </div>
             </div>
+            <div id="gdsc-album" class="hidden-album"><img src="assets/clubs/gdsc/1.jpg" class="zoomable"></div>
+            <div id="astro-album" class="hidden-album"><img src="assets/clubs/astro/1.jpg" class="zoomable"></div>
+            <div id="uni-album" class="hidden-album"><img src="assets/clubs/uni/1.jpg" class="zoomable"></div>
         </div>
 
         <div class="sub-section mt-50">
-            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+            <h3 data-en="Core Soft Skills" data-fr="Compétences Douces">Core Soft Skills</h3>
             <div class="skills-flex">
                 <div class="soft-card">
                     <i class="fas fa-users-cog"></i>
-                    <h4>Leadership</h4>
-                    <p>Managing event teams for <strong>Astrophilia</strong>.</p>
+                    <h4 data-en="Team Leadership" data-fr="Leadership d'équipe">Team Leadership</h4>
+                    <p data-en="Proven ability to manage diverse groups in high-pressure events." data-fr="Capacité prouvée à gérer des groupes diversifiés lors d'événements.">Proven ability to manage diverse groups in high-pressure events.</p>
                 </div>
                 <div class="soft-card">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h4>Responsibility</h4>
-                    <p>Social coordination for <strong>Koffa Ramadan</strong>.</p>
+                    <i class="fas fa-comments"></i>
+                    <h4 data-en="Effective Communication" data-fr="Communication Efficace">Effective Communication</h4>
+                    <p data-en="Skilled in technical training and cross-departmental coordination." data-fr="Expérimentée en formation technique et coordination inter-services.">Skilled in technical training and cross-departmental coordination.</p>
                 </div>
                 <div class="soft-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Agility</h4>
-                    <p>Rapid learning curve at <strong>GDSC</strong>.</p>
+                    <i class="fas fa-rocket"></i>
+                    <h4 data-en="Rapid Adaptation" data-fr="Adaptation Rapide">Rapid Adaptation</h4>
+                    <p data-en="Fast learner of new infrastructures and administrative systems." data-fr="Apprentissage rapide des nouvelles infrastructures et systèmes.">Fast learner of new infrastructures and administrative systems.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="sub-section mt-50">
-            <h3><i class="fas fa-certificate"></i> Certifications</h3>
-            <div class="cert-scroll">
-                <img src="assets/clubs/gdsc/cert1.jpg" class="zoomable">
-                <img src="assets/clubs/gdsc/cert2.jpg" class="zoomable">
-                <img src="assets/clubs/gdsc/cert3.jpg" class="zoomable">
             </div>
         </div>
     </section>
 
     <section id="services" class="reveal">
-        <h2 class="section-title">My Services</h2>
-        <div class="glass-grid">
+        <h2 class="section-title" data-en="My Services" data-fr="Mes Services">My Services</h2>
+        <div class="services-grid">
             <div class="glass-card service-box">
                 <i class="fas fa-laptop-code"></i>
-                <h4>Web Development</h4>
-                <p>End-to-end scalable web applications (MERN / Django).</p>
+                <h4 data-en="Full-Stack Dev" data-fr="Dév Full-Stack">Full-Stack Dev</h4>
+                <p data-en="Robust web apps using MERN/Django." data-fr="Apps web robustes avec MERN/Django.">Robust web apps using MERN/Django.</p>
             </div>
             <div class="glass-card service-box">
-                <i class="fas fa-tools"></i>
-                <h4>Web Maintenance</h4>
-                <p>Performance optimization, security audits, and bug fixing.</p>
+                <i class="fas fa-cogs"></i>
+                <h4 data-en="IT Administration" data-fr="Admin IT">IT Administration</h4>
+                <p data-en="Managing educational platforms & ERPs." data-fr="Gestion de plateformes éducatives & ERP.">Managing educational platforms & ERPs.</p>
             </div>
             <div class="glass-card service-box">
-                <i class="fas fa-chart-line"></i>
-                <h4>BI Consulting</h4>
-                <p>Data visualization and KPI dashboard development.</p>
+                <i class="fas fa-globe"></i>
+                <h4 data-en="Web Maintenance" data-fr="Maintenance Web">Web Maintenance</h4>
+                <p data-en="Security updates and WP management." data-fr="Mises à jour sécurité & gestion WP.">Security updates and WP management.</p>
             </div>
             <div class="glass-card service-box">
                 <i class="fas fa-server"></i>
-                <h4>IT Infrastructure</h4>
-                <p>Server management (OVH/Cloud) and digital transition help.</p>
+                <h4 data-en="Server Recovery" data-fr="Récupération Serveur">Server Recovery</h4>
+                <p data-en="Critical infrastructure restoration." data-fr="Restauration d'infrastructures critiques.">Critical infrastructure restoration.</p>
+            </div>
+            <div class="glass-card service-box">
+                <i class="fas fa-chart-pie"></i>
+                <h4 data-en="Data Visualization" data-fr="Visualisation Données">Data Visualization</h4>
+                <p data-en="Interactive reporting dashboards." data-fr="Tableaux de bord interactifs.">Interactive reporting dashboards.</p>
+            </div>
+            <div class="glass-card service-box">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h4 data-en="Tech Training" data-fr="Formation Tech">Tech Training</h4>
+                <p data-en="Onboarding teams to new digital tools." data-fr="Accompagnement aux outils digitaux.">Onboarding teams to new digital tools.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="reveal">
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title" data-en="Let's Connect" data-fr="Contactez-moi">Let's Connect</h2>
         <div class="contact-container">
-            <form action="mailto:yakoubinourhene1@gmail.com" method="post" enctype="text/plain" class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
+            <form class="contact-form glass-card">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
                 <textarea placeholder="Your Message" rows="5"></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
+                <button type="submit" class="btn-primary" data-en="Send Message" data-fr="Envoyer">Send Message</button>
             </form>
-            <div class="contact-buttons-flex">
-                <a href="mailto:yakoubinourhene1@gmail.com" class="btn-email-large"><i class="fas fa-envelope"></i> yakoubinourhene1@gmail.com</a>
-                <a href="https://wa.me/216XXXXXXXX" class="btn-whatsapp-large"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <div class="contact-links">
+                <a href="mailto:yakoubinourhene1@gmail.com" class="contact-btn email"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://wa.me/216XXXXXXXX" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </section>
 
     <footer class="main-footer">
-        <p>&copy; 2026 Nourhene Yaakoubi. Built with <i class="fas fa-heart"></i> and Code.</p>
-        <div class="social-footer">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <p>&copy; 2026 Nourhene Yaakoubi. <span data-en="Built with Passion & Code." data-fr="Créé avec Passion & Code.">Built with Passion & Code.</span></p>
     </footer>
 </main>
 
@@ -332,16 +324,33 @@
 </div>
 
 <script>
-    // 1. Language Toggle
-    document.querySelectorAll('.lang-btn').forEach(btn => {
+    // Language Switching Logic
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const translatableText = document.querySelectorAll('[data-en]');
+
+    langBtns.forEach(btn => {
         btn.onclick = function() {
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            const lang = this.getAttribute('data-lang');
+            langBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            // Logique de changement de langue ici si nécessaire
+
+            translatableText.forEach(el => {
+                // Check if it's a list (special case for experience)
+                if (el.tagName === 'UL') {
+                    el.innerHTML = el.getAttribute(`data-${lang}`);
+                } else {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
+                
+                // Update placeholders for inputs
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    // Logic for placeholders if needed
+                }
+            });
         }
     });
 
-    // 2. Reveal animation
+    // Reuse the Reveal and Lightbox scripts from previous version
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         reveals.forEach(el => {
@@ -350,7 +359,6 @@
     }
     window.addEventListener("scroll", reveal);
 
-    // 3. Album & Lightbox
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
     let currentSet = [];
@@ -363,21 +371,6 @@
         showImage();
     }
 
-    document.querySelectorAll('.zoomable').forEach(img => {
-        img.onclick = function(e) {
-            e.stopPropagation();
-            const parentAlbum = this.closest('.hidden-album, .cert-scroll');
-            if(parentAlbum) {
-                currentSet = Array.from(parentAlbum.querySelectorAll('img'));
-                currentIdx = currentSet.indexOf(this);
-            } else {
-                currentSet = [this];
-                currentIdx = 0;
-            }
-            showImage();
-        }
-    });
-
     function showImage() {
         lbImg.src = currentSet[currentIdx].src;
         lb.style.display = 'flex';
@@ -385,23 +378,8 @@
 
     document.getElementById('nextBtn').onclick = (e) => { e.stopPropagation(); currentIdx = (currentIdx + 1) % currentSet.length; lbImg.src = currentSet[currentIdx].src; };
     document.getElementById('prevBtn').onclick = (e) => { e.stopPropagation(); currentIdx = (currentIdx - 1 + currentSet.length) % currentSet.length; lbImg.src = currentSet[currentIdx].src; };
-    
-    // FERMETURE LIGHTBOX : Clic sur X ou en dehors de l'image
     document.querySelector('.close-lb').onclick = () => lb.style.display = 'none';
     lb.onclick = (e) => { if(e.target === lb) lb.style.display = 'none'; };
-
-    // 4. Nav Active Link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    window.addEventListener('scroll', () => {
-        let current = "";
-        document.querySelectorAll('section, header').forEach(section => {
-            if (pageYOffset >= section.offsetTop - 150) current = section.getAttribute('id');
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) link.classList.add('active');
-        });
-    });
 </script>
 </body>
 </html>
