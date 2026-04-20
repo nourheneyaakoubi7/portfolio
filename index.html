@@ -1,46 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Portfolio</title>
+    <title>Nourhene Yaakoubi | Freelance & IT Specialist</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+<button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+
 <nav class="sidebar">
     <div class="sidebar-logo">NY</div>
+    
     <div class="lang-switch">
-        <span id="btn-en" class="active" onclick="switchLang('en')">EN</span> | 
-        <span id="btn-fr" onclick="switchLang('fr')">FR</span>
+        <button class="lang-btn active" data-lang="en">EN</button> | 
+        <button class="lang-btn" data-lang="fr">FR</button>
     </div>
+
     <ul class="nav-menu">
-        <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-        <li><a href="#skills"><i class="fas fa-code"></i> <span>Skills</span></a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Experience</span></a></li>
-        <li><a href="#projects"><i class="fas fa-laptop-code"></i> <span>Projects</span></a></li>
-        <li><a href="#services"><i class="fas fa-gem"></i> <span>Services</span></a></li>
+        <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Accueil</span></a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> <span>À Propos</span></a></li>
+        <li><a href="#skills"><i class="fas fa-tools"></i> <span>Compétences</span></a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Parcours</span></a></li>
+        <li><a href="#projects"><i class="fas fa-laptop-code"></i> <span>Projets GitHub</span></a></li>
+        <li><a href="#university"><i class="fas fa-graduation-cap"></i> <span>Formation</span></a></li>
+        <li><a href="#services"><i class="fas fa-concierge-bell"></i> <span>Services</span></a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
     </ul>
+    
+    <div class="sidebar-footer">
+        <a href="https://wa.me/216XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
 </nav>
 
 <main class="main-content">
+    
     <header id="home" class="hero-section">
-        <div class="hero-container" style="display:flex; align-items:center; gap:50px; padding:0 50px;">
-            <img src="assets/images/NY.png" alt="Nourhene" class="hero-img" style="width:250px; border-radius:50%; border:4px solid var(--primary);">
+        <div class="hero-container">
+            <div class="hero-profile-wrapper">
+                <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="hero-img">
+            </div>
             <div class="hero-text">
-                <span class="badge">Expert Digital & IT Transformation</span>
+                <span class="badge">Full-Stack Dev & IT Consultant</span>
                 <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-                <p class="hero-desc" id="hero-tagline">
-                    Full-Stack Developer & Information Systems Specialist. I bridge technical logic with business operational efficiency to scale your digital presence.
-                </p>
+                <p class="tagline">Expertise en Transformation Digitale & Systèmes d'Information Décisionnels</p>
+                <p class="hero-intro">J'accompagne les entreprises et institutions dans la modernisation de leur infrastructure et le développement de solutions web performantes.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">Hire Me</a>
                     <a href="https://github.com/nourheneyaakoubi7" target="_blank" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" class="btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -48,171 +59,330 @@
 
     <section id="about" class="reveal">
         <h2 class="section-title">Bonjour, je suis Nourhene</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">
-            J’aide les entrepreneurs et les institutions à transformer leurs idées en <strong>solutions digitales performantes</strong>. À travers mon expertise en <strong>MERN Stack</strong> et <strong>BI</strong>, j'accompagne la croissance technique et stratégique des projets.
-        </p>
-        <div class="stats-grid">
-            <div class="stat-item"><h3>20+</h3><p>Projets Réalisés</p></div>
-            <div class="stat-item"><h3>24/7</h3><p>Support & Consulting</p></div>
-            <div class="stat-item"><h3>MERN</h3><p>Stack Expertise</p></div>
+        <div class="about-flex-container">
+            <div class="glass-card about-main">
+                <p class="lead-text">
+                    <strong>Développeuse Full-Stack / Consultante IT & Digitale / Spécialiste BI</strong>
+                </p>
+                <p>
+                    J’aide les institutions et les entrepreneurs à transformer leurs processus métiers en <strong>systèmes digitaux automatisés et performants</strong>. De l'architecture serveur à la visualisation de données complexes, je crée des ponts entre la technique et les besoins business.
+                </p>
+                <p>
+                    À travers mon rôle de <strong>Chargé Digital & IT</strong>, je structure la présence technologique d'organisations académiques, tout en proposant mon expertise en freelance pour des projets SaaS et des tableaux de bord décisionnels.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item"><span>10+</span><p>Projets Web</p></div>
+                    <div class="stat-item"><span>MERN</span><p>Stack Experte</p></div>
+                    <div class="stat-item"><span>24/7</span><p>Support IT</p></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="skills" class="reveal">
+    <section id="skills" class="dark-bg reveal">
         <h2 class="section-title">Mes Compétences</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Consulting & IT</h3>
+        <div class="skills-grid-detailed">
+            <div class="glass-card">
+                <h3><i class="fas fa-chart-line"></i> Consulting & IT Strategy</h3>
                 <ul class="skill-list">
-                    <li>Consultations 1:1 <span class="level">Avancé</span></li>
-                    <li>Audit Infrastructure <span class="level">Avancé</span></li>
-                    <li>Stratégie MVP <span class="level">Avancé</span></li>
+                    <li>Audit d'infrastructure digitale <span class="lvl">Avancé</span></li>
+                    <li>Gestion de domaine & serveurs (OVH) <span class="lvl">Avancé</span></li>
+                    <li>Stratégie Business Intelligence (BI) <span class="lvl">Avancé</span></li>
+                    <li>Onboarding de plateformes Admin <span class="lvl">Avancé</span></li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Frontend</h3>
+            <div class="glass-card">
+                <h3><i class="fab fa-react"></i> Développement Frontend</h3>
                 <ul class="skill-list">
-                    <li>React.js / Angular <span class="level">Avancé</span></li>
-                    <li>JavaScript (ES6+) <span class="level">Avancé</span></li>
-                    <li>Bootstrap / Tailwind <span class="level">Avancé</span></li>
+                    <li>React.js / Next.js <span class="lvl">Avancé</span></li>
+                    <li>HTML5 / CSS3 / Tailwind <span class="lvl">Avancé</span></li>
+                    <li>JavaScript (ES6+) <span class="lvl">Avancé</span></li>
+                    <li>Angular <span class="lvl">Intermédiaire</span></li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Backend & Data</h3>
+            <div class="glass-card">
+                <h3><i class="fas fa-server"></i> Développement Backend</h3>
                 <ul class="skill-list">
-                    <li>Node.js / Express <span class="level">Avancé</span></li>
-                    <li>Django / Python <span class="level">Avancé</span></li>
-                    <li>MongoDB / MySQL <span class="level">Avancé</span></li>
+                    <li>Node.js / Express <span class="lvl">Avancé</span></li>
+                    <li>Python / Django <span class="lvl">Avancé</span></li>
+                    <li>MongoDB / MySQL <span class="lvl">Avancé</span></li>
+                    <li>REST API Design <span class="lvl">Avancé</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="experience" class="reveal">
-        <h2 class="section-title">Professional Path</h2>
+        <h2 class="section-title">Parcours Professionnel</h2>
         <div class="timeline">
-            <div class="timeline-item" style="margin-left: 30px; border-left: 2px solid var(--primary); padding-left: 20px; margin-bottom: 40px;">
-                <span class="date-badge">March 2026 - Present</span>
-                <h3>Chargé Digital & IT @ ESPAF Business School</h3>
-                <p>Architecte du renouveau digital : Récupération critique de l'infrastructure serveur, sécurisation des domaines et déploiement de solutions SaaS administratives pour automatiser les flux de l'école.</p>
+            <div class="timeline-item">
+                <div class="timeline-logo"><i class="fas fa-university"></i></div>
+                <div class="timeline-content highlight">
+                    <span class="date-badge">Mars 2026 - Présent</span>
+                    <h3>Chargé Digital & IT <span class="company">@ ESPAF Business School</span></h3>
+                    <p><strong>Impact Clé :</strong> J'orchestre la transition numérique de l'établissement. J'ai sécurisé le patrimoine digital par la récupération critique de serveurs et la centralisation des domaines. Ma mission est de transformer une infrastructure traditionnelle en un écosystème moderne et automatisé.</p>
+                </div>
             </div>
-            <div class="timeline-item" style="margin-left: 30px; border-left: 2px solid var(--primary); padding-left: 20px; margin-bottom: 40px;">
-                <span class="date-badge">Internship</span>
-                <h3>BI Developer @ Fouusa Engineering</h3>
-                <p>Conception d'un écosystème de Business Intelligence. J'ai transformé des flux de données complexes en tableaux de bord interactifs (React) permettant une prise de décision instantanée.</p>
+
+            <div class="timeline-item">
+                <div class="timeline-logo"><img src="assets/logos/fouusa.png" alt="Fouusa"></div>
+                <div class="timeline-content">
+                    <span class="date-badge">Stage PFE</span>
+                    <h3>BI Developer Intern <span class="company">@ Fouusa Engineering</span></h3>
+                    <p><strong>Impact Clé :</strong> Création d'une plateforme d'intelligence d'affaires sur mesure. J'ai conçu des algorithmes de traitement de données pour traduire des flux complexes en indicateurs de performance (KPI) lisibles, permettant à la direction de piloter l'entreprise en temps réel.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-logo"><img src="assets/logos/webup-removebg-preview.png" alt="WebUp"></div>
+                <div class="timeline-content">
+                    <span class="date-badge">Stage Technicien</span>
+                    <h3>Full-Stack Intern <span class="company">@ WebUp</span></h3>
+                    <p><strong>Impact Clé :</strong> Digitalisation complète de la gestion opérationnelle. Développement d'un système robuste automatisant les commandes et le stock, réduisant drastiquement les erreurs humaines et le temps de traitement administratif.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="dark-bg reveal">
-        <h2 class="section-title">Technical Projects</h2>
+        <h2 class="section-title">Projets GitHub</h2>
         <div class="glass-grid">
-            <div class="glass-card">
-                <h3>BI-PLATFORME</h3>
-                <p>Plateforme de Business Intelligence complète (MongoDB, React). Visualisation de KPIs en temps réel.</p>
-                <div class="project-btns" style="margin-top:15px;">
-                    <a href="#" class="btn-small">GitHub</a>
-                    <button class="btn-small" onclick="openAlbum('bi-album')">Album</button>
+            <div class="glass-card project-card">
+                <div class="repo-header">
+                    <i class="fab fa-js-square"></i>
+                    <h3>Cafe-Management-System</h3>
+                    <span class="repo-badge">Public</span>
                 </div>
-                <div id="bi-album" class="hidden-album">
-                    <img src="assets/projects/fouusa/30.png">
+                <p>Système complet de gestion de café conçu pour optimiser les opérations quotidiennes. React, Node.js, MySQL.</p>
+                <div class="project-btns">
+                    <a href="https://github.com/nourheneyaakoubi7/Cafe-Management-System" class="btn-small"><i class="fab fa-github"></i> Code</a>
+                    <button class="btn-small" onclick="openAlbum('webup-album')"><i class="fas fa-images"></i> Album</button>
+                </div>
+                <div id="webup-album" class="hidden-album">
+                    <img src="assets/projects/webup/1.png" class="zoomable">
+                    <img src="assets/projects/webup/2.png" class="zoomable">
                 </div>
             </div>
-            <div class="glass-card">
-                <h3>Cafe-Management-System</h3>
-                <p>Optimisation des opérations quotidiennes : Commandes, Stock et Facturation (Node/MySQL).</p>
-                <button class="btn-small" onclick="openAlbum('cafe-album')">Album</button>
-                <div id="cafe-album" class="hidden-album"><img src="assets/projects/webup/1.png"></div>
+
+            <div class="glass-card project-card">
+                <div class="repo-header">
+                    <i class="fab fa-python"></i>
+                    <h3>Django-Angular-UserManagement</h3>
+                    <span class="repo-badge">Public</span>
+                </div>
+                <p>Système CRUD complet avec backend Django REST et frontend Angular pour la gestion des utilisateurs.</p>
+                <div class="project-btns">
+                    <a href="https://github.com/nourheneyaakoubi7/Django-Angular-UserManagement" class="btn-small"><i class="fab fa-github"></i> Code</a>
+                </div>
             </div>
-            <div class="glass-card">
-                <h3>Django-Angular-UserManagement</h3>
-                <p>Système CRUD complet avec authentification JWT et filtrage avancé.</p>
+
+            <div class="glass-card project-card">
+                <div class="repo-header">
+                    <i class="fab fa-js-square"></i>
+                    <h3>BI-PLATFORME</h3>
+                    <span class="repo-badge">Public</span>
+                </div>
+                <p>Plateforme de Business Intelligence de bout en bout pour l'amélioration de la prise de décision. Stack MERN.</p>
+                <div class="project-btns">
+                    <a href="https://github.com/nourheneyaakoubi7/BI-PLATFORME" class="btn-small"><i class="fab fa-github"></i> Code</a>
+                    <button class="btn-small" onclick="openAlbum('fouusa-album')"><i class="fas fa-images"></i> Album</button>
+                </div>
+                <div id="fouusa-album" class="hidden-album">
+                    <img src="assets/projects/fouusa/30.png" class="zoomable">
+                    <img src="assets/projects/fouusa/31.png" class="zoomable">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="university" class="reveal">
-        <h2 class="section-title">University & Clubs</h2>
-        <div class="glass-grid">
-            <div class="glass-card">
-                <h4>Formation</h4>
-                <p>ISIK Tunis - Licence Software Engineering</p>
-            </div>
-            <div class="glass-card">
-                <h4>Clubs & Leadership</h4>
-                <p><strong>Astrophilia :</strong> Team Management.<br><strong>GDSC :</strong> Google Tech Adoption.</p>
+        <h2 class="section-title">Formation Académique</h2>
+        <div class="glass-card">
+            <h4>ISIK Tunis - Licence en Informatique de Gestion</h4>
+            <div class="doc-preview">
+                <img src="assets/diplomas/licence.jpg" class="private-doc zoomable">
+                <div class="blur-overlay"><span>PRO DIPLOMA</span></div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="reveal">
+    <section id="clubs" class="reveal">
+        <h2 class="section-title">Clubs & Engagement</h2>
+        <div class="skills-flex">
+            <div class="soft-card">
+                <i class="fas fa-star"></i>
+                <h4>Astrophilia</h4>
+                <p>Leadership et gestion logistique d'événements.</p>
+                <button class="btn-small mt-10" onclick="openAlbum('astrophilia-album')">Voir Album</button>
+                <div id="astrophilia-album" class="hidden-album">
+                    <img src="assets/clubs/astrophilia/1.jpg" class="zoomable">
+                </div>
+            </div>
+            <div class="soft-card">
+                <i class="fas fa-hands-helping"></i>
+                <h4>Koffa Ramadan</h4>
+                <p>Coordination d'aide humanitaire et logistique sociale.</p>
+            </div>
+            <div class="soft-card">
+                <i class="fab fa-google"></i>
+                <h4>GDSC</h4>
+                <p>Immersion dans les technologies Google et Agilité.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="reveal">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-scroll">
+            <img src="assets/clubs/gdsc/cert1.jpg" class="zoomable">
+            <img src="assets/clubs/gdsc/cert2.jpg" class="zoomable">
+            <img src="assets/clubs/gdsc/cert3.jpg" class="zoomable">
+        </div>
+    </section>
+
+    <section id="services" class="dark-bg reveal">
         <h2 class="section-title">Ce que je propose</h2>
         <div class="glass-grid">
-            <div class="glass-card">
-                <i class="fas fa-mobile-alt service-icon"></i>
-                <h4>Web, Mobile & SaaS</h4>
-                <p>Développement de plateformes scalables pensées pour la conversion.</p>
+            <div class="glass-card service-box">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Développement Web & SaaS</h4>
+                <p>Conception d'applications métiers évolutives (React/Django).</p>
+                <a href="#contact" class="link-more">Voir plus →</a>
             </div>
-            <div class="glass-card">
-                <i class="fas fa-comments-dollar service-icon"></i>
-                <h4>Consultations 1:1</h4>
-                <p>Audit technique, pricing, et roadmap produit pour entrepreneurs.</p>
+            <div class="glass-card service-box">
+                <i class="fas fa-user-tie"></i>
+                <h4>Consultations Freelance 1:1</h4>
+                <p>Audit technique et stratégie digitale pour entrepreneurs.</p>
+                <a href="#contact" class="link-more">Voir plus →</a>
             </div>
-            <div class="glass-card">
-                <i class="fas fa-shopping-cart service-icon"></i>
-                <h4>E-commerce & Growth</h4>
-                <p>Optimisation SEO, automatisations et gestion de boutiques en ligne.</p>
+            <div class="glass-card service-box">
+                <i class="fas fa-server"></i>
+                <h4>Déploiement & Cloud</h4>
+                <p>Configuration serveurs, DNS et transition infrastructure.</p>
+                <a href="#contact" class="link-more">Voir plus →</a>
+            </div>
+            <div class="glass-card service-box">
+                <i class="fas fa-chart-bar"></i>
+                <h4>Business Intelligence</h4>
+                <p>Tableaux de bord interactifs pour piloter vos revenus.</p>
+                <a href="#contact" class="link-more">Voir plus →</a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="reveal">
         <h2 class="section-title">Contact Me</h2>
-        <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
-            <a href="mailto:yakoubinourhene1@gmail.com" class="btn-primary" style="width:100%; text-align:center;">Send an Email</a>
-            <a href="https://wa.me/216XXXXXXXX" class="btn-whatsapp" style="background:#25d366; color:white; padding:15px 40px; border-radius:10px; text-decoration:none; width:100%; text-align:center;">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
+        <div class="contact-container">
+            <form action="mailto:yakoubinourhene1@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5"></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <a href="mailto:yakoubinourhene1@gmail.com" class="btn-whatsapp" style="background: var(--primary); margin-bottom: 10px;">
+                    <i class="fas fa-envelope"></i> Send Email
+                </a>
+                <a href="https://wa.me/216XXXXXXXX" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Nourhene Yaakoubi. Built with Passion & Code.</p>
+    <footer class="main-footer">
+        <p>&copy; 2026 Nourhene Yaakoubi. Built with Passion & Technology.</p>
     </footer>
+
 </main>
 
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<div id="lightbox" class="lightbox">
     <span class="close-lb">&times;</span>
-    <img id="lb-img" src="">
+    <div class="lb-content-wrap">
+        <button id="prevBtn" class="lb-nav-btn"><i class="fas fa-chevron-left"></i></button>
+        <img id="lb-img" src="">
+        <button id="nextBtn" class="lb-nav-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
 </div>
 
 <script>
-    // 1. Traduction Simple
-    const translations = {
-        en: { tagline: "Full-Stack Developer & IT Specialist. I bridge logic with efficiency." },
-        fr: { tagline: "Développeuse Full-Stack & Spécialiste SI. Je lie la logique technique à l'efficacité business." }
+    // 1. Reveal animation
+    function reveal() {
+        const reveals = document.querySelectorAll(".reveal");
+        reveals.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+        });
+    }
+    window.addEventListener("scroll", reveal);
+
+    // 2. Lang Switch Logic
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.onclick = function() {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            // Ici tu pourrais ajouter la logique de traduction réelle
+        }
+    });
+
+    // 3. Lightbox Enhanced
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    let currentSet = [];
+    let currentIdx = 0;
+
+    function openAlbum(albumId) {
+        const albumDiv = document.getElementById(albumId);
+        currentSet = Array.from(albumDiv.querySelectorAll('img'));
+        currentIdx = 0;
+        showImage();
+    }
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+        img.onclick = function(e) {
+            e.stopPropagation();
+            const parent = this.closest('.hidden-album, .cert-scroll, .doc-preview');
+            if(parent && !parent.classList.contains('doc-preview')) {
+                currentSet = Array.from(parent.querySelectorAll('img'));
+                currentIdx = currentSet.indexOf(this);
+            } else {
+                currentSet = [this];
+                currentIdx = 0;
+            }
+            showImage();
+        }
+    });
+
+    function showImage() {
+        lbImg.src = currentSet[currentIdx].src;
+        lb.style.display = 'flex';
+    }
+
+    document.getElementById('nextBtn').onclick = (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx + 1) % currentSet.length;
+        showImage();
     };
 
-    function switchLang(lang) {
-        document.getElementById('hero-tagline').innerText = translations[lang].tagline;
-        document.querySelectorAll('.lang-switch span').forEach(s => s.classList.remove('active'));
-        document.getElementById('btn-' + lang).classList.add('active');
-    }
+    document.getElementById('prevBtn').onclick = (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx - 1 + currentSet.length) % currentSet.length;
+        showImage();
+    };
 
-    // 2. Lightbox Logic (CORRIGÉ)
-    function openAlbum(id) {
-        const album = document.getElementById(id);
-        const firstImg = album.querySelector('img');
-        if(firstImg) {
-            document.getElementById('lb-img').src = firstImg.src;
-            document.getElementById('lightbox').style.display = 'flex';
-        }
-    }
+    // Fermeture avec le bouton X ET en cliquant en dehors de l'image
+    document.querySelector('.close-lb').onclick = () => lb.style.display = 'none';
+    lb.onclick = (e) => { if(e.target === lb || e.target.classList.contains('lb-content-wrap')) lb.style.display = 'none'; };
 
-    // 3. Animation Reveal
+    // 4. Navigation Active Link
+    const navLinks = document.querySelectorAll('.nav-menu a');
     window.addEventListener('scroll', () => {
-        document.querySelectorAll('.reveal').forEach(el => {
-            if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+        let current = "";
+        document.querySelectorAll('section, header').forEach(section => {
+            if (pageYOffset >= section.offsetTop - 150) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) link.classList.add('active');
         });
     });
 </script>
