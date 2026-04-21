@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Full-Stack Developer</title>
+    <title>Nourhene Yaakoubi | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="language-picker">
+        <button onclick="setLanguage('en')" id="btn-en" class="active">EN</button>
+        <button onclick="setLanguage('fr')" id="btn-fr">FR</button>
+    </div>
 
     <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
 
     <nav class="sidebar">
         <div class="sidebar-logo">NY</div>
         <ul class="nav-menu">
-            <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-            <li><a href="#education"><i class="fas fa-university"></i> <span>Education</span></a></li>
-            <li><a href="#internships"><i class="fas fa-laptop-code"></i> <span>Internships</span></a></li>
-            <li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Exp</span></a></li>
-            <li><a href="#tools"><i class="fas fa-layer-group"></i> <span>Tools</span></a></li>
-            <li><a href="#clubs"><i class="fas fa-users"></i> <span>Clubs</span></a></li>
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> <span data-key="nav-home">Home</span></a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> <span data-key="nav-about">About</span></a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> <span data-key="nav-exp">Experience</span></a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> <span data-key="nav-projects">Projects</span></a></li>
+            <li><a href="#services"><i class="fas fa-concierge-bell"></i> <span data-key="nav-services">Services</span></a></li>
+            <li><a href="#community"><i class="fas fa-users"></i> <span data-key="nav-community">Community</span></a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-key="nav-contact">Contact</span></a></li>
         </ul>
         <div class="sidebar-footer">
-            <a href="mailto:yakoubinourhene1@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/nourheneyaakoubi7" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </nav>
 
@@ -37,88 +39,119 @@
             <div class="hero-container">
                 <div class="hero-profile-wrapper">
                     <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="hero-img">
-                    <div class="exp-badge">3+ Years Growth</div>
                 </div>
                 <div class="hero-text">
-                    <span class="badge">Computer Science Graduate (Licence)</span>
+                    <span class="badge" data-key="hero-badge">Software Developer</span>
                     <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-                    <p class="tagline">Digital Transformation Lead | Full-Stack Specialist</p>
-                    <p class="hero-bio">Architecting robust Information Systems at ESPAF and bridging the gap between technical complexity and business logic.</p>
+                    <p class="tagline" data-key="hero-tagline">Full-Stack MERN Specialist | Problem Solver</p>
                     <div class="hero-cta">
-                        <a href="#about" class="btn-primary">Explore Portfolio</a>
-                        <a href="https://github.com/nourheneyaakoubi7" target="_blank" class="btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#contact" class="btn-primary" data-key="btn-hire">Hire Me</a>
+                        <a href="assets/cv/CV_Nourhene_Yaakoubi.pdf" class="btn-secondary" data-key="btn-cv">Download CV</a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section id="about" class="fade-in">
-            <h2 class="section-title">The Blueprint</h2>
-            <div class="glass-card about-main">
-                <p class="about-text">
-                    I am a Junior Full-Stack Developer specialized in <strong>Software Engineering and Information Systems</strong>. 
-                    I possess deep expertise in the <strong>MERN Stack</strong> and server infrastructure recovery.
+        <section id="about">
+            <h2 class="section-title" data-key="about-title">About Me</h2>
+            <div class="glass-card">
+                <p class="about-text" data-key="about-desc">
+                    I am a Full-Stack Developer specialized in the MERN stack and Django. With a focus on Business Intelligence and digital infrastructure, I bridge the gap between complex data and user-friendly interfaces.
                 </p>
-                <div class="skills-grid-container">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> Core Tech</h4>
-                        <ul>
-                            <li>MERN Stack</li>
-                            <li>Python (Django), Java</li>
-                            <li>REST APIs & SQL/NoSQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-shield-alt"></i> IT Ops</h4>
-                        <ul>
-                            <li>Server Infrastructure</li>
-                            <li>Domain Management</li>
-                            <li>E-Learning Architecture</li>
-                        </ul>
-                    </div>
+                <div class="education-box">
+                    <h3 data-key="edu-title">Academic Background</h3>
+                    <p><strong>Licence in Computer Science</strong> - ISIK Kef (2022 - 2025)</p>
+                    <p data-key="edu-spec">Specialization: Software Engineering & Information Systems</p>
                 </div>
             </div>
         </section>
 
-        <section id="internships" class="dark-section">
-            <h2 class="section-title">Engineering Milestones</h2>
-            
-            <div class="project-wrapper glass-card album-container">
-                <div class="project-info">
-                    <img src="assets/logos/fouusa.png" alt="Fouusa" class="company-logo">
-                    <div>
-                        <h3>Fouusa Engineering | BI Platform</h3>
-                        <p>Architecting a data-driven dashboard for engineering KPI tracking.</p>
-                    </div>
+        <section id="experience">
+            <h2 class="section-title" data-key="exp-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="glass-card exp-item">
+                    <span class="date">March 2026 - Present</span>
+                    <h3>Chargé Digital & IT</h3>
+                    <h4 class="company">ESPAF Business School</h4>
+                    <p data-key="exp-espaf">Managing digital infrastructure, server administration (OVH), and school management systems.</p>
                 </div>
-                <div class="photo-grid" id="fouusa-grid">
-                    <img src="assets/projects/fouusa/1.png" class="zoomable">
-                    <img src="assets/projects/fouusa/2.png" class="zoomable">
-                    <img src="assets/projects/fouusa/3.png" class="zoomable">
-                    <img src="assets/projects/fouusa/4.png" class="zoomable">
-                    <img src="assets/projects/fouusa/5.png" class="zoomable">
-                    <img src="assets/projects/fouusa/6.png" class="zoomable">
-                    <img src="assets/projects/fouusa/7.png" class="zoomable">
-                    <img src="assets/projects/fouusa/8.png" class="zoomable">
-                    <img src="assets/projects/fouusa/9.png" class="zoomable">
-                    </div>
-                <button class="btn-expand">Show Full Project Scope</button>
+                <div class="glass-card exp-item">
+                    <span class="date">July 2024 - Aug 2024</span>
+                    <h3>Full-Stack Intern</h3>
+                    <h4 class="company">WebUp</h4>
+                    <p data-key="exp-webup">Developed a Cafe Management System using React and Node.js to optimize daily operations.</p>
+                </div>
             </div>
         </section>
 
-        <footer class="main-footer">
-            <div class="footer-content">
-                <p>Nourhene Yaakoubi | Engineered with Passion & Logic</p>
+        <section id="projects">
+            <h2 class="section-title" data-key="proj-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="glass-card project-card">
+                    <h3>BI-PLATFORME</h3>
+                    <p data-key="proj-bi">End-to-end Business Intelligence platform for decision-making support. (React, Node.js, MongoDB)</p>
+                    <a href="#" class="btn-link">View GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="glass-card project-card">
+                    <h3>Realtime Chat</h3>
+                    <p data-key="proj-chat">Backend server for real-time communication using Node.js and Socket.io.</p>
+                    <a href="#" class="btn-link">View GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title" data-key="serv-title">Services</h2>
+            <div class="glass-grid">
+                <div class="glass-card service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3 data-key="serv-web-h">Web Development</h3>
+                    <p data-key="serv-web-p">Custom MERN stack applications tailored to your business needs.</p>
+                </div>
+                <div class="glass-card service-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3 data-key="serv-bi-h">BI Solutions</h3>
+                    <p data-key="serv-bi-p">Interactive dashboards and data analysis platforms.</p>
+                </div>
+                <div class="glass-card service-item">
+                    <i class="fas fa-server"></i>
+                    <h3 data-key="serv-it-h">IT Administration</h3>
+                    <p data-key="serv-it-p">Domain management, server setup, and digital security.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="community">
+            <h2 class="section-title" data-key="comm-title">Community & Leadership</h2>
+            <div class="glass-card">
+                <ul class="comm-list">
+                    <li><strong>GDSC Member:</strong> Active participation in Google Developer Student Clubs events.</li>
+                    <li><strong>Event Manager (Club Astrophilia):</strong> Organized scientific and social university events.</li>
+                    <li><strong>Media Member (IDER):</strong> Handled digital presence and community outreach.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title" data-key="cont-title">Get In Touch</h2>
+            <div class="contact-container">
+                <form id="contact-form" class="glass-card">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary" data-key="btn-send">Send Message</button>
+                </form>
+                <div class="contact-links">
+                    <a href="https://wa.me/YOUR_NUMBER" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:yakoubinourhene1@gmail.com" class="email-btn"><i class="fas fa-envelope"></i> Email Me</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Nourhene Yaakoubi | <span data-key="footer-text">Built with Love & Logic</span></p>
         </footer>
     </main>
-
-    <div id="lightbox" class="lightbox">
-        <span class="close-lb">&times;</span>
-        <button id="prevBtn" class="lb-nav"><i class="fas fa-chevron-left"></i></button>
-        <img id="lb-img" src="">
-        <button id="nextBtn" class="lb-nav"><i class="fas fa-chevron-right"></i></button>
-    </div>
 
     <script src="script.js"></script>
 </body>
