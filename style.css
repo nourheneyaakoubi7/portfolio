@@ -1,83 +1,29 @@
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: #0f172a;
-    color: white;
-    margin: 0;
+.project-desc {
+    color: var(--text-dim);
+    margin: 15px 0 25px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 80px;
-    height: 100vh;
-    position: fixed;
-    background: #020617;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    transition: 0.3s;
+.club-intro {
+    color: var(--text-dim);
+    margin: 20px 0;
+    padding-left: 15px;
+    border-left: 3px solid var(--primary);
 }
 
-.sidebar:hover {
-    width: 200px;
+.hero-profile-wrapper {
+    position: relative;
 }
 
-.nav-menu {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-menu a {
-    color: #94a3b8;
-    text-decoration: none;
-    display: flex;
-    padding: 10px;
-}
-
-/* Hero */
-.hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-img {
-    width: 200px;
-    border-radius: 20px;
-}
-
-/* Buttons */
-.btn-primary {
-    background: #4f46e5;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: white;
-}
-
-.btn-secondary {
-    border: 1px solid white;
-    padding: 10px 20px;
-}
-
-/* Cards */
-.glass-card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 20px;
-}
-
-.glass-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
-}
-
-/* Form */
-form input, textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
+/* Adds a nice glow behind your photo */
+.hero-profile-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: var(--primary);
+    filter: blur(50px);
+    opacity: 0.2;
+    z-index: -1;
 }
