@@ -10,9 +10,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
+
 <body>
 
-<!-- MOBILE BTN -->
+<!-- LANGUAGE SWITCH -->
+<div class="lang-toggle">
+    <span id="enBtn" class="active">EN</span> | 
+    <span id="frBtn">FR</span>
+</div>
+
 <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
 
 <!-- SIDEBAR -->
@@ -20,20 +26,16 @@
     <div class="sidebar-logo">NY</div>
 
     <ul class="nav-menu">
-        <li><a href="#home" class="active"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#home"><i class="fas fa-home"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="fas fa-user"></i><span>About</span></a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
         <li><a href="#projects"><i class="fas fa-code"></i><span>Projects</span></a></li>
-        <li><a href="#services"><i class="fas fa-briefcase"></i><span>Services</span></a></li>
-        <li><a href="#certificates"><i class="fas fa-award"></i><span>Certificates</span></a></li>
+        <li><a href="#services"><i class="fas fa-crown"></i><span>Services</span></a></li>
+        <li><a href="#tools"><i class="fas fa-layer-group"></i><span>Stack</span></a></li>
+        <li><a href="#education"><i class="fas fa-university"></i><span>Education</span></a></li>
         <li><a href="#clubs"><i class="fas fa-users"></i><span>Community</span></a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
     </ul>
-
-    <!-- LANGUAGE SWITCH -->
-    <div class="lang-switch">
-        <button id="lang-en">EN</button>
-        <button id="lang-fr">FR</button>
-    </div>
 </nav>
 
 <!-- MAIN -->
@@ -46,7 +48,10 @@
 
         <div>
             <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-            <p class="tagline">Full-Stack Developer | MERN & BI Specialist</p>
+            <p class="tagline">Full-Stack Developer | MERN Specialist</p>
+            <p class="hero-bio">
+                I design powerful systems, modern interfaces, and scalable applications that solve real-world problems.
+            </p>
 
             <div class="hero-cta">
                 <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank" class="btn-primary">LinkedIn</a>
@@ -58,78 +63,122 @@
 
 <!-- ABOUT -->
 <section id="about">
-    <h2 class="section-title">About Me</h2>
+<h2 class="section-title">About Me</h2>
 
-    <p>
-        Junior Full-Stack Developer specialized in MERN stack and Business Intelligence systems.
-        Passionate about building impactful solutions combining logic, design and data.
-    </p>
+<p class="about-text">
+Junior Full-Stack Developer specialized in MERN stack and Business Intelligence systems.
+I combine strong technical skills with real-world experience to build efficient and scalable applications.
+</p>
+
+<div class="skills-wrapper">
+    <div>
+        <h4>Hard Skills</h4>
+        <ul>
+            <li>MERN Stack</li>
+            <li>Angular / HTML / CSS / JS</li>
+            <li>Django / Java / Python</li>
+        </ul>
+    </div>
+
+    <div>
+        <h4>Soft Skills</h4>
+        <ul>
+            <li>Problem Solving</li>
+            <li>Adaptability</li>
+            <li>Leadership</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="dark-bg">
+<h2 class="section-title">Experience</h2>
+
+<div class="glass-card">
+    <h3>BI Platform – Fouusa Engineering</h3>
+    <p>Developed dashboards and data visualization tools for decision-making.</p>
+</div>
+
+<div class="glass-card">
+    <h3>Cafe Management System – WebUp</h3>
+    <p>Full-stack system for managing orders, stock, and operations.</p>
+</div>
+
+<div class="glass-card">
+    <h3>Sales Consultant</h3>
+    <p>Managed operations and customer relations.</p>
+</div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
+<h2 class="section-title">Projects</h2>
 
-    <div class="glass-grid">
+<div class="glass-grid">
 
-        <div class="glass-card">
-            <h3>BI Platform (Fouusa)</h3>
-            <p>Advanced data visualization dashboard for engineering KPIs.</p>
-        </div>
+<div class="glass-card">
+<h3>Cafe Management</h3>
+<p>Full-stack system using MERN</p>
+</div>
 
-        <div class="glass-card">
-            <h3>Cafe Management System</h3>
-            <p>Full-stack system for managing menus, categories and staff.</p>
-        </div>
+<div class="glass-card">
+<h3>Realtime Chat</h3>
+<p>WebSocket-based chat app</p>
+</div>
 
-    </div>
+<div class="glass-card">
+<h3>BI Platform</h3>
+<p>Advanced data visualization system</p>
+</div>
+
+</div>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
-    <h2 class="section-title">Services</h2>
+<section id="services" class="dark-bg">
+<h2 class="section-title">Services</h2>
 
-    <div class="glass-grid">
-        <div class="glass-card">Full-Stack Web Development</div>
-        <div class="glass-card">UI/UX Design</div>
-        <div class="glass-card">Database & API Development</div>
-    </div>
+<div class="glass-grid">
+
+<div class="glass-card">Web Development</div>
+<div class="glass-card">UI/UX Design</div>
+<div class="glass-card">Backend APIs</div>
+
+</div>
 </section>
 
-<!-- CERTIFICATES -->
-<section id="certificates">
-    <h2 class="section-title">Certificates</h2>
+<!-- TOOLS -->
+<section id="tools">
+<h2 class="section-title">Stack & Tools</h2>
 
-    <div class="glass-grid">
-        <div class="glass-card">GDSC Certificates</div>
-        <div class="glass-card">Flutter Training</div>
-    </div>
-</section>
+<div class="tech-marquee">
+<div class="tech-track">
+<img src="assets/tools/VS CODE.jpeg">
+<img src="assets/tools/NODE.png">
+<img src="assets/tools/REACT.png">
+<img src="assets/tools/MONGODB.png">
+</div>
+</div>
 
-<!-- COMMUNITY -->
-<section id="clubs">
-    <h2 class="section-title">Community</h2>
-
-    <p>Active member in GDSC, IDER & Astrophilia organizing events and projects.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
+<h2 class="section-title">Contact</h2>
 
-    <form id="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Message"></textarea>
+<form class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+<button type="submit" class="btn-primary">Send</button>
+</form>
 
-        <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-
-    <div class="social-links">
-        <a href="mailto:yakoubinourhene1@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/nourhene-yaakoubi-"><i class="fab fa-linkedin"></i></a>
-    </div>
 </section>
+
+<footer>
+<p>© Nourhene Yaakoubi</p>
+</footer>
 
 </main>
 
