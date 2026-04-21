@@ -1,86 +1,83 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background: #0f172a;
     color: white;
+    margin: 0;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 220px;
-    background: #020617;
+    width: 80px;
     height: 100vh;
-    padding: 20px;
     position: fixed;
+    background: #020617;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
 }
 
-.sidebar ul {
+.sidebar:hover {
+    width: 200px;
+}
+
+.nav-menu {
     list-style: none;
     padding: 0;
 }
 
-.sidebar a {
-    color: white;
+.nav-menu a {
+    color: #94a3b8;
     text-decoration: none;
-    display: block;
+    display: flex;
     padding: 10px;
-}
-
-.sidebar a:hover {
-    background: #1e293b;
-}
-
-/* Sections */
-.section {
-    margin-left: 240px;
-    padding: 60px;
 }
 
 /* Hero */
-.hero {
-    text-align: center;
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.profile {
-    width: 150px;
-    border-radius: 50%;
+.hero-img {
+    width: 200px;
+    border-radius: 20px;
 }
 
-/* Skills */
-.skills span {
-    display: inline-block;
-    background: #1e293b;
-    padding: 8px;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-/* Projects */
-.project {
-    background: #1e293b;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-}
-
-/* Contact */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
+/* Buttons */
+.btn-primary {
+    background: #4f46e5;
     padding: 10px 20px;
-    background: #38bdf8;
-    border: none;
-    cursor: pointer;
+    border-radius: 10px;
+    color: white;
 }
 
-/* Language Toggle */
-.lang-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+.btn-secondary {
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+
+/* Cards */
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+/* Form */
+form input, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
 }
