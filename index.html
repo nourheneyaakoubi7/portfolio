@@ -10,15 +10,10 @@
 </head>
 <body>
 
-    <div class="mobile-header">
-        <div class="sidebar-logo">NY</div>
-        <div class="menu-toggle" id="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
+    <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
 
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-logo hide-mobile">NY</div>
+    <nav class="sidebar">
+        <div class="sidebar-logo">NY</div>
         <ul class="nav-menu">
             <li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
             <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
@@ -58,7 +53,7 @@
                 <p class="about-text">
                     I am a Junior Full-Stack Developer and self-taught Freelancer specialized in Software Engineering and Information Systems. 
                     I possess strong expertise in the <strong>MERN Stack</strong> and have a proven track record of designing Business Intelligence platforms. 
-                    I am result-oriented, a fast learner, and I thrive in multitasking environments.
+                    I am result-oriented, a fast learner, and I thrive in multitasking environments where technology meets community impact.
                 </p>
                 <div class="skills-wrapper">
                     <div class="skill-category">
@@ -91,6 +86,7 @@
 
         <section id="education">
             <h2 class="section-title">Educational Background</h2>
+            <p class="section-subtitle">My academic foundation in software engineering and technology.</p>
             <div class="glass-grid">
                 <div class="glass-card">
                     <div class="card-header-row">
@@ -119,35 +115,199 @@
 
         <section id="internships" class="dark-bg">
             <h2 class="section-title">Technical Internships</h2>
+            <p class="section-subtitle">Hands-on experience developing real-world Business Intelligence and Management systems.</p>
+            
             <div class="project-wrap gallery-spacing">
                 <div class="project-header">
                     <img src="assets/logos/fouusa.png" alt="Fouusa" class="company-logo">
                     <h3>Fouusa Engineering Services | BI Platform</h3>
                 </div>
                 <div class="album-container">
-                    <div class="photo-grid">
+                    <h4><span class="folder-icon">📁</span> Project Album</h4>
+                    <div class="photo-grid" id="fouusa-grid">
                         <img src="assets/projects/fouusa/1.png" class="zoomable">
                         <img src="assets/projects/fouusa/2.png" class="zoomable">
                         <img src="assets/projects/fouusa/3.png" class="zoomable">
-                        </div>
+                        <img src="assets/projects/fouusa/4.png" class="zoomable">
+                        <img src="assets/projects/fouusa/5.png" class="zoomable">
+                        <img src="assets/projects/fouusa/6.png" class="zoomable">
+                        <img src="assets/projects/fouusa/7.png" class="zoomable">
+                        <img src="assets/projects/fouusa/8.png" class="zoomable">
+                        <img src="assets/projects/fouusa/9.png" class="zoomable">
+                        <img src="assets/projects/fouusa/10.png" class="zoomable">
+                        <img src="assets/projects/fouusa/11.png" class="zoomable">
+                        <img src="assets/projects/fouusa/12.png" class="zoomable">
+                        <img src="assets/projects/fouusa/13.png" class="zoomable">
+                        <img src="assets/projects/fouusa/14.png" class="zoomable">
+                        <img src="assets/projects/fouusa/15.png" class="zoomable">
+                        <img src="assets/projects/fouusa/16.png" class="zoomable">
+                        <img src="assets/projects/fouusa/17.png" class="zoomable">
+                        <img src="assets/projects/fouusa/18.png" class="zoomable">
+                        <img src="assets/projects/fouusa/19.png" class="zoomable">
+                        <img src="assets/projects/fouusa/20.png" class="zoomable">
+                        <img src="assets/projects/fouusa/21.png" class="zoomable">
+                        <img src="assets/projects/fouusa/22.png" class="zoomable">
+                        <img src="assets/projects/fouusa/23.png" class="zoomable">
+                        <img src="assets/projects/fouusa/24.png" class="zoomable">
+                        <img src="assets/projects/fouusa/25.png" class="zoomable">
+                        <img src="assets/projects/fouusa/26.png" class="zoomable">
+                        <img src="assets/projects/fouusa/27.png" class="zoomable">
+                        <img src="assets/projects/fouusa/28.png" class="zoomable">
+                        <img src="assets/projects/fouusa/29.png" class="zoomable">
+                        <img src="assets/projects/fouusa/30.png" class="zoomable">
+                        <img src="assets/projects/fouusa/31.png" class="zoomable">
+                        <img src="assets/projects/fouusa/32.png" class="zoomable">
+                    </div>
                     <button class="btn-more">Show More Photos</button>
+                </div>
+            </div>
+
+            <div class="project-wrap">
+                <div class="project-header">
+                    <img src="assets/logos/webup.png" alt="WebUp" class="company-logo">
+                    <h3>WebUp | Cafe Management System</h3>
+                </div>
+                <div class="album-container">
+                    <h4><span class="folder-icon">📁</span> Project Album</h4>
+                    <div class="photo-grid" id="webup-grid">
+                        <img src="assets/projects/webup/1.png" class="zoomable">
+                        <img src="assets/projects/webup/2.png" class="zoomable">
+                        <img src="assets/projects/webup/3.png" class="zoomable">
+                        <img src="assets/projects/webup/4.png" class="zoomable">
+                        <img src="assets/projects/webup/5.png" class="zoomable">
+                        <img src="assets/projects/webup/6.png" class="zoomable">
+                        <img src="assets/projects/webup/7.png" class="zoomable">
+                    </div>
+                    <button class="btn-more">Show More Photos</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Customer Service Experience</h2>
+            <p class="section-subtitle">Valuable professional skills gained through retail and sales operations.</p>
+            <div class="glass-grid">
+                <div class="glass-card">
+                    <h4><i class="fas fa-moon"></i> Sales Consultant (Night Shift)</h4>
+                    <p class="date-text">Dec 2023 - Feb 2025 | Cosmétiques Boutique</p>
+                    <ul class="exp-bullets">
+                        <li>Managed evening operations for a high-traffic boutique.</li>
+                        <li>Handled cash transactions and inventory management.</li>
+                        <li>Provided professional beauty consultations.</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h4><i class="fas fa-sun"></i> Retail Assistant (Summer)</h4>
+                    <p class="date-text">Summers 2020 - 2021 | Dahmeni, Kef</p>
+                    <ul class="exp-bullets">
+                        <li>Assisted in local retail business during peak seasons.</li>
+                        <li>Managed stock organization and customer rapport.</li>
+                        <li>Worked in high-pressure local environments.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="tools">
             <h2 class="section-title">Stack & Tools</h2>
+            <p class="section-subtitle">Technologies and software I use to bring projects to life.</p>
             <div class="tech-marquee">
                 <div class="tech-track">
+                    <img src="assets/tools/VS CODE.jpeg" title="VS Code">
                     <img src="assets/tools/NODE.png" title="Node.js">
                     <img src="assets/tools/REACT.png" title="React">
                     <img src="assets/tools/MONGODB.png" title="MongoDB">
-                    <img src="assets/tools/POSTMAN.png" title="Postman">
                     <img src="assets/tools/CSS.png" title="CSS">
+                    <img src="assets/tools/EXPRESS.png" title="EXPRESS">
                     <img src="assets/tools/HTML.png" title="HTML">
-                    <img src="assets/tools/NODE.png">
-                    <img src="assets/tools/REACT.png">
-                    <img src="assets/tools/MONGODB.png">
+                    <img src="assets/tools/LATEX.png" title="LATEX">
+                    <img src="assets/tools/OLLAMA.png" title="OLLAMA">
+                    <img src="assets/tools/OVERLEAF.png" title="OVERLEAF">
+                    <img src="assets/tools/POSTMAN.png" title="POSTMAN">
+                </div>
+            </div>
+        </section>
+
+        <section id="clubs">
+            <h2 class="section-title">Social & Community Leadership</h2>
+            <p class="section-subtitle">My engagement in university clubs and humanitarian projects.</p>
+            
+            <div class="glass-card club-card">
+                <div class="card-header-row">
+                    <img src="assets/logos/gdsc.jpg" class="club-logo">
+                    <h3>GDSC Member</h3>
+                </div>
+                <div class="cert-grid-fixed">
+                    <img src="assets/clubs/gdsc/cert1.jpg" class="zoomable">
+                    <img src="assets/clubs/gdsc/cert2.jpg" class="zoomable">
+                    <img src="assets/clubs/gdsc/cert3.jpg" class="zoomable">
+                </div>
+                <div class="album-container mt-20">
+                    <div class="photo-grid">
+                        <img src="assets/clubs/gdsc/1.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/2.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/3.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/4.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/5.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/7.jpg" class="zoomable">
+                        <img src="assets/clubs/gdsc/8.jpg" class="zoomable">
+                    </div>
+                    <button class="btn-more">Show More Photos</button>
+                </div>
+            </div>
+
+            <div class="glass-card club-card mt-30">
+                <div class="card-header-row">
+                    <img src="assets/logos/astophilia.jpg" class="club-logo">
+                    <h3>Club Astrophilia (Event Manager)</h3>
+                </div>
+                <div class="album-container">
+                    <h4><span class="folder-icon">📁</span> Organized Events</h4>
+                    <div class="photo-grid">
+                        <img src="assets/clubs/astrophilia/1.jpg" class="zoomable">
+                        <img src="assets/clubs/astrophilia/2.jpg" class="zoomable">
+                        <img src="assets/clubs/astrophilia/3.jpg" class="zoomable">
+                        <img src="assets/clubs/astrophilia/6.jpg" class="zoomable">
+                        <img src="assets/clubs/astrophilia/7.jpg" class="zoomable">
+                        <img src="assets/clubs/astrophilia/8.jpg" class="zoomable">
+                    </div>
+                    <button class="btn-more">Show More Photos</button>
+                </div>
+            </div>
+
+            <div class="glass-card club-card highlight mt-30">
+                <div class="card-header-row">
+                    <img src="assets/logos/ider.jpg" class="mini-logo">
+                    <h3>IDER (Media Member)</h3>
+                </div>
+                <div class="photo-grid">
+                    <img src="assets/clubs/ider/1.jpg" class="zoomable">
+                    <img src="assets/clubs/ider/2.jpg" class="zoomable">
+                </div>
+                
+                <hr class="divider">
+
+                <div class="card-header-row">
+                    <h3>Koffa Ramadan Project</h3>
+                </div>
+                <div class="album-container">
+                    <div class="photo-grid">
+                        <img src="assets/clubs/koffa/1.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/2.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/3.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/4.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/5.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/6.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/7.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/8.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/9.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/10.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/11.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/12.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/13.jpg" class="zoomable">
+                        <img src="assets/clubs/koffa/14.jpg" class="zoomable">
+                    </div>
+                    <button class="btn-more">Show More Photos</button>
                 </div>
             </div>
         </section>
@@ -155,8 +315,8 @@
         <footer>
             <p>Created by Nourhene Yaakoubi | Multitasking with Love</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/nourheneyaakoubi7" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="mailto:yakoubinourhene1@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </footer>
@@ -172,40 +332,24 @@
     </div>
 
     <script>
-        // MOBILE MENU TOGGLE
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const sidebar = document.getElementById('sidebar');
-        
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('mobile-active');
-            menuBtn.querySelector('i').classList.toggle('fa-bars');
-            menuBtn.querySelector('i').classList.toggle('fa-times');
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                sidebar.classList.remove('mobile-active');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-            });
-        });
-
-        // PHOTO GALLERY SHOW MORE/LESS
+        // Photo Limit Logic (Show 6 initially)
         document.querySelectorAll('.photo-grid').forEach(grid => {
             const photos = grid.querySelectorAll('img');
             const btn = grid.parentElement.querySelector('.btn-more');
+            
             if (photos.length > 6) {
                 for (let i = 6; i < photos.length; i++) { photos[i].style.display = 'none'; }
-                btn.onclick = function() {
-                    const isHidden = photos[6].style.display === 'none';
-                    for (let i = 6; i < photos.length; i++) { photos[i].style.display = isHidden ? 'block' : 'none'; }
-                    this.innerText = isHidden ? 'Show Less' : 'Show More Photos';
-                };
+                if (btn) {
+                    btn.onclick = function() {
+                        const isHidden = photos[6].style.display === 'none';
+                        for (let i = 6; i < photos.length; i++) { photos[i].style.display = isHidden ? 'block' : 'none'; }
+                        this.innerText = isHidden ? 'Show Less' : 'Show More Photos';
+                    };
+                }
             } else if (btn) { btn.style.display = 'none'; }
         });
 
-        // LIGHTBOX LOGIC
+        // Lightbox Logic
         const lb = document.getElementById('lightbox');
         const lbImg = document.getElementById('lb-img');
         let currentSet = [];
@@ -230,6 +374,28 @@
             lbImg.src = currentSet[currentIdx].src;
         };
         document.querySelector('.close-lb').onclick = () => lb.style.display = 'none';
+
+        // Mobile Sidebar Toggle Logic
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        navToggle.onclick = () => {
+            sidebar.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        };
+
+        // Close sidebar when clicking links on mobile
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.onclick = () => {
+                if(window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    navToggle.querySelector('i').classList.add('fa-bars');
+                    navToggle.querySelector('i').classList.remove('fa-times');
+                }
+            };
+        });
     </script>
 </body>
 </html>
