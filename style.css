@@ -1,169 +1,86 @@
-:root {
-    --primary-color: #2d3436;
-    --accent-color: #6c5ce7; /* Soft Purple/Blue */
-    --bg-color: #ffffff;
-    --sidebar-bg: #f9f9f9;
-    --text-color: #333;
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: var(--font-main);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
+    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
+    background: #0f172a;
+    color: white;
 }
 
 /* Sidebar */
 .sidebar {
-    width: 250px;
+    width: 220px;
+    background: #020617;
     height: 100vh;
-    background: var(--sidebar-bg);
+    padding: 20px;
     position: fixed;
-    padding: 2rem;
-    border-right: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.sidebar .logo {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    color: var(--accent-color);
-}
-
-.nav-links {
+.sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
-.nav-links li {
-    margin: 1.5rem 0;
-}
-
-.nav-links a {
+.sidebar a {
+    color: white;
     text-decoration: none;
-    color: #666;
-    font-weight: 500;
-    transition: 0.3s;
+    display: block;
+    padding: 10px;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: var(--accent-color);
-    padding-left: 10px;
+.sidebar a:hover {
+    background: #1e293b;
 }
 
-/* Content Area */
-.content {
-    margin-left: 250px;
-    width: calc(100% - 250px);
-    padding: 0 4rem;
-}
-
+/* Sections */
 .section {
-    padding: 5rem 0;
-    border-bottom: 1px solid #fafafa;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    position: relative;
+    margin-left: 240px;
+    padding: 60px;
 }
 
 /* Hero */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
-.profile-img {
-    width: 180px;
-    height: 180px;
+.profile {
+    width: 150px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 5px solid var(--sidebar-bg);
 }
 
-/* Project Cards */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+/* Skills */
+.skills span {
+    display: inline-block;
+    background: #1e293b;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
-.project-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+/* Projects */
+.project {
+    background: #1e293b;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.project-card img {
+/* Contact */
+input, textarea {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-/* Language Switcher */
-.language-switcher {
+button {
+    padding: 10px 20px;
+    background: #38bdf8;
+    border: none;
+    cursor: pointer;
+}
+
+/* Language Toggle */
+.lang-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.language-switcher button {
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* Contact Form */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-}
-
-#contact-form input, #contact-form textarea {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.btn {
-    background: var(--accent-color);
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .sidebar { width: 80px; padding: 1rem; }
-    .sidebar .logo, .nav-links a span { display: none; }
-    .content { margin-left: 80px; width: calc(100% - 80px); padding: 0 1.5rem; }
+    top: 10px;
+    right: 10px;
 }
