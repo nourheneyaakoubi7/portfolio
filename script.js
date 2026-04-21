@@ -1,4 +1,4 @@
-// MOBILE NAV
+// Sidebar toggle
 const toggle = document.querySelector(".mobile-nav-toggle");
 const sidebar = document.querySelector(".sidebar");
 
@@ -6,35 +6,27 @@ toggle.onclick = () => {
     sidebar.classList.toggle("active");
 };
 
-// ACTIVE LINK SCROLL
-const sections = document.querySelectorAll("section");
+// Smooth scroll highlight
 const links = document.querySelectorAll(".nav-menu a");
 
-window.onscroll = () => {
-    let current = "";
-
-    sections.forEach(section => {
-        const top = section.offsetTop;
-        if (scrollY >= top - 100) {
-            current = section.getAttribute("id");
-        }
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
     });
+});
 
-    links.forEach(a => {
-        a.classList.remove("active");
-        if (a.getAttribute("href") === "#" + current) {
-            a.classList.add("active");
-        }
-    });
+// Language toggle (basic version)
+document.getElementById("enBtn").onclick = () => {
+    alert("English version active");
 };
 
-// CONTACT FORM
-document.getElementById("contact-form").addEventListener("submit", function(e){
+document.getElementById("frBtn").onclick = () => {
+    alert("Version française bientôt disponible");
+};
+
+// Contact form
+document.querySelector(".contact-form").addEventListener("submit", e => {
     e.preventDefault();
     alert("Message sent successfully 🚀");
 });
-
-// LANGUAGE SWITCH (basic demo)
-document.getElementById("lang-fr").onclick = () => {
-    alert("French version coming soon 🇫🇷");
-};
