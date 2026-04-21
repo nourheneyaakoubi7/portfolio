@@ -43,7 +43,7 @@ body { background-color: var(--bg); color: var(--text); overflow-x: hidden; disp
 }
 .nav-menu a:hover, .nav-menu a.active { background: var(--glass); color: var(--primary); }
 
-.lang-switch { text-align: center; margin-bottom: 30px; font-size: 0.8rem; cursor: pointer; }
+.lang-switch { text-align: center; margin-bottom: 30px; font-size: 0.8rem; cursor: pointer; color: var(--text-dim); }
 .lang-btn.active { color: var(--primary); font-weight: bold; }
 
 /* --- MAIN CONTENT AREA --- */
@@ -54,16 +54,19 @@ body { background-color: var(--bg); color: var(--text); overflow-x: hidden; disp
 }
 
 section { padding: 80px 0; min-height: 100vh; }
+.section-title { font-size: 2.5rem; margin-bottom: 40px; }
 
 /* --- HERO SECTION --- */
 .hero-container { display: flex; align-items: center; gap: 50px; }
 .hero-img { width: 300px; height: 300px; border-radius: 30px; object-fit: cover; border: 2px solid var(--primary); }
 .badge { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
 h1 { font-size: 3.5rem; margin: 20px 0; }
+.hero-cta { margin-top: 30px; display: flex; gap: 20px; }
 
 /* --- GLASS CARDS & GRIDS --- */
 .glass-card { background: var(--glass); border: 1px solid var(--border); padding: 40px; border-radius: 24px; backdrop-filter: blur(10px); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.expertise-grid { display: grid; gap: 20px; }
 
 /* --- BUTTONS --- */
 .btn-primary { background: var(--primary); color: white; padding: 14px 28px; border-radius: 12px; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
