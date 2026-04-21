@@ -1,29 +1,44 @@
-.project-desc {
+/* LANGUAGE SWITCH */
+.lang-toggle {
+    position: fixed;
+    top: 20px;
+    left: 100px;
+    z-index: 2000;
+    font-weight: 600;
+}
+
+.lang-toggle span {
+    cursor: pointer;
     color: var(--text-dim);
-    margin: 15px 0 25px 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 800px;
 }
 
-.club-intro {
-    color: var(--text-dim);
-    margin: 20px 0;
-    padding-left: 15px;
-    border-left: 3px solid var(--primary);
+.lang-toggle .active {
+    color: var(--primary);
 }
 
-.hero-profile-wrapper {
-    position: relative;
+/* CONTACT FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
 }
 
-/* Adds a nice glow behind your photo */
-.hero-profile-wrapper::after {
-    content: '';
-    position: absolute;
-    inset: -20px;
-    background: var(--primary);
-    filter: blur(50px);
-    opacity: 0.2;
-    z-index: -1;
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: white;
+}
+
+/* HOVER ANIMATION */
+.glass-card {
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
 }
