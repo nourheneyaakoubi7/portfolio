@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Full-Stack & IT Lead</title>
+    <title>Nourhene Yaakoubi | Digital Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,137 +11,249 @@
 <body>
 
 <nav class="sidebar">
-    <div class="sidebar-logo">NY</div>
-    <div class="lang-switch">
-        <span class="lang-btn active" onclick="setLanguage('en')">EN</span> | 
-        <span class="lang-btn" onclick="setLanguage('fr')">FR</span>
+    <div class="sidebar-header">
+        <div class="logo">NY</div>
+        <div class="lang-selector">
+            <span class="lang-option active" onclick="setLanguage('en')">EN</span>
+            <span class="divider">|</span>
+            <span class="lang-option" onclick="setLanguage('fr')">FR</span>
+        </div>
     </div>
-    <ul class="nav-menu">
-        <li><a href="#home" class="active"><i class="fas fa-home"></i> <span data-en="Home" data-fr="Accueil">Home</span></a></li>
-        <li><a href="#about"><i class="fas fa-user"></i> <span data-en="About" data-fr="À Propos">About</span></a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span data-en="Path" data-fr="Parcours">Path</span></a></li>
-        <li><a href="#projects"><i class="fas fa-code"></i> <span data-en="Projects" data-fr="Projets">Projects</span></a></li>
-        <li><a href="#community"><i class="fas fa-users"></i> <span data-en="Clubs" data-fr="Clubs">Clubs</span></a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a></li>
+    <ul class="nav-links">
+        <li><a href="#home" class="active"><i class="fas fa-th-large"></i> <span data-en="Dashboard" data-fr="Tableau de bord">Dashboard</span></a></li>
+        <li><a href="#about"><i class="fas fa-user-circle"></i> <span data-en="Biography" data-fr="Biographie">Biography</span></a></li>
+        <li><a href="#skills"><i class="fas fa-layer-group"></i> <span data-en="Capabilities" data-fr="Capacités">Capabilities</span></a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span data-en="Professional Path" data-fr="Parcours Pro">Professional Path</span></a></li>
+        <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span data-en="Featured Projects" data-fr="Projets Clés">Featured Projects</span></a></li>
+        <li><a href="#community"><i class="fas fa-users"></i> <span data-en="Social Impact" data-fr="Impact Social">Social Impact</span></a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-fr="Éducation">Education</span></a></li>
+        <li><a href="#contact"><i class="fas fa-paper-plane"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a></li>
     </ul>
+    <div class="sidebar-footer">
+        <a href="https://wa.me/216"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+    </div>
 </nav>
 
-<main class="main-content">
-    <header id="home" class="hero-section">
-        <div class="hero-container">
-            <div class="hero-image-box">
+<main class="content-wrapper">
+    <section id="home" class="hero-block">
+        <div class="hero-flex">
+            <div class="hero-image">
                 <img src="assets/images/NY.png" alt="Nourhene Yaakoubi">
+                <div class="experience-badge" data-en="Full-Stack Developer" data-fr="Développeuse Full-Stack">Full-Stack Developer</div>
             </div>
-            <div class="hero-text">
-                <span class="badge" data-en="Full-Stack Software Developer" data-fr="Développeuse Full-Stack">Full-Stack Software Developer</span>
-                <h1>Nourhene Yaakoubi</h1>
-                <h3 data-en="Digital Transformation Lead | Information Systems Specialist" data-fr="Lead Transformation Digitale | Spécialiste SI">Digital Transformation Lead | Information Systems Specialist</h3>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-main" data-en="Contact Me" data-fr="Me Contacter">Contact Me</a>
-                    <a href="https://github.com/nourheneyaakoubi7" class="btn-sub"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="about" class="section">
-        <h2 class="title" data-en="Get To Know Me" data-fr="À Propos">Get To Know Me</h2>
-        <div class="glass-card about-box">
-            <p data-en="Passionate about Digital Transformation, I hold a Licence degree in Software Engineering and Information Systems from ISIK Tunis. My academic journey has been driven by a desire to bridge technical complexity with business needs."
-               data-fr="Passionnée par la transformation digitale, je suis titulaire d'une licence en génie logiciel et SI de l'ISIK Tunis. Mon parcours est guidé par le désir de lier complexité technique et besoins métiers.">
-            </p>
-            <div class="lang-pills">
-                <span><i class="fas fa-globe"></i> English (Fluent)</span>
-                <span><i class="fas fa-globe"></i> French (Professional)</span>
-                <span><i class="fas fa-globe"></i> Arabic (Native)</span>
-            </div>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-item"><strong>Frontend & Backend:</strong> MERN, Django, Angular</div>
-            <div class="skill-item"><strong>Data:</strong> MySQL, NoSQL, BI Dashboards</div>
-            <div class="skill-item"><strong>Infrastructure:</strong> Server Admin, Domain Management, E-Learning</div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <h2 class="title" data-en="Professional Path" data-fr="Parcours Professionnel">Professional Path</h2>
-        <div class="timeline">
-            <div class="path-card current">
-                <span class="date">March 2026 - Present</span>
-                <h3>Digital & IT Lead @ ESPAF Business School</h3>
-                <ul>
-                    <li data-en="System Admin for WordPress & Educated portal." data-fr="Admin système pour WordPress & le portail Educated."></li>
-                    <li data-en="Orchestrated critical server recovery & infrastructure restructuration." data-fr="Récupération serveur et restructuration d'infrastructure."></li>
-                </ul>
-            </div>
-            <div class="path-card">
-                <span class="date">Internship</span>
-                <h3>Developer Intern @ Fouusa Engineering</h3>
-                <p data-en="Developed React dashboards for high-performance engineering KPIs." data-fr="Développement de dashboards React pour KPIs d'ingénierie."></p>
-            </div>
-            <div class="path-card secondary">
-                <span class="date">2023 - 2025</span>
-                <h3>Sales Consultant (Night Shift) @ Cosmétiques</h3>
-                <p data-en="Independent evening operations and inventory management." data-fr="Gestion autonome des opérations du soir et de l'inventaire."></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <h2 class="title" data-en="Featured Projects" data-fr="Projets Clés">Featured Projects</h2>
-        <div class="project-grid">
-            <div class="p-card">
-                <h4>BI-PLATFORME</h4>
-                <p>Full-cycle business tracking platform built with MERN.</p>
-                <div class="p-links">
-                    <a href="#"><i class="fab fa-github"></i> Code</a>
-                    <a href="assets/projects/bi-album"><i class="fas fa-images"></i> Album</a>
-                </div>
-            </div>
-            <div class="p-card">
-                <h4>Cafe-Management</h4>
-                <p>Ecosystem for daily operations and inventory tracking.</p>
-                <div class="p-links">
-                    <a href="#"><i class="fab fa-github"></i> Code</a>
-                    <a href="assets/projects/cafe-album"><i class="fas fa-images"></i> Album</a>
-                </div>
-            </div>
-            <div class="p-card">
-                <h4>User Management</h4>
-                <p>Django & Angular secure CRUD system.</p>
-                <div class="p-links">
-                    <a href="#"><i class="fab fa-github"></i> Code</a>
+            <div class="hero-content">
+                <span class="pre-title">Computer Science Graduate (Licence)</span>
+                <h1 class="main-name">Nourhene <span class="highlight">Yaakoubi</span></h1>
+                <h2 class="sub-role" data-en="Information Systems Specialist" data-fr="Spécialiste en Systèmes d'Information">Information Systems Specialist</h2>
+                <p class="hero-text" data-en="Transforming complex data into seamless user experiences. I bridge the gap between robust back-end logic and intuitive front-end design with a commitment to community impact."
+                   data-fr="Transformer des données complexes en expériences utilisateur fluides. Je comble le fossé entre la logique back-end robuste et le design front-end intuitif.">
+                </p>
+                <div class="action-buttons">
+                    <a href="https://linkedin.com" class="btn btn-primary"><i class="fab fa-linkedin"></i> Connect</a>
+                    <a href="https://github.com/nourheneyaakoubi7" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profile</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="community" class="section">
-        <h2 class="title" data-en="Clubs & Soft Skills" data-fr="Clubs & Soft Skills">Clubs & Soft Skills</h2>
-        <div class="club-grid">
-            <div class="club-card">
-                <h3>GDSC ISIK</h3>
-                <p>Technical Lead & active member. Hosted web tech workshops.</p>
-                <a href="assets/clubs/gdsc" class="btn-album"><i class="fas fa-images"></i> Album</a>
+    <section id="about" class="page-section">
+        <div class="section-container">
+            <h2 class="section-heading" data-en="About Me" data-fr="À Propos de Moi">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text-content">
+                    <p data-en="I am a highly motivated Junior Full-Stack Developer with a degree in Software Engineering and Information Systems. My technical foundation is built on the MERN Stack, with a specialized focus on designing data-centric Business Intelligence platforms."
+                       data-fr="Je suis une développeuse Full-Stack Junior très motivée, diplômée en génie logiciel et systèmes d'information.">
+                    </p>
+                    <p data-en="I approach software development with a 'multitasking mindset'—balancing rapid technical adaptability with strong interpersonal leadership. Whether I am architecting a database or managing a community event, I strive to deliver high-quality results that merge technology with real-world human needs."
+                       data-fr="J'aborde le développement logiciel avec un esprit multitâche, équilibrant adaptabilité technique et leadership.">
+                    </p>
+                </div>
+                <div class="language-cards">
+                    <div class="lang-card"><span>Arabic:</span> <strong>Native</strong></div>
+                    <div class="lang-card"><span>English:</span> <strong>Professional</strong></div>
+                    <div class="lang-card"><span>French:</span> <strong>Basic</strong></div>
+                </div>
             </div>
-            <div class="club-card">
-                <h3>Astrophilia</h3>
-                <p>Logistics & event organization for scientific events.</p>
-                <a href="assets/clubs/astrophilia" class="btn-album"><i class="fas fa-images"></i> Album</a>
-            </div>
-        </div>
-        <div class="soft-skills">
-            <div class="s-skill"><i class="fas fa-users"></i> Team Leadership</div>
-            <div class="s-skill"><i class="fas fa-bolt"></i> Rapid Adaptation</div>
         </div>
     </section>
 
+    <section id="skills" class="page-section bg-alt">
+        <div class="section-container">
+            <h2 class="section-heading">Technical & Soft Skills</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3>Hard Skills</h3>
+                    <ul>
+                        <li><strong>Full-Stack:</strong> MERN (MongoDB, Express, React, Node.js)</li>
+                        <li><strong>Front-End:</strong> Angular, HTML5, JavaScript, TypeScript</li>
+                        <li><strong>Back-End:</strong> Django (Python), Java, REST APIs</li>
+                        <li><strong>Tools:</strong> Git, Postman, LaTeX, SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul data-en>
+                        <li>Agile Problem Solving & Fast Learning</li>
+                        <li>Cross-functional Teamwork & Communication</li>
+                        <li>Strategic Event Planning & Management</li>
+                        <li>Professional Independence & Discipline</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="page-section">
+        <div class="section-container">
+            <h2 class="section-heading">Professional Path</h2>
+            <div class="path-timeline">
+                <div class="path-item special">
+                    <div class="path-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="path-info">
+                        <span class="path-date">March 2026 - Present</span>
+                        <h3>Digital & IT Lead @ ESPAF Business School</h3>
+                        <ul class="path-details">
+                            <li data-en="System Administrator for the primary website (WordPress) and student management portal (Educated)."></li>
+                            <li data-en="Administrator of the E-Learning platform; managing online courses and live sessions."></li>
+                            <li data-en="Primary technical liaison between the school and development agencies."></li>
+                            <li data-en="Orchestrated server recovery and infrastructure restructuration to ensure 24/7 service."></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="path-info">
+                        <span class="path-date">Internship</span>
+                        <h3>Developer Intern @ Fouusa Engineering</h3>
+                        <p data-en="Designed and implemented a Business Intelligence Dashboard to visualize engineering KPIs. Transformed raw datasets into actionable visual insights for management."></p>
+                        <a href="assets/projects/bi-album" class="btn-album"><i class="fas fa-camera"></i> Project Album</a>
+                    </div>
+                </div>
+                <div class="path-item retail">
+                    <div class="path-icon"><i class="fas fa-store"></i></div>
+                    <div class="path-info">
+                        <span class="path-date">Dec 2023 - Feb 2025</span>
+                        <h3>Sales Consultant (Night Shift) @ Cosmétiques</h3>
+                        <ul class="path-details">
+                            <li data-en="Independently managed evening operations, demonstrating reliability and trust."></li>
+                            <li data-en="Mastered inventory systems and financial transactions under high-traffic conditions."></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="page-section bg-alt">
+        <div class="section-container">
+            <h2 class="section-heading">Featured Projects</h2>
+            <div class="project-showcase">
+                <div class="project-card">
+                    <div class="p-header"><i class="fab fa-react"></i> <span>GitHub</span></div>
+                    <h3>BI-PLATFORME</h3>
+                    <p data-en="Full-cycle business tracking platform built with MERN for decision-making improvement."></p>
+                    <div class="p-links">
+                        <a href="https://github.com/nourheneyaakoubi7/BI-PLATFORME">Code</a>
+                        <a href="assets/projects/bi-album" class="album-link">Album</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="p-header"><i class="fas fa-coffee"></i> <span>GitHub</span></div>
+                    <h3>Cafe-Management-System</h3>
+                    <p data-en="Full-stack system designed to optimize daily operations and inventory tracking."></p>
+                    <div class="p-links">
+                        <a href="https://github.com/nourheneyaakoubi7/Cafe-Management-System">Code</a>
+                        <a href="assets/projects/cafe-album" class="album-link">Album</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="p-header"><i class="fab fa-python"></i> <span>GitHub</span></div>
+                    <h3>Django-Angular-UserManagement</h3>
+                    <p data-en="Full-stack user management system allowing CRUD operations with secure REST API."></p>
+                    <div class="p-links">
+                        <a href="https://github.com/nourheneyaakoubi7/Django-Angular-UserManagement">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="page-section">
+        <div class="section-container">
+            <h2 class="section-heading">Social & Community Leadership</h2>
+            <div class="album-grid">
+                <div class="album-card">
+                    <img src="assets/logos/astrophilia.png" alt="Astrophilia">
+                    <div class="album-info">
+                        <h3>Club Astrophilia</h3>
+                        <p data-en="Spearheaded logistics and coordination for large-scale events as Event Manager."></p>
+                        <a href="assets/clubs/astrophilia" class="btn-album">View Events Album</a>
+                    </div>
+                </div>
+                <div class="album-card">
+                    <img src="assets/logos/gdsc.png" alt="GDSC">
+                    <div class="album-info">
+                        <h3>GDSC Member</h3>
+                        <p data-en="Engaging in technical workshops and collaborative coding to stay at the tech forefront."></p>
+                        <a href="assets/clubs/gdsc" class="btn-album">Show Photos</a>
+                    </div>
+                </div>
+                <div class="album-card">
+                    <div class="placeholder-icon"><i class="fas fa-heart"></i></div>
+                    <div class="album-info">
+                        <h3>Koffa Ramadan</h3>
+                        <p data-en="Coordinated humanitarian aid logistics during critical community timelines."></p>
+                        <a href="assets/clubs/koffa" class="btn-album">Show Photos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="page-section bg-alt">
+        <div class="section-container">
+            <h2 class="section-heading">Educational Background</h2>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <h3>ISIK Tunis</h3>
+                    <span class="edu-date">2022 - 2025</span>
+                </div>
+                <p>Licence in Software Engineering & Information Systems</p>
+                <a href="assets/diplomas/isik" class="btn-album"><i class="fas fa-certificate"></i> View Diploma</a>
+            </div>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <h3>Hbib Bourguiba</h3>
+                    <span class="edu-date">2021 - 2022</span>
+                </div>
+                <p>Baccalaureate in Technology | Mention: Assez Bien</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="section-container">
+            <h2 data-en="Let's Connect" data-fr="Contactez-moi">Let's Connect</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <textarea placeholder="Your Message" rows="5"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+            <p class="copyright">© 2026 Nourhene Yaakoubi | Created with Heart & Logic</p>
+        </div>
+    </footer>
 </main>
 
 <script>
     function setLanguage(lang) {
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
+        document.querySelectorAll('.lang-option').forEach(el => el.classList.remove('active'));
+        event.target.classList.add('active');
         document.querySelectorAll('[data-en]').forEach(el => {
             el.innerText = el.getAttribute(`data-${lang}`);
         });
