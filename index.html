@@ -2,125 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Full-Stack Developer</title>
+    <title>Nourhene Yaakoubi | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <div class="language-switcher">
-        <button id="lang-btn">FR</button>
+<!-- Sidebar -->
+<nav class="sidebar">
+    <h2>N.Y</h2>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Language Toggle -->
+<div class="lang-toggle">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('fr')">FR</button>
+</div>
+
+<!-- Hero -->
+<section id="hero" class="section hero">
+    <img src="assets/images/NY.png" class="profile">
+    <h1>Nourhene Yaakoubi</h1>
+    <p>Full-Stack Developer | Problem Solver</p>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a passionate Full-Stack Developer specialized in MERN Stack and Business Intelligence.</p>
+
+    <h3>Skills</h3>
+    <div class="skills">
+        <span>MERN Stack</span>
+        <span>Angular</span>
+        <span>Python</span>
+        <span>Django</span>
+        <span>Java</span>
     </div>
 
-    <nav class="sidebar">
-        <div class="logo">NY</div>
-        <ul class="nav-links">
-            <li><a href="#hero" class="active" data-en="Home" data-fr="Accueil">Home</a></li>
-            <li><a href="#about" data-en="About" data-fr="À Propos">About</a></li>
-            <li><a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a></li>
-            <li><a href="#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
-            <li><a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a></li>
-            <li><a href="#community" data-en="Community" data-fr="Communauté">Community</a></li>
-            <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
-        </ul>
-    </nav>
+    <h3>Education</h3>
+    <div class="edu">
+        <img src="assets/logos/isik.png">
+        <p>Licence in Software Engineering (2022–2025)</p>
+    </div>
+</section>
 
-    <main class="content">
-        <section id="hero" class="hero">
-            <div class="hero-container">
-                <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="profile-img">
-                <h1 data-en="Nourhene Yaakoubi" data-fr="Nourhene Yaakoubi">Nourhene Yaakoubi</h1>
-                <h2 data-en="Full-Stack Developer & Problem Solver" data-fr="Développeuse Full-Stack & Résolveuse de Problèmes">Full-Stack Developer & Problem Solver</h2>
-                <p data-en="MERN Specialist | Business Intelligence Enthusiast" data-fr="Spécialiste MERN | Passionnée par la Business Intelligence">MERN Specialist | Business Intelligence Enthusiast</p>
-            </div>
-        </section>
+<!-- Experience -->
+<section id="experience" class="section">
+    <h2>Experience</h2>
+    <p>Sales Consultant - Cosmétiques Boutique (2023-2025)</p>
+    <p>Retail Assistant (2020-2021)</p>
+</section>
 
-        <section id="about" class="section">
-            <h2 class="section-title" data-en="About Me" data-fr="À Propos de Moi">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p data-en="Junior Full-Stack Developer and self-taught freelancer specializing in Software Engineering and Information Systems." 
-                       data-fr="Développeuse Full-Stack Junior et freelance autodidacte spécialisée en Génie Logiciel et Systèmes d'Information.">
-                       Junior Full-Stack Developer and self-taught freelancer specializing in Software Engineering and Information Systems.
-                    </p>
-                    <div class="education">
-                        <h3 data-en="Education" data-fr="Éducation">Education</h3>
-                        <div class="edu-item">
-                            <img src="assets/logos/isik.png" alt="ISIK" class="edu-logo">
-                            <div>
-                                <strong data-en="Licence in Software Engineering" data-fr="Licence en Génie Logiciel">Licence in Software Engineering</strong>
-                                <p>ISIK Tunis (2022 – 2025)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Projects -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
 
-        <section id="experience" class="section">
-            <h2 class="section-title" data-en="Experience" data-fr="Expérience">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3 data-en="Chargé Digital & IT" data-fr="Chargé Digital & IT">Chargé Digital & IT</h3>
-                    <span>ESPAF Business School (2026 - Present)</span>
-                </div>
-                <div class="timeline-item">
-                    <h3 data-en="BI Platform Intern" data-fr="Stagiaire Plateforme BI">BI Platform Intern</h3>
-                    <span>Fouusa Engineering Services</span>
-                </div>
-                <div class="timeline-item">
-                    <h3 data-en="Sales Consultant" data-fr="Conseillère de Vente">Sales Consultant</h3>
-                    <span>Cosmétiques Boutique (2023 - 2025)</span>
-                </div>
-            </div>
-        </section>
+    <div class="project">
+        <h3>BI Platform</h3>
+        <img src="assets/logos/fouusa.png">
+    </div>
 
-        <section id="projects" class="section">
-            <h2 class="section-title" data-en="Key Projects" data-fr="Projets Clés">Key Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/projects/webup/1.png" alt="Cafe Management">
-                    <h3>Cafe Management System</h3>
-                    <p data-en="Full-stack management solution developed at WebUp." data-fr="Solution de gestion complète développée chez WebUp.">Full-stack management solution developed at WebUp.</p>
-                </div>
-                <div class="project-card">
-                    <img src="assets/projects/fouusa/1.png" alt="BI Platform">
-                    <h3>BI Platform</h3>
-                    <p data-en="Interactive data analysis dashboard." data-fr="Tableau de bord interactif d'analyse de données.">Interactive data analysis dashboard.</p>
-                </div>
-            </div>
-        </section>
+    <div class="project">
+        <h3>Cafe Management System</h3>
+        <img src="assets/logos/webup.png">
+    </div>
 
-        <section id="skills" class="section">
-            <h2 class="section-title" data-en="Skills & Tools" data-fr="Compétences & Outils">Skills & Tools</h2>
-            <div class="tech-stack">
-                <img src="assets/tools/MONGODB.png" alt="MongoDB" title="MongoDB">
-                <img src="assets/tools/EXPRESS.png" alt="Express" title="Express">
-                <img src="assets/tools/REACT.png" alt="React" title="React">
-                <img src="assets/tools/NODE.png" alt="Node" title="Node.js">
-                <img src="assets/tools/POSTMAN.png" alt="Postman" title="Postman">
-            </div>
-        </section>
+</section>
 
-        <section id="contact" class="section">
-            <h2 class="section-title" data-en="Get In Touch" data-fr="Contactez-moi">Get In Touch</h2>
-            <div class="contact-container">
-                <form id="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="btn">Send</button>
-                </form>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/nourhene-yaakoubi-"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/nourheneyaakoubi7"><i class="fab fa-github"></i></a>
-                    <a href="mailto:yakoubinourhene1@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Services -->
+<section id="services" class="section">
+    <h2>Services</h2>
+    <ul>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Full Stack Apps</li>
+    </ul>
+</section>
 
-    <script src="script.js"></script>
+<!-- Certificates -->
+<section id="certificates" class="section">
+    <h2>Certificates</h2>
+    <img src="assets/clubs/gdsc/cert1.jpg">
+</section>
+
+<!-- Community -->
+<section id="community" class="section">
+    <h2>Community</h2>
+    <p>GDSC | Astrophilia | IDER</p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="socials">
+        <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank">LinkedIn</a>
+        <a href="mailto:yakoubinourhene1@gmail.com">Email</a>
+        <a href="https://github.com/nourheneyaakoubi7">GitHub</a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Nourhene Yaakoubi</p>
+</footer>
+
 </body>
 </html>
