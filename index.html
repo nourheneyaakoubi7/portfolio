@@ -3,261 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Digital Portfolio</title>
+    <title>Nourhene Yaakoubi | Digital Lead & Software Architect</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<nav class="sidebar">
-    <div class="sidebar-header">
-        <div class="logo">NY</div>
-        <div class="lang-selector">
-            <span class="lang-option active" onclick="setLanguage('en')">EN</span>
-            <span class="divider">|</span>
-            <span class="lang-option" onclick="setLanguage('fr')">FR</span>
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<aside class="sidebar">
+    <div class="sidebar-top">
+        <div class="branding">
+            <span class="logo-text">NY</span>
+            <div class="status-indicator">
+                <span class="dot"></span>
+                <span data-en="Available for Innovation" data-fr="Disponible pour Innover">Available for Innovation</span>
+            </div>
+        </div>
+        
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
         </div>
     </div>
-    <ul class="nav-links">
-        <li><a href="#home" class="active"><i class="fas fa-th-large"></i> <span data-en="Dashboard" data-fr="Tableau de bord">Dashboard</span></a></li>
-        <li><a href="#about"><i class="fas fa-user-circle"></i> <span data-en="Biography" data-fr="Biographie">Biography</span></a></li>
-        <li><a href="#skills"><i class="fas fa-layer-group"></i> <span data-en="Capabilities" data-fr="Capacités">Capabilities</span></a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> <span data-en="Professional Path" data-fr="Parcours Pro">Professional Path</span></a></li>
-        <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span data-en="Featured Projects" data-fr="Projets Clés">Featured Projects</span></a></li>
-        <li><a href="#community"><i class="fas fa-users"></i> <span data-en="Social Impact" data-fr="Impact Social">Social Impact</span></a></li>
-        <li><a href="#education"><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-fr="Éducation">Education</span></a></li>
-        <li><a href="#contact"><i class="fas fa-paper-plane"></i> <span data-en="Contact" data-fr="Contact">Contact</span></a></li>
-    </ul>
-    <div class="sidebar-footer">
-        <a href="https://wa.me/216"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-</nav>
 
-<main class="content-wrapper">
-    <section id="home" class="hero-block">
-        <div class="hero-flex">
-            <div class="hero-image">
-                <img src="assets/images/NY.png" alt="Nourhene Yaakoubi">
-                <div class="experience-badge" data-en="Full-Stack Developer" data-fr="Développeuse Full-Stack">Full-Stack Developer</div>
-            </div>
-            <div class="hero-content">
-                <span class="pre-title">Computer Science Graduate (Licence)</span>
-                <h1 class="main-name">Nourhene <span class="highlight">Yaakoubi</span></h1>
-                <h2 class="sub-role" data-en="Information Systems Specialist" data-fr="Spécialiste en Systèmes d'Information">Information Systems Specialist</h2>
-                <p class="hero-text" data-en="Transforming complex data into seamless user experiences. I bridge the gap between robust back-end logic and intuitive front-end design with a commitment to community impact."
-                   data-fr="Transformer des données complexes en expériences utilisateur fluides. Je comble le fossé entre la logique back-end robuste et le design front-end intuitif.">
+    <nav class="nav-container">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#hero" class="nav-link active">
+                    <span class="nav-number">01</span>
+                    <span class="nav-label" data-en="Terminal" data-fr="Terminal">Terminal</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#biography" class="nav-link">
+                    <span class="nav-number">02</span>
+                    <span class="nav-label" data-en="Profile" data-fr="Profil">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#capabilities" class="nav-link">
+                    <span class="nav-number">03</span>
+                    <span class="nav-label" data-en="Hard/Soft Skills" data-fr="Compétences">Hard/Soft Skills</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#it-leadership" class="nav-link">
+                    <span class="nav-number">04</span>
+                    <span class="nav-label" data-en="IT Leadership" data-fr="Leadership IT">IT Leadership</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#engineering" class="nav-link">
+                    <span class="nav-number">05</span>
+                    <span class="nav-label" data-en="Engineering" data-fr="Ingénierie">Engineering</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#commercial" class="nav-link">
+                    <span class="nav-number">06</span>
+                    <span class="nav-label" data-en="Commercial Grit" data-fr="Parcours Commercial">Commercial Grit</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#social-ecosystem" class="nav-link">
+                    <span class="nav-number">07</span>
+                    <span class="nav-label" data-en="Social Impact" data-fr="Impact Social">Social Impact</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">
+                    <span class="nav-number">08</span>
+                    <span class="nav-label" data-en="Secure Line" data-fr="Ligne Sécurisée">Secure Line</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/nourheneyaakoubi7"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">NY &copy; 2026</p>
+    </div>
+</aside>
+
+<main class="main-wrapper">
+
+    <section id="hero" class="section hero-viewport">
+        <div class="hero-layout">
+            <div class="hero-info">
+                <h3 class="reveal-text" data-en="Computer Science Graduate (Licence)" data-fr="Diplômée en Informatique (Licence)">Computer Science Graduate (Licence)</h3>
+                <h1 class="glitch-text">Nourhene Yaakoubi</h1>
+                <h2 class="dynamic-role" data-en="Digital Lead & MERN Specialist" data-fr="Digital Lead & Spécialiste MERN">Digital Lead & MERN Specialist</h2>
+                <p class="hero-paragraph" data-en="Transforming complex data into seamless user experiences. I bridge the gap between robust back-end logic and intuitive front-end design with a commitment to community impact." data-fr="Transformer des données complexes en expériences fluides. Je comble le fossé entre la logique back-end et le design intuitif.">
                 </p>
-                <div class="action-buttons">
-                    <a href="https://linkedin.com" class="btn btn-primary"><i class="fab fa-linkedin"></i> Connect</a>
-                    <a href="https://github.com/nourheneyaakoubi7" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Profile</a>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="cta-primary" data-en="Initiate Project" data-fr="Initier Projet">Initiate Project</a>
+                    <a href="https://github.com/nourheneyaakoubi7" class="cta-secondary"><i class="fab fa-github"></i> <span data-en="Inspect Code" data-fr="Inspecter Code">Inspect Code</span></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="image-frame">
+                    <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="main-portrait">
+                    <div class="floating-stat">
+                        <span class="number">100%</span>
+                        <span class="label" data-en="Adaptability" data-fr="Adaptabilité">Adaptability</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="page-section">
-        <div class="section-container">
-            <h2 class="section-heading" data-en="About Me" data-fr="À Propos de Moi">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text-content">
-                    <p data-en="I am a highly motivated Junior Full-Stack Developer with a degree in Software Engineering and Information Systems. My technical foundation is built on the MERN Stack, with a specialized focus on designing data-centric Business Intelligence platforms."
-                       data-fr="Je suis une développeuse Full-Stack Junior très motivée, diplômée en génie logiciel et systèmes d'information.">
+    <section id="biography" class="section">
+        <div class="container">
+            <h2 class="section-title">The Digital Blueprint</h2>
+            <div class="bio-grid">
+                <div class="bio-card main-bio">
+                    <h4 data-en="The Multitasking Mindset" data-fr="L'Esprit Multitâche">The Multitasking Mindset</h4>
+                    <p data-en="I am a highly motivated Junior Full-Stack Developer with a degree in Software Engineering and Information Systems. My technical foundation is built on the MERN Stack, with a specialized focus on designing data-centric Business Intelligence platforms.">
                     </p>
-                    <p data-en="I approach software development with a 'multitasking mindset'—balancing rapid technical adaptability with strong interpersonal leadership. Whether I am architecting a database or managing a community event, I strive to deliver high-quality results that merge technology with real-world human needs."
-                       data-fr="J'aborde le développement logiciel avec un esprit multitâche, équilibrant adaptabilité technique et leadership.">
+                    <p data-en="I approach software development balancing rapid technical adaptability with strong interpersonal leadership. Whether I am architecting a database or managing a community event, I strive to deliver high-quality results that merge technology with real-world human needs.">
                     </p>
                 </div>
-                <div class="language-cards">
-                    <div class="lang-card"><span>Arabic:</span> <strong>Native</strong></div>
-                    <div class="lang-card"><span>English:</span> <strong>Professional</strong></div>
-                    <div class="lang-card"><span>French:</span> <strong>Basic</strong></div>
+                <div class="bio-card languages">
+                    <h4 data-en="Linguistic Stack" data-fr="Stack Linguistique">Linguistic Stack</h4>
+                    <div class="lang-row"><span>Arabic</span> <div class="progress"><div class="bar" style="width: 100%;"></div></div> <span>Native</span></div>
+                    <div class="lang-row"><span>English</span> <div class="progress"><div class="bar" style="width: 90%;"></div></div> <span>Professional</span></div>
+                    <div class="lang-row"><span>French</span> <div class="progress"><div class="bar" style="width: 60%;"></div></div> <span>Basic</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="page-section bg-alt">
-        <div class="section-container">
-            <h2 class="section-heading">Technical & Soft Skills</h2>
-            <div class="skills-wrapper">
-                <div class="skill-category">
-                    <h3>Hard Skills</h3>
+    <section id="capabilities" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-en="Hard & Soft Assets" data-fr="Actifs Techniques & Humains">Hard & Soft Assets</h2>
+            <div class="skills-complex-grid">
+                <div class="skill-group">
+                    <div class="icon-header"><i class="fas fa-layer-group"></i> <h3>Full-Stack</h3></div>
                     <ul>
-                        <li><strong>Full-Stack:</strong> MERN (MongoDB, Express, React, Node.js)</li>
-                        <li><strong>Front-End:</strong> Angular, HTML5, JavaScript, TypeScript</li>
-                        <li><strong>Back-End:</strong> Django (Python), Java, REST APIs</li>
-                        <li><strong>Tools:</strong> Git, Postman, LaTeX, SQL</li>
+                        <li>MERN (MongoDB, Express, React, Node.js)</li>
+                        <li>Angular, HTML5, JavaScript, TypeScript</li>
+                        <li>Django (Python), Java, REST APIs</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul data-en>
+                <div class="skill-group">
+                    <div class="icon-header"><i class="fas fa-tools"></i> <h3>Infrastructure</h3></div>
+                    <ul>
+                        <li>Server Recovery & Restructuring</li>
+                        <li>WordPress Ecosystem Admin</li>
+                        <li>E-Learning Architecture & Live Session Hosting</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <div class="icon-header"><i class="fas fa-brain"></i> <h3>Soft Power</h3></div>
+                    <ul>
                         <li>Agile Problem Solving & Fast Learning</li>
-                        <li>Cross-functional Teamwork & Communication</li>
                         <li>Strategic Event Planning & Management</li>
-                        <li>Professional Independence & Discipline</li>
+                        <li>Cross-functional Communication</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="page-section">
-        <div class="section-container">
-            <h2 class="section-heading">Professional Path</h2>
-            <div class="path-timeline">
-                <div class="path-item special">
-                    <div class="path-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="path-info">
-                        <span class="path-date">March 2026 - Present</span>
-                        <h3>Digital & IT Lead @ ESPAF Business School</h3>
-                        <ul class="path-details">
-                            <li data-en="System Administrator for the primary website (WordPress) and student management portal (Educated)."></li>
-                            <li data-en="Administrator of the E-Learning platform; managing online courses and live sessions."></li>
-                            <li data-en="Primary technical liaison between the school and development agencies."></li>
-                            <li data-en="Orchestrated server recovery and infrastructure restructuration to ensure 24/7 service."></li>
-                        </ul>
+    <section id="it-leadership" class="section highlight-section">
+        <div class="container">
+            <div class="label-badge">Current Role</div>
+            <h2 class="section-title white">Digital & IT Leadership</h2>
+            <div class="experience-showcase">
+                <div class="showcase-header">
+                    <div class="company-info">
+                        <h3>ESPF Business School</h3>
+                        <p>March 2026 - Present | Charge Digital & IT</p>
+                    </div>
+                    <div class="role-impact">
+                        <span class="impact-tag">Infrastructure Lead</span>
+                        <span class="impact-tag">System Admin</span>
                     </div>
                 </div>
-                <div class="path-item">
-                    <div class="path-icon"><i class="fas fa-chart-pie"></i></div>
-                    <div class="path-info">
-                        <span class="path-date">Internship</span>
-                        <h3>Developer Intern @ Fouusa Engineering</h3>
-                        <p data-en="Designed and implemented a Business Intelligence Dashboard to visualize engineering KPIs. Transformed raw datasets into actionable visual insights for management."></p>
-                        <a href="assets/projects/bi-album" class="btn-album"><i class="fas fa-camera"></i> Project Album</a>
+                <div class="showcase-content">
+                    <p data-en="At ESPAF, I am responsible for the entire digital backbone of the institution. My role is not just technical; it is strategic and adaptive.">
+                    </p>
+                    <div class="task-grid">
+                        <div class="task-item">
+                            <i class="fas fa-shield-virus"></i>
+                            <p data-en="Orchestrated a total server recovery and domain infrastructure restructuration to ensure academic continuity."></p>
+                        </div>
+                        <div class="task-item">
+                            <i class="fas fa-user-shield"></i>
+                            <p data-en="Strategic Administrator of 'Educated' Portal and main WordPress website, handling all user-flow and data integrity."></p>
+                        </div>
+                        <div class="task-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p data-en="Architect of the E-Learning platform, managing curriculum deployment and live session technical stability."></p>
+                        </div>
+                        <div class="task-item">
+                            <i class="fas fa-handshake"></i>
+                            <p data-en="Acting as the primary technical interface between the school administration and external development agencies."></p>
+                        </div>
                     </div>
-                </div>
-                <div class="path-item retail">
-                    <div class="path-icon"><i class="fas fa-store"></i></div>
-                    <div class="path-info">
-                        <span class="path-date">Dec 2023 - Feb 2025</span>
-                        <h3>Sales Consultant (Night Shift) @ Cosmétiques</h3>
-                        <ul class="path-details">
-                            <li data-en="Independently managed evening operations, demonstrating reliability and trust."></li>
-                            <li data-en="Mastered inventory systems and financial transactions under high-traffic conditions."></li>
-                        </ul>
+                    <div class="album-trigger">
+                        <a href="assets/diplomas/isik" class="btn-album-large"><i class="fas fa-images"></i> <span data-en="View Infrastructure Albums" data-fr="Voir Albums Infrastructure">View Infrastructure Albums</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="page-section bg-alt">
-        <div class="section-container">
-            <h2 class="section-heading">Featured Projects</h2>
-            <div class="project-showcase">
-                <div class="project-card">
-                    <div class="p-header"><i class="fab fa-react"></i> <span>GitHub</span></div>
+    <section id="engineering" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Architecture</h2>
+            <div class="repo-grid">
+                <div class="repo-card">
+                    <div class="repo-top">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="repo-type">MERN Stack</span>
+                    </div>
                     <h3>BI-PLATFORME</h3>
-                    <p data-en="Full-cycle business tracking platform built with MERN for decision-making improvement."></p>
-                    <div class="p-links">
-                        <a href="https://github.com/nourheneyaakoubi7/BI-PLATFORME">Code</a>
-                        <a href="assets/projects/bi-album" class="album-link">Album</a>
+                    <p data-en="End-to-end development of a Business Intelligence platform. Transforming raw engineering datasets into interactive visual dashboards."></p>
+                    <div class="repo-meta">
+                        <span><i class="fas fa-code-branch"></i> GitHub</span>
+                        <a href="assets/projects/bi-album" class="album-mini">View Album</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="p-header"><i class="fas fa-coffee"></i> <span>GitHub</span></div>
+                <div class="repo-card">
+                    <div class="repo-top">
+                        <i class="fas fa-mug-hot"></i>
+                        <span class="repo-type">Full-Stack</span>
+                    </div>
                     <h3>Cafe-Management-System</h3>
-                    <p data-en="Full-stack system designed to optimize daily operations and inventory tracking."></p>
-                    <div class="p-links">
-                        <a href="https://github.com/nourheneyaakoubi7/Cafe-Management-System">Code</a>
-                        <a href="assets/projects/cafe-album" class="album-link">Album</a>
+                    <p data-en="Management ecosystem designed for the hospitality sector. Optimizing order workflows and stock management."></p>
+                    <div class="repo-meta">
+                        <span><i class="fas fa-code-branch"></i> GitHub</span>
+                        <a href="assets/projects/cafe-album" class="album-mini">View Album</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="p-header"><i class="fab fa-python"></i> <span>GitHub</span></div>
-                    <h3>Django-Angular-UserManagement</h3>
-                    <p data-en="Full-stack user management system allowing CRUD operations with secure REST API."></p>
-                    <div class="p-links">
-                        <a href="https://github.com/nourheneyaakoubi7/Django-Angular-UserManagement">Code</a>
+                <div class="repo-card">
+                    <div class="repo-top">
+                        <i class="fas fa-comments"></i>
+                        <span class="repo-type">Node.js</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="community" class="page-section">
-        <div class="section-container">
-            <h2 class="section-heading">Social & Community Leadership</h2>
-            <div class="album-grid">
-                <div class="album-card">
-                    <img src="assets/logos/astrophilia.png" alt="Astrophilia">
-                    <div class="album-info">
-                        <h3>Club Astrophilia</h3>
-                        <p data-en="Spearheaded logistics and coordination for large-scale events as Event Manager."></p>
-                        <a href="assets/clubs/astrophilia" class="btn-album">View Events Album</a>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <img src="assets/logos/gdsc.png" alt="GDSC">
-                    <div class="album-info">
-                        <h3>GDSC Member</h3>
-                        <p data-en="Engaging in technical workshops and collaborative coding to stay at the tech forefront."></p>
-                        <a href="assets/clubs/gdsc" class="btn-album">Show Photos</a>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="placeholder-icon"><i class="fas fa-heart"></i></div>
-                    <div class="album-info">
-                        <h3>Koffa Ramadan</h3>
-                        <p data-en="Coordinated humanitarian aid logistics during critical community timelines."></p>
-                        <a href="assets/clubs/koffa" class="btn-album">Show Photos</a>
+                    <h3>REALTIME-chat</h3>
+                    <p data-en="High-performance backend server for real-time applications using Socket.io and Express."></p>
+                    <div class="repo-meta">
+                        <span><i class="fas fa-code-branch"></i> GitHub</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="page-section bg-alt">
-        <div class="section-container">
-            <h2 class="section-heading">Educational Background</h2>
-            <div class="edu-card">
-                <div class="edu-header">
-                    <h3>ISIK Tunis</h3>
-                    <span class="edu-date">2022 - 2025</span>
+    <section id="commercial" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title white">Professional Grit & Responsibility</h2>
+            <div class="grit-grid">
+                <div class="grit-card">
+                    <div class="grit-header">
+                        <h4>Sales Consultant (Night Shift)</h4>
+                        <span>2023 - 2025 | Cosmétiques Boutique</span>
+                    </div>
+                    <p data-en="Independently managed evening operations in high-traffic retail. Mastered inventory control and financial accountability. This role defined my professional discipline."></p>
                 </div>
-                <p>Licence in Software Engineering & Information Systems</p>
-                <a href="assets/diplomas/isik" class="btn-album"><i class="fas fa-certificate"></i> View Diploma</a>
-            </div>
-            <div class="edu-card">
-                <div class="edu-header">
-                    <h3>Hbib Bourguiba</h3>
-                    <span class="edu-date">2021 - 2022</span>
+                <div class="grit-card">
+                    <div class="grit-header">
+                        <h4>Retail Assistant (Summer)</h4>
+                        <span>2020 - 2021 | Dahmeni, Kef</span>
+                    </div>
+                    <p data-en="Early entry into the professional world. Developed a strong work ethic and interpersonal communication under seasonal pressure."></p>
                 </div>
-                <p>Baccalaureate in Technology | Mention: Assez Bien</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="footer">
-        <div class="section-container">
-            <h2 data-en="Let's Connect" data-fr="Contactez-moi">Let's Connect</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
+    <section id="social-ecosystem" class="section">
+        <div class="container">
+            <h2 class="section-title">Social Leadership & Community</h2>
+            <div class="club-masonry">
+                <div class="club-card-large">
+                    <div class="club-img-box"><img src="assets/logos/astrophilia.png" alt="Astrophilia"></div>
+                    <div class="club-info-box">
+                        <h3>Club Astrophilia (Event Manager)</h3>
+                        <p data-en="Spearheaded logistics and coordination for large-scale events. Managed team communication and scheduling under tight deadlines."></p>
+                        <a href="assets/clubs/astrophilia" class="btn-album-filled">View Organized Events</a>
                     </div>
-                    <textarea placeholder="Your Message" rows="5"></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+                <div class="club-row">
+                    <div class="club-card-small">
+                        <h4>GDSC ISIK</h4>
+                        <p data-en="Technical Lead engaging in workshops and collaborative projects to stay at the tech forefront."></p>
+                        <a href="assets/clubs/gdsc" class="album-mini">Show Photos</a>
+                    </div>
+                    <div class="club-card-small">
+                        <h4>Koffa Ramadan</h4>
+                        <p data-en="Coordinated humanitarian aid logistics, demonstrating commitment to social responsibility."></p>
+                        <a href="assets/clubs/koffa" class="album-mini">Show Photos</a>
+                    </div>
+                    <div class="club-card-small">
+                        <h4>IDER (Media Member)</h4>
+                        <p data-en="Managed digital presence and media assets for club missions."></p>
+                        <a href="assets/clubs/ider" class="album-mini">View Media Assets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section final-section">
+        <div class="container contact-split">
+            <div class="contact-cta">
+                <h2 data-en="Ready to Build?" data-fr="Prêt à Bâtir?">Ready to Build?</h2>
+                <p data-en="I am looking for environments that challenge my technical adaptability and leadership.">
+                </p>
+                <div class="quick-links">
+                    <a href="mailto:nourhene@example.com"><i class="fas fa-envelope"></i> Email Me</a>
+                    <a href="https://wa.me/216"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="contact-form-box">
+                <form id="portfolio-contact">
+                    <div class="input-row">
+                        <div class="input-group"><label>Name</label><input type="text" placeholder="John Doe"></div>
+                        <div class="input-group"><label>Subject</label><input type="text" placeholder="Collaboration"></div>
+                    </div>
+                    <div class="input-group"><label>Message</label><textarea rows="5" placeholder="Let's talk architecture..."></textarea></div>
+                    <button type="submit" class="submit-btn">Transmit Signal</button>
                 </form>
             </div>
-            <p class="copyright">© 2026 Nourhene Yaakoubi | Created with Heart & Logic</p>
         </div>
-    </footer>
+    </section>
+
 </main>
 
 <script>
+    // SMOOTH SCROLL AND ACTIVE LINK HIGHLIGHTING
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // BILINGUAL LOGIC
     function setLanguage(lang) {
-        document.querySelectorAll('.lang-option').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
         event.target.classList.add('active');
         document.querySelectorAll('[data-en]').forEach(el => {
             el.innerText = el.getAttribute(`data-${lang}`);
         });
     }
+
+    // CURSOR FOLLOW EFFECT
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+    window.addEventListener("mousemove", (e) => {
+        dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+        outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+    });
 </script>
+
 </body>
 </html>
