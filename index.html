@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Nourhene Yaakoubi | Full-Stack Developer Portfolio</title>
+    <title>Nourhene Yaakoubi | Portfolio Full-Stack</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 </nav>
 
 <main class="main-content">
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <header id="home" class="hero-section">
         <div class="hero-container">
             <div class="hero-profile-wrapper">
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE (UPDATED FROM CV) -->
+    <!-- EXPERIENCE -->
     <section id="experience">
         <h2 class="section-title" data-i18n="exp.title">Professional Experience</h2>
         <div class="glass-grid">
@@ -76,13 +76,13 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION with MODAL & ALBUM SLIDER -->
+    <!-- PROJECTS GRID -->
     <section id="projects" class="dark-bg">
         <h2 class="section-title" data-i18n="projects.title">Projects Showcase</h2>
         <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <!-- SERVICES (Freelance) -->
+    <!-- SERVICES FREELANCE -->
     <section id="services">
         <h2 class="section-title" data-i18n="services.title">What I Offer</h2>
         <div class="services-grid">
@@ -95,19 +95,19 @@
         <div class="service-cta"><button class="btn-primary book-btn" data-i18n="services.bookBtn">Book a Service →</button></div>
     </section>
 
-    <!-- TOOLS & STACK -->
+    <!-- TOOLS -->
     <section id="tools"><h2 class="section-title" data-i18n="tools.title">Tech Stack & Tools</h2><div class="tech-marquee"><div class="tech-track" id="techTrack"></div></div></section>
 
     <!-- EDUCATION -->
     <section id="education"><h2 class="section-title" data-i18n="education.title">Academic Background</h2><div class="glass-grid"><div class="glass-card"><div class="card-header-row"><img src="assets/logos/isik.png" class="mini-logo"><h3>ISIK Le Kef (2022-2025)</h3></div><p><strong>Licence</strong> in Software Engineering & Information Systems</p></div><div class="glass-card"><div class="card-header-row"><i class="fas fa-graduation-cap header-icon"></i><h3>Baccalaureate in Technology</h3></div><p>Hbib Bourguiba (2021-2022) | Mention: Assez Bien</p></div></div></section>
 
-    <!-- SOCIAL & COMMUNITY LEADERSHIP (ENHANCED) -->
+    <!-- COMMUNITY -->
     <section id="community">
         <h2 class="section-title" data-i18n="community.title">Social & Community Leadership</h2>
         <div class="community-slider-wrapper" id="communityWrapper"></div>
     </section>
 
-    <!-- CONTACT SECTION with FORM + SOCIAL ICONS & AUTO WHATSAPP -->
+    <!-- CONTACT -->
     <section id="contact">
         <h2 class="section-title" data-i18n="contact.title">Let's Connect</h2>
         <div class="contact-container">
@@ -134,7 +134,7 @@
     <footer><p>© 2025 Nourhene Yaakoubi — Built with ♥ for code & community</p></footer>
 </main>
 
-<!-- MODAL PROJECT POPUP -->
+<!-- MODAL PROJECT -->
 <div id="projectModal" class="modal-overlay">
     <div class="modal-container">
         <button class="close-modal"><i class="fas fa-times"></i></button>
@@ -147,11 +147,11 @@
     </div>
 </div>
 
-<!-- ZOOMABLE IMAGE MODAL -->
+<!-- ZOOM MODAL -->
 <div id="zoomModal" class="zoom-overlay"><span class="close-zoom">&times;</span><img class="zoom-img" id="zoomImage" src=""></div>
 
 <script>
-// ---------- PROJECT DATABASE (with descriptions, tech, and photos counts) ----------
+// Projects database (paths exactes comme dans tes dossiers)
 const projectsData = [
     { id: "fouusa", nameEn: "BI Platform (Fouusa)", nameFr: "Plateforme BI (Fouusa)", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`) },
     { id: "cafe", nameEn: "Coffee Management System", nameFr: "Système de Gestion Café", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`) },
@@ -160,7 +160,6 @@ const projectsData = [
     { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: ["assets/projects/chat-placeholder.png"] }
 ];
 
-// Community albums data (enhanced popup style same as projects)
 const communityAlbums = [
     { name: "Google Developer Student Clubs (GDSC)", photos: ["assets/clubs/gdsc/1.jpg","assets/clubs/gdsc/2.jpg","assets/clubs/gdsc/3.jpg","assets/clubs/gdsc/4.jpg","assets/clubs/gdsc/5.jpg","assets/clubs/gdsc/7.jpg","assets/clubs/gdsc/8.jpg"], desc: "Technical workshops, hackathons and collaborative projects." },
     { name: "Club Astrophilia (Event Manager)", photos: ["assets/clubs/astophilia/1.jpg","assets/clubs/astrophilia/2.jpg","assets/clubs/astrophilia/3.jpg","assets/clubs/astrophilia/6.jpg","assets/clubs/astrophilia/7.jpg","assets/clubs/astrophilia/8.jpg"], desc: "Led large-scale astronomy events, logistics and team coordination." },
@@ -173,7 +172,7 @@ let currentProject = null;
 let currentGalleryImages = [];
 let currentIndex = 0;
 
-// render projects
+// RENDER PROJECTS
 function renderProjects() {
     const grid = document.getElementById('projectsGrid');
     if(!grid) return;
@@ -184,7 +183,7 @@ function renderProjects() {
         </div>
     `).join('');
     document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', (e) => {
+        card.addEventListener('click', () => {
             const id = card.dataset.id;
             const proj = projectsData.find(p => p.id === id);
             if(proj) openProjectModal(proj);
@@ -210,8 +209,7 @@ function renderSliderTrack() {
     document.querySelectorAll('.gallery-slide-img').forEach(img => {
         img.addEventListener('click', (e) => {
             e.stopPropagation();
-            const bigSrc = img.dataset.src;
-            openZoom(bigSrc);
+            openZoom(img.dataset.src);
         });
     });
     updateSliderArrows();
@@ -238,7 +236,6 @@ function openZoom(src) {
     zoomModal.classList.add('active');
 }
 
-// COMMUNITY interactive cards with photo-grid popup
 function renderCommunity() {
     const wrapper = document.getElementById('communityWrapper');
     wrapper.innerHTML = communityAlbums.map((album, idx) => `
@@ -268,57 +265,43 @@ function openCommunityAlbum(idx) {
     document.getElementById('projectModal').classList.add('active');
 }
 
-// TOOLS marquee dynamic
 const toolsList = ["VS CODE","NODE","REACT","MONGODB","CSS","EXPRESS","HTML","LATEX","OLLAMA","OVERLEAF","POSTMAN","GIT","DOCKER","TAILWIND"];
 function renderTools() {
     const trackDiv = document.getElementById('techTrack');
     trackDiv.innerHTML = toolsList.map(t => `<img src="assets/tools/${t.toLowerCase().replace(/ /g,'_')}.png" onerror="this.src='https://placehold.co/60x60?text=${t}'" title="${t}">`).join('');
 }
 
-// Language translations + i18n binding
 const translations = {
-    en: { 'nav.home':'Home','nav.about':'About','nav.experience':'Experience','nav.projects':'Projects','nav.services':'Services','nav.tools':'Tools','nav.education':'Education','nav.community':'Community','nav.contact':'Contact','nav.downloadCv':'CV','hero.badge':'Computer Science Graduate','hero.tagline':'Full-Stack Developer | Information Systems Specialist','hero.bio':'Transforming complex data into seamless user experiences. I bridge the gap...','about.title':'About Me','exp.title':'Professional Experience','projects.title':'Projects Showcase','services.title':'What I Offer','services.bookBtn':'Book a Service →','tools.title':'Tech Stack & Tools','education.title':'Academic Background','community.title':'Social & Community Leadership','contact.title':'Let\'s Connect' },
+    en: { 'nav.home':'Home','nav.about':'About','nav.experience':'Experience','nav.projects':'Projects','nav.services':'Services','nav.tools':'Tools','nav.education':'Education','nav.community':'Community','nav.contact':'Contact','nav.downloadCv':'CV','hero.badge':'Computer Science Graduate','hero.tagline':'Full-Stack Developer | Information Systems Specialist','hero.bio':'Transforming complex data into seamless user experiences. I bridge the gap between robust back-end logic and intuitive front-end design with a commitment to community impact.','about.title':'About Me','exp.title':'Professional Experience','projects.title':'Projects Showcase','services.title':'What I Offer','services.bookBtn':'Book a Service →','tools.title':'Tech Stack & Tools','education.title':'Academic Background','community.title':'Social & Community Leadership','contact.title':'Let\'s Connect' },
     fr: { 'nav.home':'Accueil','nav.about':'À propos','nav.experience':'Expérience','nav.projects':'Projets','nav.services':'Services','nav.tools':'Outils','nav.education':'Formation','nav.community':'Communauté','nav.contact':'Contact','nav.downloadCv':'CV','hero.badge':'Diplômée en Informatique','hero.tagline':'Développeuse Full-Stack | Systèmes d\'Information','hero.bio':'Transformer les données complexes en expériences utilisateur fluides. Je relie back-end robuste et design intuitif.','about.title':'À propos de moi','exp.title':'Expériences professionnelles','projects.title':'Galerie de projets','services.title':'Ce que je propose','services.bookBtn':'Réserver un service →','tools.title':'Stack & Outils','education.title':'Parcours académique','community.title':'Vie associative et leadership','contact.title':'Contactez-moi' }
 };
 
 function applyLanguage(lang) {
     currentLang = lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if(translations[lang][key]) el.innerText = translations[lang][key]; else if(el.innerText) {} });
+    document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if(translations[lang][key]) el.innerText = translations[lang][key]; });
     renderProjects();
     if(currentProject) openProjectModal(currentProject);
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
 }
 
-// CONTACT FORM => send to WhatsApp backend auto (without opening browser)
-function setupContactForm() {
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const name = document.getElementById('fullName').value;
-        const email = document.getElementById('emailContact').value;
-        const phone = document.getElementById('phoneNumber').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('messageContent').value;
-        const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${phone || 'Not provided'}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
-        const whatsappUrl = `https://wa.me/21621508776?text=${fullMsg}`;
-        window.open(whatsappUrl, '_blank');
-        form.reset();
-        alert(currentLang === 'en' ? 'Message preloaded! Click send on WhatsApp.' : 'Message chargé ! Envoyez sur WhatsApp.');
-    });
-}
+document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fullName').value;
+    const email = document.getElementById('emailContact').value;
+    const phone = document.getElementById('phoneNumber').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('messageContent').value;
+    const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${phone || 'Not provided'}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
+    window.open(`https://wa.me/21621508776?text=${fullMsg}`, '_blank');
+    e.target.reset();
+    alert(currentLang === 'en' ? 'Message preloaded! Click send on WhatsApp.' : 'Message chargé ! Envoyez sur WhatsApp.');
+});
 
-// Book button scroll to contact
 document.querySelector('.book-btn')?.addEventListener('click',()=>{ document.getElementById('contact').scrollIntoView({behavior:'smooth'}); });
-
-// Sidebar mobile toggle
 document.getElementById('mobileToggle')?.addEventListener('click',()=>{ document.getElementById('sidebar').classList.toggle('active'); });
 document.querySelectorAll('.nav-link').forEach(link=>{ link.addEventListener('click',()=>{ document.getElementById('sidebar')?.classList.remove('active'); }); });
-
-// lang buttons
 document.querySelectorAll('.lang-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ applyLanguage(btn.dataset.lang); }); });
-
-// close modals
 document.querySelector('.close-modal')?.addEventListener('click',()=>{ document.getElementById('projectModal').classList.remove('active'); });
 document.querySelector('.close-zoom')?.addEventListener('click',()=>{ document.getElementById('zoomModal').classList.remove('active'); });
 document.getElementById('zoomModal')?.addEventListener('click',(e)=>{ if(e.target === document.getElementById('zoomModal')) document.getElementById('zoomModal').classList.remove('active'); });
@@ -327,7 +310,6 @@ document.getElementById('projectModal')?.addEventListener('click',(e)=>{ if(e.ta
 renderProjects();
 renderCommunity();
 renderTools();
-setupContactForm();
 applyLanguage('en');
 </script>
 </body>
