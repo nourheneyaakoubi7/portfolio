@@ -1,418 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nourhene Yaakoubi | Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nourhene Yaakoubi | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+    <div class="top-actions">
+        <div class="lang-switch">
+            <button onclick="setLanguage('en')" class="lang-btn active">EN</button>
+            <button onclick="setLanguage('fr')" class="lang-btn">FR</button>
+        </div>
+        <a href="assets/Cv_Nourhene_Yakoubi_MAIN.pdf" download class="download-cv">
+            <i class="fas fa-file-download"></i> <span class="en">Download CV</span><span class="fr">Télécharger CV</span>
+        </a>
+    </div>
 
-<nav class="sidebar">
-<div class="sidebar-logo">NY</div>
+    <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
 
-<ul class="nav-menu">
-<li><a href="#home" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-<li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-<li><a href="#experience"><i class="fas fa-briefcase"></i> <span>Experience</span></a></li>
-<li><a href="#projects"><i class="fas fa-code"></i> <span>Projects</span></a></li>
-<li><a href="#services"><i class="fas fa-cogs"></i> <span>Services</span></a></li>
-<li><a href="#tools"><i class="fas fa-layer-group"></i> <span>Tools</span></a></li>
-<li><a href="#education"><i class="fas fa-university"></i> <span>Education</span></a></li>
-<li><a href="#clubs"><i class="fas fa-users"></i> <span>Community</span></a></li>
-<li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
-</ul>
-</nav>
+    <nav class="sidebar">
+        <div class="sidebar-logo">NY</div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> <span class="en">Home</span><span class="fr">Accueil</span></a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> <span class="en">About</span><span class="fr">À propos</span></a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> <span class="en">Experience</span><span class="fr">Expérience</span></a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> <span class="en">Projects</span><span class="fr">Projets</span></a></li>
+            <li><a href="#services"><i class="fas fa-handshake"></i> <span class="en">Services</span><span class="fr">Services</span></a></li>
+            <li><a href="#tools"><i class="fas fa-layer-group"></i> <span class="en">Skills</span><span class="fr">Compétences</span></a></li>
+            <li><a href="#clubs"><i class="fas fa-users"></i> <span class="en">Social Life</span><span class="fr">Vie Sociale</span></a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="en">Contact</span><span class="fr">Contact</span></a></li>
+        </ul>
+    </nav>
 
-<main class="main-content">
-
-<header id="home" class="hero-section">
+    <main class="main-content">
+        <header id="home" class="hero-section">
             <div class="hero-container">
                 <div class="hero-profile-wrapper">
                     <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="hero-img">
                 </div>
                 <div class="hero-text">
-                    <span class="badge">Computer Science Graduate (Licence)</span>
+                    <span class="badge en">Full-Stack Developer | IT Operations</span>
+                    <span class="badge fr">Développeuse Full-Stack | Opérations IT</span>
                     <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-                    <p class="tagline">Full-Stack Developer | Information Systems Specialist</p>
-                    <p class="hero-bio">Transforming complex data into seamless user experiences. I bridge the gap between robust back-end logic and intuitive front-end design with a commitment to community impact.</p>
+                    <p class="tagline en">Transforming ideas into digital reality.</p>
+                    <p class="tagline fr">Transformer vos idées en réalité digitale.</p>
                     <div class="hero-cta">
-                        <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank" class="btn-primary">Connect on LinkedIn</a>
-                        <a href="https://github.com/nourheneyaakoubi7" target="_blank" class="btn-secondary">GitHub Profile</a>
+                        <a href="#contact" class="btn-primary en">Hire Me</a>
+                        <a href="#contact" class="btn-primary fr">Me Contacter</a>
+                        <div class="social-links">
+                            <a href="https://github.com/nourheneyaakoubi7" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="glass-card">
-                <p class="about-text">
-                    I am a highly motivated <strong>Junior Full-Stack Developer</strong> with a degree in Software Engineering and Information Systems. My technical foundation is built on the <strong>MERN Stack</strong>, with a specialized focus on designing data-centric <strong>Business Intelligence</strong> platforms. 
-                    <br><br>
-                    I approach software development with a "multitasking mindset"—balancing rapid technical adaptability with strong interpersonal leadership. Whether I am architecting a database or managing a community event, I strive to deliver high-quality results that merge technology with real-world human needs.
-                </p>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-code"></i> Hard Skills</h4>
-                        <ul>
-                            <li><strong>Full-Stack:</strong> MERN (MongoDB, Express, React, Node.js)</li>
-                            <li><strong>Front-End:</strong> Angular, HTML5, JavaScript, TypeScript</li>
-                            <li><strong>Back-End:</strong> Django (Python), Java, REST APIs</li>
-                            <li><strong>Technical Tools:</strong> Git, Postman, LaTeX, SQL</li>
-                        </ul>
+        <section id="experience">
+            <h2 class="section-title"><span class="en">Professional Experience</span><span class="fr">Expérience Professionnelle</span></h2>
+            <div class="timeline">
+                <div class="glass-card exp-item">
+                    <span class="exp-date">March 2026 - Present</span>
+                    <h3>Digital & IT Operations</h3>
+                    <h4>ESPAF Business School</h4>
+                    <p class="en">Administration of e-learning platforms (Educated, Moodle) and IT infrastructure management.</p>
+                    <p class="fr">Administration des plateformes e-learning et gestion de l'infrastructure IT.</p>
+                </div>
+                <div class="glass-card exp-item">
+                    <span class="exp-date">March 2025 - June 2025</span>
+                    <h3>PFE - Full-Stack Developer</h3>
+                    <h4>Fouusa Engineering Services</h4>
+                    <p class="en">Developed a BI platform using MERN stack with dynamic dashboards.</p>
+                    <p class="fr">Développement d'une plateforme BI avec le stack MERN et dashboards dynamiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title"><span class="en">Featured Projects</span><span class="fr">Projets Réalisés</span></h2>
+            <div class="project-grid">
+                <div class="project-card" onclick="openProject('bi')">
+                    <img src="assets/projects/fouusa/1.png" alt="BI Platform">
+                    <div class="project-overlay">
+                        <h3>BI Platform</h3>
                     </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-brain"></i> Soft Skills</h4>
-                        <ul>
-                            <li>Agile Problem Solving & Fast Learning</li>
-                            <li>Cross-functional Teamwork & Communication</li>
-                            <li>Strategic Event Planning & Management</li>
-                            <li>Professional Independence & Discipline</li>
-                        </ul>
+                </div>
+                <div class="project-card" onclick="openProject('cafe')">
+                    <img src="assets/projects/webup/1.png" alt="Coffee System">
+                    <div class="project-overlay">
+                        <h3>Coffee Management</h3>
                     </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-language"></i> Languages</h4>
-                        <div class="lang-tag">Arabic: <span>Native</span></div>
-                        <div class="lang-tag">English: <span>Professional Working</span></div>
-                        <div class="lang-tag">French: <span>Basic</span></div>
+                </div>
+                <div class="project-card" onclick="openProject('vitrine')">
+                    <img src="assets/projects/VITRINE/1.png" alt="Architect Vitrine">
+                    <div class="project-overlay">
+                        <h3>Architect Vitrine</h3>
+                    </div>
+                </div>
+                <div class="project-card" onclick="openProject('usermg')">
+                    <img src="assets/projects/UserManagement/1.png" alt="User Management">
+                    <div class="project-overlay">
+                        <h3>User Management</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2 class="section-title">Experience</h2>
-
-<div class="glass-grid">
-
-<div class="glass-card">
-<h3>Fouusa Engineering Services</h3>
-<p>Built a Business Intelligence dashboard transforming raw data into insights.</p>
-</div>
-
-<div class="glass-card">
-<h3>WebUp</h3>
-<p>Developed Café Management System with optimized workflows and UI.</p>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="dark-bg">
-<h2 class="section-title">Projects</h2>
-
-<!-- Fouusa Album -->
-<div class="project-wrap">
-<h3>BI Dashboard (Fouusa)</h3>
-
-<div class="photo-grid">
-<img src="assets/projects/fouusa/1.png" class="zoomable">
-<img src="assets/projects/fouusa/2.png" class="zoomable">
-<img src="assets/projects/fouusa/3.png" class="zoomable">
-<img src="assets/projects/fouusa/4.png" class="zoomable">
-<img src="assets/projects/fouusa/5.png" class="zoomable">
-<img src="assets/projects/fouusa/6.png" class="zoomable">
-<img src="assets/projects/fouusa/7.png" class="zoomable">
-<img src="assets/projects/fouusa/8.png" class="zoomable">
-<img src="assets/projects/fouusa/9.png" class="zoomable">
-<img src="assets/projects/fouusa/10.png" class="zoomable">
-<img src="assets/projects/fouusa/11.png" class="zoomable">
-<img src="assets/projects/fouusa/12.png" class="zoomable">
-<img src="assets/projects/fouusa/13.png" class="zoomable">
-<img src="assets/projects/fouusa/14.png" class="zoomable">
-<img src="assets/projects/fouusa/15.png" class="zoomable">
-<img src="assets/projects/fouusa/16.png" class="zoomable">
-<img src="assets/projects/fouusa/17.png" class="zoomable">
-<img src="assets/projects/fouusa/18.png" class="zoomable">
-<img src="assets/projects/fouusa/19.png" class="zoomable">
-<img src="assets/projects/fouusa/20.png" class="zoomable">
-<img src="assets/projects/fouusa/21.png" class="zoomable">
-<img src="assets/projects/fouusa/22.png" class="zoomable">
-<img src="assets/projects/fouusa/23.png" class="zoomable">
-<img src="assets/projects/fouusa/24.png" class="zoomable">
-<img src="assets/projects/fouusa/25.png" class="zoomable">
-<img src="assets/projects/fouusa/26.png" class="zoomable">
-<img src="assets/projects/fouusa/27.png" class="zoomable">
-<img src="assets/projects/fouusa/28.png" class="zoomable">
-<img src="assets/projects/fouusa/29.png" class="zoomable">
-<img src="assets/projects/fouusa/30.png" class="zoomable">
-<img src="assets/projects/fouusa/31.png" class="zoomable">
-<img src="assets/projects/fouusa/32.png" class="zoomable">
-</div>
-</div>
-
-<!-- WebUp -->
-<div class="project-wrap">
-<h3>Café Management System</h3>
-
-<div class="photo-grid">
-<img src="assets/projects/webup/1.png" class="zoomable">
-<img src="assets/projects/webup/2.png" class="zoomable">
-<img src="assets/projects/webup/3.png" class="zoomable">
-<img src="assets/projects/webup/4.png" class="zoomable">
-<img src="assets/projects/webup/5.png" class="zoomable">
-<img src="assets/projects/webup/6.png" class="zoomable">
-<img src="assets/projects/webup/7.png" class="zoomable">
-</div>
-</div>
-
-<!-- PLACEHOLDER for your new projects -->
-<div class="project-wrap">
-<h3>Architect Vitrine (NEW)</h3>
-<img src="assets/projects/VITRINE/1.png" class="zoomable">
-<img src="assets/projects/VITRINE/2.png" class="zoomable">
-<img src="assets/projects/VITRINE/3.png" class="zoomable">
-<img src="assets/projects/VITRINE/4.png" class="zoomable">
-<img src="assets/projects/VITRINE/5.png" class="zoomable">
-<img src="assets/projects/VITRINE/6.png" class="zoomable">
-<img src="assets/projects/VITRINE/7.png" class="zoomable">
-<img src="assets/projects/VITRINE/8.png" class="zoomable">
-<img src="assets/projects/VITRINE/9.png" class="zoomable">
-<img src="assets/projects/VITRINE/10.png" class="zoomable">
-<img src="assets/projects/VITRINE/11.png" class="zoomable">
-<img src="assets/projects/VITRINE/12.png" class="zoomable">
-<img src="assets/projects/VITRINE/13.png" class="zoomable">
-<img src="assets/projects/VITRINE/14.png" class="zoomable">
-<img src="assets/projects/VITRINE/15.png" class="zoomable">
-<img src="assets/projects/VITRINE/16.png" class="zoomable">
-<img src="assets/projects/VITRINE/17.png" class="zoomable">
-<img src="assets/projects/VITRINE18.png" class="zoomable">
-<img src="assets/projects/VITRINE/19.png" class="zoomable">
-<img src="assets/projects/VITRINE/20.png" class="zoomable">
-</div>
-
-<div class="project-wrap">
-<h3>Django Angular User Management (NEW)</h3>
-<img src="assets/projects/UserManagement/1.png" class="zoomable">
-<img src="assets/projects/UserManagement/2.png" class="zoomable">
-</div>
-
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-<h2 class="section-title">Services</h2>
-
-<div class="glass-grid">
-<div class="glass-card">
-<h4>Full-Stack Development</h4>
-<p>Building scalable MERN & Django apps.</p>
-</div>
-
-<div class="glass-card">
-<h4>UI/UX Interfaces</h4>
-<p>Modern responsive front-end design.</p>
-</div>
-
-<div class="glass-card">
-<h4>Database & APIs</h4>
-<p>Designing optimized backend systems.</p>
-</div>
-</div>
-</section>
-
-
-        <section id="tools">
-            <h2 class="section-title">Stack & Tools</h2>
-            <p class="section-subtitle">A modern toolkit focused on performance, scalability, and developer productivity.</p>
-            <div class="tech-marquee">
-                <div class="tech-track">
-                    <img src="assets/tools/VS CODE.jpeg" title="VS Code">
-                    <img src="assets/tools/NODE.png" title="Node.js">
-                    <img src="assets/tools/REACT.png" title="React">
-                    <img src="assets/tools/MONGODB.png" title="MongoDB">
-                    <img src="assets/tools/CSS.png" title="CSS">
-                    <img src="assets/tools/EXPRESS.png" title="EXPRESS">
-                    <img src="assets/tools/HTML.png" title="HTML">
-                    <img src="assets/tools/LATEX.png" title="LATEX">
-                    <img src="assets/tools/OLLAMA.png" title="OLLAMA">
-                    <img src="assets/tools/OVERLEAF.png" title="OVERLEAF">
-                    <img src="assets/tools/POSTMAN.png" title="POSTMAN">
-                </div>
-            </div>
-        </section>
-
-         <section id="education">
-            <h2 class="section-title">Educational Background</h2>
-            <p class="section-subtitle">Solid academic foundation in system architecture and digital technologies.</p>
+        <section id="services">
+            <h2 class="section-title"><span class="en">Services Offereed</span><span class="fr">Mes Services</span></h2>
             <div class="glass-grid">
-                <div class="glass-card">
-                    <div class="card-header-row">
-                        <img src="assets/logos/isik.png" alt="ISIK Logo" class="mini-logo">
-                        <h3>ISIK Tunis (2022-2025)</h3>
-                    </div>
-                    <p><strong>Licence</strong> in Software Engineering & Information Systems</p>
-                    <div class="doc-preview blurred-container">
-                        <img src="assets/diplomas/licence.jpg" alt="Licence Diploma" class="private-doc">
-                        <div class="blur-overlay"><span>Private Data Protected</span></div>
-                    </div>
+                <div class="glass-card service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Full-Stack Dev</h3>
+                    <p>MERN & Django applications.</p>
+                    <a href="#contact" class="btn-small">Book Now</a>
                 </div>
-                <div class="glass-card">
-                    <div class="card-header-row">
-                        <i class="fas fa-graduation-cap header-icon"></i>
-                        <h3>Baccalaureate in Technology</h3>
-                    </div>
-                    <p>Hbib Bourguiba (2021-2022) | Mention: Assez Bien</p>
-                    <div class="doc-preview blurred-container">
-                        <img src="assets/diplomas/bac.jpg" alt="Bac Diploma" class="private-doc">
-                        <div class="blur-overlay"><span>Private Data Protected</span></div>
-                    </div>
+                <div class="glass-card service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Dev</h3>
+                    <p>Responsive mobile solutions.</p>
+                    <a href="#contact" class="btn-small">Book Now</a>
+                </div>
+                <div class="glass-card service-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-Commerce</h3>
+                    <p>Custom online stores.</p>
+                    <a href="#contact" class="btn-small">Book Now</a>
                 </div>
             </div>
         </section>
 
         <section id="clubs">
-            <h2 class="section-title">Social & Community Leadership</h2>
-            <p class="section-subtitle">Demonstrating teamwork and organizational excellence through active community engagement.</p>
-            
-            <div class="glass-card club-card">
-                <div class="card-header-row">
-                    <img src="assets/logos/gdsc.jpg" class="club-logo">
+            <h2 class="section-title"><span class="en">Social & Community Leadership</span><span class="fr">Engagement Social</span></h2>
+            <div class="community-grid">
+                <div class="glass-card community-item" onclick="openSocial('gdsc')">
+                    <img src="assets/logos/gdsc.jpg" class="mini-logo">
                     <h3>GDSC Member</h3>
+                    <p>Google Developer Student Clubs</p>
                 </div>
-                <p class="club-desc">Contributing to the <strong>Google Developer Student Clubs</strong> network, engaging in technical workshops and collaborative projects to stay at the forefront of emerging technologies.</p>
-                <div class="cert-grid-fixed">
-                    <img src="assets/clubs/gdsc/cert1.jpg" class="zoomable">
-                    <img src="assets/clubs/gdsc/cert2.jpg" class="zoomable">
-                    <img src="assets/clubs/gdsc/cert3.jpg" class="zoomable">
-                </div>
-                <div class="album-container mt-20">
-                    <div class="photo-grid">
-                        <img src="assets/clubs/gdsc/1.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/2.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/3.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/4.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/5.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/7.jpg" class="zoomable">
-                        <img src="assets/clubs/gdsc/8.jpg" class="zoomable">
-                    </div>
-                    <button class="btn-more">Show More Photos</button>
-                </div>
-            </div>
-
-            <div class="glass-card club-card mt-30">
-                <div class="card-header-row">
-                    <img src="assets/logos/astophilia.jpg" class="club-logo">
-                    <h3>Club Astrophilia (Event Manager)</h3>
-                </div>
-                <p class="club-desc">Spearheaded the logistics and coordination for large-scale events. Managed team communication and scheduling to ensure successful project execution under tight deadlines.</p>
-                <div class="album-container">
-                    <h4><span class="folder-icon">📁</span> Organized Events</h4>
-                    <div class="photo-grid">
-                        <img src="assets/clubs/astophilia/1.jpg" class="zoomable">
-                        <img src="assets/clubs/astrophilia/2.jpg" class="zoomable">
-                        <img src="assets/clubs/astrophilia/3.jpg" class="zoomable">
-                        <img src="assets/clubs/astrophilia/6.jpg" class="zoomable">
-                        <img src="assets/clubs/astrophilia/7.jpg" class="zoomable">
-                        <img src="assets/clubs/astrophilia/8.jpg" class="zoomable">
-                    </div>
-                    <button class="btn-more">Show More Photos</button>
-                </div>
-            </div>
-
-            <div class="glass-card club-card highlight mt-30">
-                <div class="card-header-row">
-                    <img src="assets/logos/ider.jpg" class="mini-logo">
-                    <h3>IDER (Media Member)</h3>
-                </div>
-                <p class="club-desc">Managed digital presence and media assets, ensuring clear communication of the club’s mission and impact across various platforms.</p>
-                <div class="photo-grid">
-                    <img src="assets/clubs/ider/1.jpg" class="zoomable">
-                    <img src="assets/clubs/ider/2.jpg" class="zoomable">
-                </div>
-                
-                <hr class="divider">
-
-                <div class="card-header-row">
-                    <h3>Koffa Ramadan Project</h3>
-                </div>
-                <p class="club-desc">Coordinated humanitarian aid logistics, demonstrating strong commitment to social responsibility and operational efficiency during critical timelines.</p>
-                <div class="album-container">
-                    <div class="photo-grid">
-                        <img src="assets/clubs/koffa/1.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/2.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/3.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/4.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/5.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/6.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/7.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/8.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/9.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/10.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/11.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/12.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/13.jpg" class="zoomable">
-                        <img src="assets/clubs/koffa/14.jpg" class="zoomable">
-                    </div>
-                    <button class="btn-more">Show More Photos</button>
-                </div>
-            </div>
-
-            <div class="glass-card club-card">
-                <div class="card-header-row">
-                    <img src="assets/logos/isik.png" class="club-logo">
-                    <h3>University Event Engagement</h3>
-                </div>
-                <p class="club-desc">Actively participated in academic seminars and tech-forums at ISIK, fostering a culture of peer-to-peer learning and networking.</p>
-                <div class="album-container mt-20">
-                    <div class="photo-grid">
-                        <img src="assets/clubs/university-event/1.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/2.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/3.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/4.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/5.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/7.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/8.jpg" class="zoomable">
-                        <img src="assets/clubs/university-event/9.jpg" class="zoomable">
-                    </div>
-                    <button class="btn-more">Show More Photos</button>
+                <div class="glass-card community-item" onclick="openSocial('astrophilia')">
+                    <img src="assets/logos/astophilia.jpg" class="mini-logo">
+                    <h3>Astrophilia</h3>
+                    <p>Event Manager</p>
                 </div>
             </div>
         </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">Contact Me</h2>
+        <section id="contact">
+            <h2 class="section-title"><span class="en">Get In Touch</span><span class="fr">Contactez-moi</span></h2>
+            <div class="contact-container glass-card">
+                <form id="waForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Name / Nom" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <input type="text" id="subject" placeholder="Subject / Objet" required>
+                    <textarea id="msg" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">
+                        <span class="en">Send Message</span><span class="fr">Envoyer</span>
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="social-icons-large">
+                        <a href="https://wa.me/21621508776"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com/in/nourhene-yaakoubi-"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/nourheneyaakoubi7"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="glass-card">
-<form id="contactForm">
+        <footer class="footer">
+            <p>&copy; 2026 Nourhene Yaakoubi. Built with <i class="fas fa-heart"></i></p>
+        </footer>
+    </main>
 
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="email" id="email" placeholder="Your Email" required>
-<textarea id="message" placeholder="Your Message" required></textarea>
+    <div id="projectModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Project Name</h2>
+            <div class="modal-body">
+                <div class="modal-desc">
+                    <h4>Description</h4>
+                    <p id="modalDescription"></p>
+                    <h4>Technical Details</h4>
+                    <p id="modalTech"></p>
+                </div>
+                <div class="gallery-container">
+                    <button class="nav-arrow left" onclick="prevImg()"><i class="fas fa-chevron-left"></i></button>
+                    <div class="gallery-strip" id="galleryStrip">
+                        </div>
+                    <button class="nav-arrow right" onclick="nextImg()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<button type="submit" class="btn-primary">Send via WhatsApp</button>
+    <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+        <span class="close-zoom">&times;</span>
+        <img id="zoomedImg">
+    </div>
 
-</form>
-</div>
-</section>
+    <script>
+        // Language Toggle Logic
+        function setLanguage(lang) {
+            document.querySelectorAll('.en, .fr').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.' + lang).forEach(el => {
+                el.style.display = (el.tagName === 'SPAN' || el.tagName === 'I') ? 'inline' : 'block';
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
 
-</main>
+        // Project Data
+        const projects = {
+            bi: {
+                title: "BI Platform MERN",
+                desc: "Complete Business Intelligence platform with dynamic data visualization.",
+                tech: "React, Node.js, Express, MongoDB, Chart.js",
+                photos: Array.from({length: 32}, (_, i) => `assets/projects/fouusa/${i+1}.png`)
+            },
+            cafe: {
+                title: "Coffee Management System",
+                desc: "Full-stack system for managing orders, inventory, and sales.",
+                tech: "MERN Stack, JWT Authentication, MVC Architecture",
+                photos: Array.from({length: 7}, (_, i) => `assets/projects/webup/${i+1}.png`)
+            },
+            vitrine: {
+                title: "Architect Vitrine",
+                desc: "Modern showcase website for architectural services with SSR.",
+                tech: "Next.js, TypeScript, Tailwind CSS",
+                photos: Array.from({length: 20}, (_, i) => `assets/projects/VITRINE/${i+1}.png`)
+            },
+            usermg: {
+                title: "Django User Management",
+                desc: "Secure user administration system with robust API.",
+                tech: "Django, Angular, PostgreSQL, REST API",
+                photos: ["assets/projects/UserManagement/1.png", "assets/projects/UserManagement/2.png"]
+            }
+        };
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-e.preventDefault();
+        let currentImgIndex = 0;
+        let currentPhotos = [];
 
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value;
-const message = document.getElementById("message").value;
+        function openProject(id) {
+            const p = projects[id];
+            document.getElementById('modalTitle').innerText = p.title;
+            document.getElementById('modalDescription').innerText = p.desc;
+            document.getElementById('modalTech').innerText = p.tech;
+            
+            const strip = document.getElementById('galleryStrip');
+            strip.innerHTML = '';
+            currentPhotos = p.photos;
+            currentImgIndex = 0;
 
-const phone = "+21621508776";
+            p.photos.forEach((src, idx) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.onclick = () => zoomImg(src);
+                strip.appendChild(img);
+            });
 
-const text = `Hello Nourhene,%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            document.getElementById('projectModal').style.display = 'flex';
+            updateGalleryPos();
+        }
 
-window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-});
-</script>
+        function updateGalleryPos() {
+            const strip = document.getElementById('galleryStrip');
+            strip.style.transform = `translateX(-${currentImgIndex * 220}px)`;
+        }
 
+        function nextImg() {
+            if (currentImgIndex < currentPhotos.length - 1) {
+                currentImgIndex++;
+                updateGalleryPos();
+            }
+        }
+
+        function prevImg() {
+            if (currentImgIndex > 0) {
+                currentImgIndex--;
+                updateGalleryPos();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        function zoomImg(src) {
+            document.getElementById('zoomedImg').src = src;
+            document.getElementById('zoomModal').style.display = 'flex';
+        }
+
+        function closeZoom() {
+            document.getElementById('zoomModal').style.display = 'none';
+        }
+
+        // WhatsApp Direct Integration
+        document.getElementById('waForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const obj = document.getElementById('subject').value;
+            const msg = document.getElementById('msg').value;
+            const phone = "21621508776";
+            const text = `*New Portfolio Message*%0A*From:* ${name}%0A*Subject:* ${obj}%0A*Message:* ${msg}`;
+            const url = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+            window.open(url, '_blank');
+        };
+
+        // Initialize EN
+        window.onload = () => setLanguage('en');
+    </script>
 </body>
 </html>
