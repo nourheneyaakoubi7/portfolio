@@ -1,320 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhene Yaakoubi | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nourhene Yaakoubi | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
 <body>
 
-    <div class="top-actions">
-        <div class="lang-switch">
-            <button onclick="setLanguage('en')" class="lang-btn active">EN</button>
-            <button onclick="setLanguage('fr')" class="lang-btn">FR</button>
-        </div>
-        <a href="assets/Cv_Nourhene_Yakoubi_MAIN.pdf" download class="download-cv">
-            <i class="fas fa-file-download"></i> <span class="en">Download CV</span><span class="fr">Télécharger CV</span>
-        </a>
-    </div>
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('fr')">FR</button>
+</div>
 
-    <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+<!-- SIDEBAR -->
+<nav class="sidebar">
+<div class="sidebar-logo">NY</div>
 
-    <nav class="sidebar">
-        <div class="sidebar-logo">NY</div>
-        <ul class="nav-menu">
-            <li><a href="#home" class="active"><i class="fas fa-home"></i> <span class="en">Home</span><span class="fr">Accueil</span></a></li>
-            <li><a href="#about"><i class="fas fa-user"></i> <span class="en">About</span><span class="fr">À propos</span></a></li>
-            <li><a href="#experience"><i class="fas fa-briefcase"></i> <span class="en">Experience</span><span class="fr">Expérience</span></a></li>
-            <li><a href="#projects"><i class="fas fa-code"></i> <span class="en">Projects</span><span class="fr">Projets</span></a></li>
-            <li><a href="#services"><i class="fas fa-handshake"></i> <span class="en">Services</span><span class="fr">Services</span></a></li>
-            <li><a href="#tools"><i class="fas fa-layer-group"></i> <span class="en">Skills</span><span class="fr">Compétences</span></a></li>
-            <li><a href="#clubs"><i class="fas fa-users"></i> <span class="en">Social Life</span><span class="fr">Vie Sociale</span></a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> <span class="en">Contact</span><span class="fr">Contact</span></a></li>
-        </ul>
-    </nav>
+<ul class="nav-menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <main class="main-content">
-        <header id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-profile-wrapper">
-                    <img src="assets/images/NY.png" alt="Nourhene Yaakoubi" class="hero-img">
-                </div>
-                <div class="hero-text">
-                    <span class="badge en">Full-Stack Developer | IT Operations</span>
-                    <span class="badge fr">Développeuse Full-Stack | Opérations IT</span>
-                    <h1>Nourhene <span class="gradient-text">Yaakoubi</span></h1>
-                    <p class="tagline en">Transforming ideas into digital reality.</p>
-                    <p class="tagline fr">Transformer vos idées en réalité digitale.</p>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary en">Hire Me</a>
-                        <a href="#contact" class="btn-primary fr">Me Contacter</a>
-                        <div class="social-links">
-                            <a href="https://github.com/nourheneyaakoubi7" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/nourhene-yaakoubi-" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+<main class="main-content">
 
-        <section id="experience">
-            <h2 class="section-title"><span class="en">Professional Experience</span><span class="fr">Expérience Professionnelle</span></h2>
-            <div class="timeline">
-                <div class="glass-card exp-item">
-                    <span class="exp-date">March 2026 - Present</span>
-                    <h3>Digital & IT Operations</h3>
-                    <h4>ESPAF Business School</h4>
-                    <p class="en">Administration of e-learning platforms (Educated, Moodle) and IT infrastructure management.</p>
-                    <p class="fr">Administration des plateformes e-learning et gestion de l'infrastructure IT.</p>
-                </div>
-                <div class="glass-card exp-item">
-                    <span class="exp-date">March 2025 - June 2025</span>
-                    <h3>PFE - Full-Stack Developer</h3>
-                    <h4>Fouusa Engineering Services</h4>
-                    <p class="en">Developed a BI platform using MERN stack with dynamic dashboards.</p>
-                    <p class="fr">Développement d'une plateforme BI avec le stack MERN et dashboards dynamiques.</p>
-                </div>
-            </div>
-        </section>
+<!-- HERO -->
+<section id="home" class="hero-section">
+<h1>Nourhene Yaakoubi</h1>
+<p>Full Stack Developer</p>
 
-        <section id="projects">
-            <h2 class="section-title"><span class="en">Featured Projects</span><span class="fr">Projets Réalisés</span></h2>
-            <div class="project-grid">
-                <div class="project-card" onclick="openProject('bi')">
-                    <img src="assets/projects/fouusa/1.png" alt="BI Platform">
-                    <div class="project-overlay">
-                        <h3>BI Platform</h3>
-                    </div>
-                </div>
-                <div class="project-card" onclick="openProject('cafe')">
-                    <img src="assets/projects/webup/1.png" alt="Coffee System">
-                    <div class="project-overlay">
-                        <h3>Coffee Management</h3>
-                    </div>
-                </div>
-                <div class="project-card" onclick="openProject('vitrine')">
-                    <img src="assets/projects/VITRINE/1.png" alt="Architect Vitrine">
-                    <div class="project-overlay">
-                        <h3>Architect Vitrine</h3>
-                    </div>
-                </div>
-                <div class="project-card" onclick="openProject('usermg')">
-                    <img src="assets/projects/UserManagement/1.png" alt="User Management">
-                    <div class="project-overlay">
-                        <h3>User Management</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+<a href="assets/CV.pdf" download class="btn-primary">Download CV</a>
+</section>
 
-        <section id="services">
-            <h2 class="section-title"><span class="en">Services Offereed</span><span class="fr">Mes Services</span></h2>
-            <div class="glass-grid">
-                <div class="glass-card service-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Full-Stack Dev</h3>
-                    <p>MERN & Django applications.</p>
-                    <a href="#contact" class="btn-small">Book Now</a>
-                </div>
-                <div class="glass-card service-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Dev</h3>
-                    <p>Responsive mobile solutions.</p>
-                    <a href="#contact" class="btn-small">Book Now</a>
-                </div>
-                <div class="glass-card service-card">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h3>E-Commerce</h3>
-                    <p>Custom online stores.</p>
-                    <a href="#contact" class="btn-small">Book Now</a>
-                </div>
-            </div>
-        </section>
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
 
-        <section id="clubs">
-            <h2 class="section-title"><span class="en">Social & Community Leadership</span><span class="fr">Engagement Social</span></h2>
-            <div class="community-grid">
-                <div class="glass-card community-item" onclick="openSocial('gdsc')">
-                    <img src="assets/logos/gdsc.jpg" class="mini-logo">
-                    <h3>GDSC Member</h3>
-                    <p>Google Developer Student Clubs</p>
-                </div>
-                <div class="glass-card community-item" onclick="openSocial('astrophilia')">
-                    <img src="assets/logos/astophilia.jpg" class="mini-logo">
-                    <h3>Astrophilia</h3>
-                    <p>Event Manager</p>
-                </div>
-            </div>
-        </section>
+<div class="glass-card">
+<h3>Fouusa Engineering Services</h3>
+<p>Business Intelligence Dashboard</p>
+<ul>
+<li>Data visualization</li>
+<li>Dashboard UX</li>
+<li>Performance optimization</li>
+</ul>
+</div>
 
-        <section id="contact">
-            <h2 class="section-title"><span class="en">Get In Touch</span><span class="fr">Contactez-moi</span></h2>
-            <div class="contact-container glass-card">
-                <form id="waForm">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Name / Nom" required>
-                        <input type="email" id="email" placeholder="Email" required>
-                    </div>
-                    <input type="text" id="subject" placeholder="Subject / Objet" required>
-                    <textarea id="msg" placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">
-                        <span class="en">Send Message</span><span class="fr">Envoyer</span>
-                    </button>
-                </form>
-                <div class="contact-info">
-                    <div class="social-icons-large">
-                        <a href="https://wa.me/21621508776"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://linkedin.com/in/nourhene-yaakoubi-"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/nourheneyaakoubi7"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="glass-card">
+<h3>WebUp</h3>
+<p>Café Management System</p>
+<ul>
+<li>Frontend UI</li>
+<li>Backend logic</li>
+<li>Workflow optimization</li>
+</ul>
+</div>
 
-        <footer class="footer">
-            <p>&copy; 2026 Nourhene Yaakoubi. Built with <i class="fas fa-heart"></i></p>
-        </footer>
-    </main>
+</section>
 
-    <div id="projectModal" class="modal">
-        <div class="modal-content glass-card">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Project Name</h2>
-            <div class="modal-body">
-                <div class="modal-desc">
-                    <h4>Description</h4>
-                    <p id="modalDescription"></p>
-                    <h4>Technical Details</h4>
-                    <p id="modalTech"></p>
-                </div>
-                <div class="gallery-container">
-                    <button class="nav-arrow left" onclick="prevImg()"><i class="fas fa-chevron-left"></i></button>
-                    <div class="gallery-strip" id="galleryStrip">
-                        </div>
-                    <button class="nav-arrow right" onclick="nextImg()"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
 
-    <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
-        <span class="close-zoom">&times;</span>
-        <img id="zoomedImg">
-    </div>
+<div class="project-grid">
 
-    <script>
-        // Language Toggle Logic
-        function setLanguage(lang) {
-            document.querySelectorAll('.en, .fr').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.' + lang).forEach(el => {
-                el.style.display = (el.tagName === 'SPAN' || el.tagName === 'I') ? 'inline' : 'block';
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
+<div class="project-card" onclick="openProject('bi')">
+<img src="assets/projects/fouusa/1.png">
+<h3>BI Dashboard</h3>
+</div>
 
-        // Project Data
-        const projects = {
-            bi: {
-                title: "BI Platform MERN",
-                desc: "Complete Business Intelligence platform with dynamic data visualization.",
-                tech: "React, Node.js, Express, MongoDB, Chart.js",
-                photos: Array.from({length: 32}, (_, i) => `assets/projects/fouusa/${i+1}.png`)
-            },
-            cafe: {
-                title: "Coffee Management System",
-                desc: "Full-stack system for managing orders, inventory, and sales.",
-                tech: "MERN Stack, JWT Authentication, MVC Architecture",
-                photos: Array.from({length: 7}, (_, i) => `assets/projects/webup/${i+1}.png`)
-            },
-            vitrine: {
-                title: "Architect Vitrine",
-                desc: "Modern showcase website for architectural services with SSR.",
-                tech: "Next.js, TypeScript, Tailwind CSS",
-                photos: Array.from({length: 20}, (_, i) => `assets/projects/VITRINE/${i+1}.png`)
-            },
-            usermg: {
-                title: "Django User Management",
-                desc: "Secure user administration system with robust API.",
-                tech: "Django, Angular, PostgreSQL, REST API",
-                photos: ["assets/projects/UserManagement/1.png", "assets/projects/UserManagement/2.png"]
-            }
-        };
+<div class="project-card" onclick="openProject('cafe')">
+<img src="assets/projects/webup/1.png">
+<h3>Café System</h3>
+</div>
 
-        let currentImgIndex = 0;
-        let currentPhotos = [];
+<div class="project-card" onclick="openProject('vitrine')">
+<img src="assets/projects/VITRINE/1.png">
+<h3>Vitrine</h3>
+</div>
 
-        function openProject(id) {
-            const p = projects[id];
-            document.getElementById('modalTitle').innerText = p.title;
-            document.getElementById('modalDescription').innerText = p.desc;
-            document.getElementById('modalTech').innerText = p.tech;
-            
-            const strip = document.getElementById('galleryStrip');
-            strip.innerHTML = '';
-            currentPhotos = p.photos;
-            currentImgIndex = 0;
+<div class="project-card" onclick="openProject('user')">
+<img src="assets/projects/UserManagement/1.png">
+<h3>User Management</h3>
+</div>
 
-            p.photos.forEach((src, idx) => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.onclick = () => zoomImg(src);
-                strip.appendChild(img);
-            });
+</div>
+</section>
 
-            document.getElementById('projectModal').style.display = 'flex';
-            updateGalleryPos();
-        }
+<!-- POPUP -->
+<div id="projectPopup" class="popup">
+<span class="close" onclick="closePopup()">×</span>
 
-        function updateGalleryPos() {
-            const strip = document.getElementById('galleryStrip');
-            strip.style.transform = `translateX(-${currentImgIndex * 220}px)`;
-        }
+<h2 id="popupTitle"></h2>
+<p id="popupDesc"></p>
+<p id="popupTech"></p>
 
-        function nextImg() {
-            if (currentImgIndex < currentPhotos.length - 1) {
-                currentImgIndex++;
-                updateGalleryPos();
-            }
-        }
+<div class="slider">
+<button onclick="prev()">❮</button>
+<img id="sliderImg">
+<button onclick="next()">❯</button>
+</div>
 
-        function prevImg() {
-            if (currentImgIndex > 0) {
-                currentImgIndex--;
-                updateGalleryPos();
-            }
-        }
+</div>
 
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-        }
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
 
-        function zoomImg(src) {
-            document.getElementById('zoomedImg').src = src;
-            document.getElementById('zoomModal').style.display = 'flex';
-        }
+<div class="glass-grid">
 
-        function closeZoom() {
-            document.getElementById('zoomModal').style.display = 'none';
-        }
+<div class="glass-card">Full Stack Development</div>
+<div class="glass-card">Mobile Apps</div>
+<div class="glass-card">Frontend UI</div>
+<div class="glass-card">E-commerce</div>
+<div class="glass-card">Vitrine Websites</div>
 
-        // WhatsApp Direct Integration
-        document.getElementById('waForm').onsubmit = function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const obj = document.getElementById('subject').value;
-            const msg = document.getElementById('msg').value;
-            const phone = "21621508776";
-            const text = `*New Portfolio Message*%0A*From:* ${name}%0A*Subject:* ${obj}%0A*Message:* ${msg}`;
-            const url = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
-            window.open(url, '_blank');
-        };
+</div>
 
-        // Initialize EN
-        window.onload = () => setLanguage('en');
-    </script>
+<a href="#contact" class="btn-primary">Book Now</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<form id="form">
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<input type="text" id="phone" placeholder="Phone">
+<input type="text" id="object" placeholder="Subject">
+<textarea id="msg" placeholder="Message"></textarea>
+
+<button type="submit">Send</button>
+</form>
+
+<div class="social">
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+
+</section>
+
+</main>
+
+<script>
+
+// PROJECT DATA
+const data = {
+bi: {
+title:"BI Dashboard",
+desc:"Business intelligence platform",
+tech:"React + Node + MongoDB",
+images:[...Array(32)].map((_,i)=>`assets/projects/fouusa/${i+1}.png`)
+},
+
+cafe: {
+title:"Café System",
+desc:"Management system",
+tech:"Angular + Django",
+images:[...Array(7)].map((_,i)=>`assets/projects/webup/${i+1}.png`)
+},
+
+vitrine:{
+title:"Vitrine",
+desc:"Showcase website",
+tech:"HTML CSS JS",
+images:[...Array(19)].map((_,i)=>`assets/projects/VITRINE/${i+1}.png`)
+},
+
+user:{
+title:"User Management",
+desc:"Admin system",
+tech:"Django Angular",
+images:["assets/projects/UserManagement/1.png","assets/projects/UserManagement/2.png"]
+}
+};
+
+let current = [];
+let index = 0;
+
+function openProject(key){
+document.getElementById("projectPopup").style.display="flex";
+
+let p = data[key];
+
+document.getElementById("popupTitle").innerText=p.title;
+document.getElementById("popupDesc").innerText=p.desc;
+document.getElementById("popupTech").innerText=p.tech;
+
+current = p.images;
+index = 0;
+document.getElementById("sliderImg").src=current[0];
+}
+
+function closePopup(){
+document.getElementById("projectPopup").style.display="none";
+}
+
+function next(){
+index = (index+1)%current.length;
+document.getElementById("sliderImg").src=current[index];
+}
+
+function prev(){
+index = (index-1+current.length)%current.length;
+document.getElementById("sliderImg").src=current[index];
+}
+
+// CONTACT WHATSAPP AUTO SEND
+document.getElementById("form").addEventListener("submit", e=>{
+e.preventDefault();
+
+let text = `Name:${name.value}%0AEmail:${email.value}%0APhone:${phone.value}%0ASubject:${object.value}%0AMessage:${msg.value}`;
+
+fetch(`https://api.whatsapp.com/send?phone=21621508776&text=${text}`);
+alert("Message sent!");
+});
+
+// LANGUAGE
+function setLang(lang){
+alert("Language switch ready for next step");
+}
+
+</script>
+
 </body>
 </html>
