@@ -54,7 +54,7 @@
         </div>
     </header>
 
-    <!-- ABOUT (REDESIGNED) -->
+    <!-- ABOUT -->
     <section id="about">
         <h2 class="section-title" data-i18n="about.title">About Me</h2>
         <div class="about-container">
@@ -108,7 +108,7 @@
         <div class="projects-grid" id="projectsGrid"></div>
     </section>
 
-    <!-- SERVICES (ENHANCED CONTENT) -->
+    <!-- SERVICES -->
     <section id="services">
         <h2 class="section-title" data-i18n="services.title">What I Offer</h2>
         <div class="services-grid">
@@ -128,7 +128,7 @@
     <!-- EDUCATION -->
     <section id="education"><h2 class="section-title" data-i18n="education.title">Academic Background</h2><div class="glass-grid"><div class="glass-card"><div class="card-header-row"><img src="assets/logos/isik.png" class="mini-logo" alt="isik"><h3>ISIK Le Kef (2022-2025)</h3></div><p><strong>Licence</strong> in Software Engineering & Information Systems</p></div><div class="glass-card"><div class="card-header-row"><i class="fas fa-graduation-cap header-icon"></i><h3>Baccalaureate in Technology</h3></div><p>Hbib Bourguiba (2021-2022) | Mention: Assez Bien</p></div></div></section>
 
-    <!-- COMMUNITY (CARD STYLE with CERTIFICATES) -->
+    <!-- COMMUNITY -->
     <section id="community">
         <h2 class="section-title" data-i18n="community.title">Social & Community Leadership</h2>
         <div class="community-cards-grid" id="communityWrapper"></div>
@@ -206,7 +206,7 @@
         <button class="close-modal"><i class="fas fa-times"></i></button>
         <div class="modal-header"><h2 id="modalTitle"></h2><p id="modalDesc"></p></div>
         <div class="modal-tech"><strong>Technical Description:</strong><br><span id="modalTech"></span></div>
-        <div class="album-slider-container">
+        <div class="album-slider-container" id="albumSliderContainer">
             <div class="slider-header"><span><i class="fas fa-images"></i> Project Gallery</span></div>
             <div class="slider-wrapper"><button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button><div class="slider-track" id="sliderTrack"></div><button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button></div>
         </div>
@@ -217,19 +217,19 @@
 <div id="zoomModal" class="zoom-overlay"><span class="close-zoom">&times;</span><img class="zoom-img" id="zoomImage" src=""></div>
 
 <script>
-// Projects database
+// Projects database - Realtime Chat has NO photos
 const projectsData = [
     { id: "fouusa", nameEn: "BI Platform (Fouusa)", nameFr: "Plateforme BI (Fouusa)", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`) },
     { id: "cafe", nameEn: "Coffee Management System", nameFr: "Système de Gestion Café", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`) },
     { id: "vitrine", nameEn: "Architect Showcase (Next.js)", nameFr: "Vitrine Architecte (Next.js)", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`) },
     { id: "usermg", nameEn: "Django Angular User Manager", nameFr: "Gestion Utilisateurs Django/Angular", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`) },
-    { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: ["assets/projects/chat-placeholder.png"] }
+    { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [] } // NO PHOTOS
 ];
 
-// Community Albums with certifications
+// Community Albums - CORRECTED PATH for astrophilia
 const communityAlbums = [
     { id: "gdsc", name: "Google Developer Student Clubs (GDSC)", photos: ["assets/clubs/gdsc/1.jpg","assets/clubs/gdsc/2.jpg","assets/clubs/gdsc/3.jpg","assets/clubs/gdsc/4.jpg","assets/clubs/gdsc/5.jpg","assets/clubs/gdsc/7.jpg","assets/clubs/gdsc/8.jpg"], desc: "Technical workshops, hackathons and collaborative projects.", certs: ["assets/clubs/gdsc/cert1.jpg","assets/clubs/gdsc/cert2.jpg","assets/clubs/gdsc/cert3.jpg"] },
-    { id: "astrophilia", name: "Club Astrophilia (Event Manager)", photos: ["assets/clubs/astophilia/1.jpg","assets/clubs/astrophilia/2.jpg","assets/clubs/astrophilia/3.jpg","assets/clubs/astrophilia/6.jpg","assets/clubs/astrophilia/7.jpg","assets/clubs/astrophilia/8.jpg"], desc: "Led large-scale astronomy events, logistics and team coordination.", certs: [] },
+    { id: "astrophilia", name: "Club Astrophilia (Event Manager)", photos: ["assets/clubs/astrophilia/1.jpg","assets/clubs/astrophilia/2.jpg","assets/clubs/astrophilia/3.jpg","assets/clubs/astrophilia/4.jpg","assets/clubs/astrophilia/5.jpg","assets/clubs/astrophilia/6.jpg","assets/clubs/astrophilia/7.jpg","assets/clubs/astrophilia/8.jpg"], desc: "Led large-scale astronomy events, logistics and team coordination.", certs: [] },
     { id: "ider", name: "IDER Media Member & Koffa Ramadan", photos: ["assets/clubs/ider/1.jpg","assets/clubs/ider/2.jpg","assets/clubs/koffa/1.jpg","assets/clubs/koffa/2.jpg","assets/clubs/koffa/3.jpg","assets/clubs/koffa/4.jpg","assets/clubs/koffa/5.jpg","assets/clubs/koffa/6.jpg","assets/clubs/koffa/7.jpg","assets/clubs/koffa/8.jpg","assets/clubs/koffa/9.jpg","assets/clubs/koffa/10.jpg","assets/clubs/koffa/11.jpg","assets/clubs/koffa/12.jpg","assets/clubs/koffa/13.jpg","assets/clubs/koffa/14.jpg"], desc: "Digital media management & humanitarian coordination for Ramadan project.", certs: [] },
     { id: "university", name: "University Events & Seminars", photos: ["assets/clubs/university-event/1.jpg","assets/clubs/university-event/2.jpg","assets/clubs/university-event/3.jpg","assets/clubs/university-event/4.jpg","assets/clubs/university-event/5.jpg","assets/clubs/university-event/7.jpg","assets/clubs/university-event/8.jpg","assets/clubs/university-event/9.jpg"], desc: "Active participant in tech-forums and academic networking.", certs: [] }
 ];
@@ -245,7 +245,7 @@ function renderProjects() {
     if(!grid) return;
     grid.innerHTML = projectsData.map(proj => `
         <div class="project-card" data-id="${proj.id}">
-            <img src="${proj.photos[0]}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
+            <img src="${proj.photos.length > 0 ? proj.photos[0] : 'assets/projects/placeholder.png'}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
             <div class="project-info"><h3>${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3></div>
         </div>
     `).join('');
@@ -264,8 +264,16 @@ function openProjectModal(proj) {
     document.getElementById('modalDesc').innerText = currentLang === 'en' ? proj.descEn : proj.descFr;
     document.getElementById('modalTech').innerText = currentLang === 'en' ? proj.techEn : proj.techFr;
     currentGalleryImages = [...proj.photos];
-    currentIndex = 0;
-    renderSliderTrack();
+    
+    // Hide album slider if no photos
+    const sliderContainer = document.getElementById('albumSliderContainer');
+    if(proj.photos.length === 0) {
+        sliderContainer.style.display = 'none';
+    } else {
+        sliderContainer.style.display = 'block';
+        currentIndex = 0;
+        renderSliderTrack();
+    }
     document.getElementById('projectModal').classList.add('active');
 }
 
@@ -303,7 +311,7 @@ function openZoom(src) {
     zoomModal.classList.add('active');
 }
 
-// RENDER COMMUNITY AS CARDS (without view full album button)
+// RENDER COMMUNITY
 function renderCommunity() {
     const wrapper = document.getElementById('communityWrapper');
     wrapper.innerHTML = communityAlbums.map((album, idx) => `
@@ -338,15 +346,31 @@ function openCommunityAlbum(idx) {
     document.getElementById('modalTitle').innerText = album.name;
     document.getElementById('modalDesc').innerText = album.desc;
     document.getElementById('modalTech').innerHTML = "📸 Community moments & leadership activities" + (album.certs && album.certs.length ? `<br><br><strong>🏅 Certifications:</strong> ${album.certs.length} documents disponibles` : "");
+    
+    const sliderContainer = document.getElementById('albumSliderContainer');
+    sliderContainer.style.display = 'block';
     renderSliderTrack();
     document.getElementById('projectModal').classList.add('active');
 }
 
-// TOOLS
-const toolsList = ["VS CODE","NODE","REACT","MONGODB","CSS","EXPRESS","HTML","LATEX","OLLAMA","OVERLEAF","POSTMAN"];
+// TOOLS - CORRECT PATHS
+const toolsList = [
+    { name: "VS CODE", file: "VS CODE.jpeg" },
+    { name: "NODE", file: "NODE.png" },
+    { name: "REACT", file: "REACT.png" },
+    { name: "MONGODB", file: "MONGODB.png" },
+    { name: "CSS", file: "CSS.png" },
+    { name: "EXPRESS", file: "EXPRESS.png" },
+    { name: "HTML", file: "HTML.png" },
+    { name: "LATEX", file: "LATEX.png" },
+    { name: "OLLAMA", file: "OLLAMA.png" },
+    { name: "OVERLEAF", file: "OVERLEAF.png" },
+    { name: "POSTMAN", file: "POSTMAN.png" }
+];
+
 function renderTools() {
     const trackDiv = document.getElementById('techTrack');
-    trackDiv.innerHTML = toolsList.map(t => `<img src="assets/tools/${t.toLowerCase().replace(/ /g,'_')}.png" onerror="this.src='https://placehold.co/60x60?text=${t}'" title="${t}">`).join('');
+    trackDiv.innerHTML = toolsList.map(tool => `<img src="assets/tools/${encodeURIComponent(tool.file)}" onerror="this.src='https://placehold.co/60x60?text=${tool.name}'" title="${tool.name}">`).join('');
 }
 
 // TRANSLATIONS
@@ -364,7 +388,7 @@ function applyLanguage(lang) {
     document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
 }
 
-// CONTACT FORM - Direct WhatsApp with user's phone number
+// CONTACT FORM
 document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('fullName').value;
@@ -379,14 +403,13 @@ document.getElementById('contactForm')?.addEventListener('submit', async (e) => 
     }
     
     const myNumber = "21621508776";
-    const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
-    const whatsappUrl = `https://wa.me/${myNumber}?text=${fullMsg}`;
-    window.open(whatsappUrl, '_blank');
+    const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${userPhone}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
+    window.open(`https://wa.me/${myNumber}?text=${fullMsg}`, '_blank');
     e.target.reset();
     alert(currentLang === 'en' ? 'Redirecting to WhatsApp...' : 'Redirection vers WhatsApp...');
 });
 
-// SCROLL SPY FOR SIDEBAR ACTIVE LINK
+// SCROLL SPY
 function updateActiveLink() {
     const sections = document.querySelectorAll('section, header');
     const navLinks = document.querySelectorAll('.nav-link');
