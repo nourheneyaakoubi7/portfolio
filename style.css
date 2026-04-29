@@ -31,7 +31,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ========== SIDEBAR - NO SCROLLBAR ========== */
+/* ========== SIDEBAR - SANS AUCUNE BARRE DE DÉFILEMENT ========== */
 .sidebar {
     width: 80px;
     height: 100vh;
@@ -47,11 +47,22 @@ body {
     transition: var(--transition);
     overflow-y: hidden;
     overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar:hover {
     width: 240px;
     overflow-y: visible;
+    overflow-x: visible;
+}
+
+.sidebar:hover::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar-logo {
@@ -67,7 +78,6 @@ body {
     list-style: none;
     width: 100%;
     flex: 1;
-    overflow-y: visible;
 }
 
 .nav-menu li a {
@@ -990,13 +1000,16 @@ section {
         left: -100%;
         width: 80%;
         transition: left 0.3s;
-        overflow-y: hidden;
     }
     
     .sidebar.active {
         left: 0;
         width: 80%;
         overflow-y: auto;
+    }
+    
+    .sidebar.active::-webkit-scrollbar {
+        display: none;
     }
     
     .sidebar:hover {
