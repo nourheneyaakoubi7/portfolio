@@ -217,18 +217,22 @@
     </div>
 </div>
 
-<!-- ZOOM MODAL -->
-<div id="zoomModal" class="zoom-overlay"><span class="close-zoom">&times;</span><img class="zoom-img" id="zoomImage" src=""></div>
+<!-- ZOOM MODAL WITH NAVIGATION -->
+<div id="zoomModal" class="zoom-overlay">
+    <span class="close-zoom">&times;</span>
+    <button class="zoom-nav prev" id="zoomPrev"><i class="fas fa-chevron-left"></i></button>
+    <img class="zoom-img" id="zoomImage" src="">
+    <button class="zoom-nav next" id="zoomNext"><i class="fas fa-chevron-right"></i></button>
+</div>
 
 <script>
-// Projects database - NEW ORDER: PetCare, Architect, BI Platform, User Mg, Cafe, Realtime
+// Projects database - WITHOUT Realtime Chat
 const projectsData = [
     { id: "petcare", nameEn: "PetCare Veterinary Clinic", nameFr: "Clinique Vétérinaire PetCare", shortDescEn: "Modern veterinary clinic showcase with appointment system", shortDescFr: "Vitrine moderne pour clinique vétérinaire avec système de rendez-vous", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/", coverIndex: 0 },
     { id: "vitrine", nameEn: "Architect Studio Showcase", nameFr: "Vitrine Studio d'Architecture", shortDescEn: "Modern SSR portfolio for architecture studio", shortDescFr: "Portfolio SSR moderne pour studio d'architecture", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/", coverIndex: 0 },
     { id: "fouusa", nameEn: "Enterprise BI Analytics Platform", nameFr: "Plateforme BI Analytique", shortDescEn: "Business Intelligence dashboard with real-time analytics", shortDescFr: "Tableau de bord BI avec analyses en temps réel", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null, coverIndex: 30 },
     { id: "usermg", nameEn: "Django Angular Admin Panel", nameFr: "Panel Admin Django Angular", shortDescEn: "Complete user management system with JWT auth", shortDescFr: "Système complet de gestion utilisateurs avec authentification JWT", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null, coverIndex: 0 },
-    { id: "cafe", nameEn: "Smart Coffee Management System", nameFr: "Smart Gestion Café", shortDescEn: "Complete coffee shop management solution", shortDescFr: "Solution complète de gestion pour coffee shop", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null, coverIndex: 0 },
-    { id: "realtime", nameEn: "Real-Time Chat Application", nameFr: "Application Chat Temps Réel", shortDescEn: "Instant messaging platform with rooms", shortDescFr: "Plateforme de messagerie instantanée avec salons", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [], liveLink: null, coverIndex: 0 }
+    { id: "cafe", nameEn: "Smart Coffee Management System", nameFr: "Smart Gestion Café", shortDescEn: "Complete coffee shop management solution", shortDescFr: "Solution complète de gestion pour coffee shop", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null, coverIndex: 0 }
 ];
 
 // Community Albums
@@ -244,6 +248,10 @@ let currentProject = null;
 let currentGalleryImages = [];
 let currentIndex = 0;
 
+// Zoom navigation variables
+let currentZoomImages = [];
+let currentZoomIndex = 0;
+
 // RENDER PROJECTS
 function renderProjects() {
     const grid = document.getElementById('projectsGrid');
@@ -256,7 +264,7 @@ function renderProjects() {
             <div class="project-card" data-id="${proj.id}">
                 <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
                 <div class="project-info">
-                    <h3>${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
+                    <h3 class="project-title">${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
                     <p class="project-short-desc">${shortDesc}</p>
                     ${hasLink ? `<a href="${proj.liveLink}" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Visit Website</a>` : ''}
                 </div>
@@ -298,11 +306,12 @@ function renderSliderTrack() {
     document.querySelectorAll('.gallery-slide-img').forEach(img => {
         img.addEventListener('click', (e) => {
             e.stopPropagation();
-            openZoom(img.dataset.src);
+            const idx = parseInt(img.dataset.index);
+            openZoomWithNavigation(currentGalleryImages, idx);
         });
     });
     
-    // Navigation arrows
+    // Navigation arrows for slider
     const leftArrow = document.getElementById('sliderLeft');
     const rightArrow = document.getElementById('sliderRight');
     
@@ -328,6 +337,25 @@ function scrollToIndex() {
     }
 }
 
+// ZOOM WITH NAVIGATION BETWEEN PHOTOS
+function openZoomWithNavigation(images, startIndex) {
+    currentZoomImages = images;
+    currentZoomIndex = startIndex;
+    
+    const zoomModal = document.getElementById('zoomModal');
+    const zoomImg = document.getElementById('zoomImage');
+    zoomImg.src = currentZoomImages[currentZoomIndex];
+    zoomModal.classList.add('active');
+}
+
+function navigateZoom(direction) {
+    if(currentZoomImages.length === 0) return;
+    currentZoomIndex = (currentZoomIndex + direction + currentZoomImages.length) % currentZoomImages.length;
+    const zoomImg = document.getElementById('zoomImage');
+    zoomImg.src = currentZoomImages[currentZoomIndex];
+}
+
+// Simple zoom for certificates (no navigation)
 function openZoom(src) {
     const zoomModal = document.getElementById('zoomModal');
     const zoomImg = document.getElementById('zoomImage');
@@ -456,6 +484,9 @@ document.querySelector('.close-modal')?.addEventListener('click',()=>{ document.
 document.querySelector('.close-zoom')?.addEventListener('click',()=>{ document.getElementById('zoomModal').classList.remove('active'); });
 document.getElementById('zoomModal')?.addEventListener('click',(e)=>{ if(e.target === document.getElementById('zoomModal')) document.getElementById('zoomModal').classList.remove('active'); });
 document.getElementById('projectModal')?.addEventListener('click',(e)=>{ if(e.target === document.getElementById('projectModal')) document.getElementById('projectModal').classList.remove('active'); });
+document.getElementById('zoomPrev')?.addEventListener('click', (e) => { e.stopPropagation(); navigateZoom(-1); });
+document.getElementById('zoomNext')?.addEventListener('click', (e) => { e.stopPropagation(); navigateZoom(1); });
+
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', () => { updateActiveLink(); renderProjects(); renderCommunity(); renderTools(); applyLanguage('en'); });
 </script>
