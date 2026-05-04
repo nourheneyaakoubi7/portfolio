@@ -103,7 +103,7 @@
     </section>
 
     <!-- PROJECTS GRID -->
-    <section id="projects" class="dark-bg">
+    <section id="projects">
         <h2 class="section-title" data-i18n="projects.title">Projects Showcase</h2>
         <div class="projects-grid" id="projectsGrid"></div>
     </section>
@@ -142,7 +142,7 @@
                 <form id="contactForm">
                     <input type="text" id="fullName" placeholder="Full Name" required>
                     <input type="email" id="emailContact" placeholder="Email Address" required>
-                    <input type="tel" id="phoneNumber" placeholder="Phone Number (required for WhatsApp)" required>
+                    <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
                     <input type="text" id="subject" placeholder="Subject">
                     <textarea id="messageContent" placeholder="Tell me about your project..." required></textarea>
                     <button type="submit" class="btn-primary send-btn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
@@ -206,10 +206,13 @@
         <button class="close-modal"><i class="fas fa-times"></i></button>
         <div class="modal-header"><h2 id="modalTitle"></h2><p id="modalDesc"></p></div>
         <div class="modal-tech"><strong>Technical Description:</strong><br><span id="modalTech"></span></div>
-        <div class="modal-live-link" id="modalLiveLink" style="margin: 15px 0;"></div>
         <div class="album-slider-container" id="albumSliderContainer">
             <div class="slider-header"><span><i class="fas fa-images"></i> Project Gallery</span></div>
-            <div class="slider-wrapper"><button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button><div class="slider-track" id="sliderTrack"></div><button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button></div>
+            <div class="slider-wrapper">
+                <button class="slider-arrow left" id="sliderLeft"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-track" id="sliderTrack"></div>
+                <button class="slider-arrow right" id="sliderRight"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </div>
 </div>
@@ -218,14 +221,14 @@
 <div id="zoomModal" class="zoom-overlay"><span class="close-zoom">&times;</span><img class="zoom-img" id="zoomImage" src=""></div>
 
 <script>
-// Projects database - WITH LIVE LINKS
+// Projects database - NEW ORDER: PetCare, Architect, BI Platform, User Mg, Cafe, Realtime
 const projectsData = [
-    { id: "fouusa", nameEn: "BI Platform (Fouusa)", nameFr: "Plateforme BI (Fouusa)", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null },
-    { id: "cafe", nameEn: "Coffee Management System", nameFr: "Système de Gestion Café", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null },
-    { id: "vitrine", nameEn: "Architect Showcase (Next.js)", nameFr: "Vitrine Architecte (Next.js)", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/" },
-    { id: "petcare", nameEn: "Pet Care - Animal Clinic Vitrine", nameFr: "Pet Care - Vitrine Clinique Vétérinaire", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/" },
-    { id: "usermg", nameEn: "Django Angular User Manager", nameFr: "Gestion Utilisateurs Django/Angular", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null },
-    { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [], liveLink: null }
+    { id: "petcare", nameEn: "PetCare Veterinary Clinic", nameFr: "Clinique Vétérinaire PetCare", shortDescEn: "Modern veterinary clinic showcase with appointment system", shortDescFr: "Vitrine moderne pour clinique vétérinaire avec système de rendez-vous", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/", coverIndex: 0 },
+    { id: "vitrine", nameEn: "Architect Studio Showcase", nameFr: "Vitrine Studio d'Architecture", shortDescEn: "Modern SSR portfolio for architecture studio", shortDescFr: "Portfolio SSR moderne pour studio d'architecture", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/", coverIndex: 0 },
+    { id: "fouusa", nameEn: "Enterprise BI Analytics Platform", nameFr: "Plateforme BI Analytique", shortDescEn: "Business Intelligence dashboard with real-time analytics", shortDescFr: "Tableau de bord BI avec analyses en temps réel", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null, coverIndex: 30 },
+    { id: "usermg", nameEn: "Django Angular Admin Panel", nameFr: "Panel Admin Django Angular", shortDescEn: "Complete user management system with JWT auth", shortDescFr: "Système complet de gestion utilisateurs avec authentification JWT", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null, coverIndex: 0 },
+    { id: "cafe", nameEn: "Smart Coffee Management System", nameFr: "Smart Gestion Café", shortDescEn: "Complete coffee shop management solution", shortDescFr: "Solution complète de gestion pour coffee shop", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null, coverIndex: 0 },
+    { id: "realtime", nameEn: "Real-Time Chat Application", nameFr: "Application Chat Temps Réel", shortDescEn: "Instant messaging platform with rooms", shortDescFr: "Plateforme de messagerie instantanée avec salons", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [], liveLink: null, coverIndex: 0 }
 ];
 
 // Community Albums
@@ -245,14 +248,24 @@ let currentIndex = 0;
 function renderProjects() {
     const grid = document.getElementById('projectsGrid');
     if(!grid) return;
-    grid.innerHTML = projectsData.map(proj => `
-        <div class="project-card" data-id="${proj.id}">
-            <img src="${proj.photos.length > 0 ? proj.photos[0] : 'assets/projects/placeholder.png'}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
-            <div class="project-info"><h3>${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3></div>
-        </div>
-    `).join('');
+    grid.innerHTML = projectsData.map(proj => {
+        const coverPhoto = proj.photos.length > 0 ? proj.photos[proj.coverIndex] : 'assets/projects/placeholder.png';
+        const shortDesc = currentLang === 'en' ? proj.shortDescEn : proj.shortDescFr;
+        const hasLink = proj.liveLink !== null;
+        return `
+            <div class="project-card" data-id="${proj.id}">
+                <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
+                <div class="project-info">
+                    <h3>${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
+                    <p class="project-short-desc">${shortDesc}</p>
+                    ${hasLink ? `<a href="${proj.liveLink}" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Visit Website</a>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
     document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            if(e.target.classList.contains('project-link-btn') || e.target.closest('.project-link-btn')) return;
             const id = card.dataset.id;
             const proj = projectsData.find(p => p.id === id);
             if(proj) openProjectModal(proj);
@@ -265,15 +278,6 @@ function openProjectModal(proj) {
     document.getElementById('modalTitle').innerText = currentLang === 'en' ? proj.nameEn : proj.nameFr;
     document.getElementById('modalDesc').innerText = currentLang === 'en' ? proj.descEn : proj.descFr;
     document.getElementById('modalTech').innerText = currentLang === 'en' ? proj.techEn : proj.techFr;
-    
-    // Add live link button if exists
-    const liveLinkDiv = document.getElementById('modalLiveLink');
-    if(proj.liveLink) {
-        liveLinkDiv.innerHTML = `<a href="${proj.liveLink}" target="_blank" class="btn-live-demo"><i class="fas fa-external-link-alt"></i> ${currentLang === 'en' ? 'Visit Live Website' : 'Visiter le Site'}</a>`;
-        liveLinkDiv.style.display = 'block';
-    } else {
-        liveLinkDiv.style.display = 'none';
-    }
     
     currentGalleryImages = [...proj.photos];
     const sliderContainer = document.getElementById('albumSliderContainer');
@@ -290,21 +294,31 @@ function openProjectModal(proj) {
 function renderSliderTrack() {
     const track = document.getElementById('sliderTrack');
     if(!track) return;
-    track.innerHTML = currentGalleryImages.map((src, idx) => `<div class="slide-img"><img src="${src}" class="gallery-slide-img" data-src="${src}" alt="project view"></div>`).join('');
+    track.innerHTML = currentGalleryImages.map((src, idx) => `<div class="slide-img"><img src="${src}" class="gallery-slide-img" data-src="${src}" data-index="${idx}" alt="project view"></div>`).join('');
     document.querySelectorAll('.gallery-slide-img').forEach(img => {
         img.addEventListener('click', (e) => {
             e.stopPropagation();
             openZoom(img.dataset.src);
         });
     });
-    updateSliderArrows();
-}
-
-function updateSliderArrows() {
-    const leftBtn = document.querySelector('.slider-arrow.left');
-    const rightBtn = document.querySelector('.slider-arrow.right');
-    if(leftBtn) leftBtn.onclick = () => { if(currentGalleryImages.length) { currentIndex = (currentIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length; scrollToIndex(); } };
-    if(rightBtn) rightBtn.onclick = () => { if(currentGalleryImages.length) { currentIndex = (currentIndex + 1) % currentGalleryImages.length; scrollToIndex(); } };
+    
+    // Navigation arrows
+    const leftArrow = document.getElementById('sliderLeft');
+    const rightArrow = document.getElementById('sliderRight');
+    
+    leftArrow.onclick = () => {
+        if(currentGalleryImages.length > 0) {
+            currentIndex = (currentIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+            scrollToIndex();
+        }
+    };
+    
+    rightArrow.onclick = () => {
+        if(currentGalleryImages.length > 0) {
+            currentIndex = (currentIndex + 1) % currentGalleryImages.length;
+            scrollToIndex();
+        }
+    };
 }
 
 function scrollToIndex() {
@@ -356,7 +370,6 @@ function openCommunityAlbum(idx) {
     document.getElementById('modalTitle').innerText = album.name;
     document.getElementById('modalDesc').innerText = album.desc;
     document.getElementById('modalTech').innerHTML = "📸 Community moments & leadership activities" + (album.certs && album.certs.length ? `<br><br><strong>🏅 Certifications:</strong> ${album.certs.length} documents disponibles` : "");
-    document.getElementById('modalLiveLink').style.display = 'none';
     const sliderContainer = document.getElementById('albumSliderContainer');
     sliderContainer.style.display = 'block';
     renderSliderTrack();
@@ -407,13 +420,8 @@ document.getElementById('contactForm')?.addEventListener('submit', async (e) => 
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('messageContent').value;
     
-    if(!userPhone) {
-        alert(currentLang === 'en' ? 'Please enter your phone number for WhatsApp.' : 'Veuillez entrer votre numéro de téléphone pour WhatsApp.');
-        return;
-    }
-    
     const myNumber = "21621508776";
-    const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${userPhone}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
+    const fullMsg = `🌟 *New Portfolio Message* 🌟%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${userPhone || 'Not provided'}%0A📌 *Subject:* ${subject}%0A💬 *Message:* ${message}`;
     window.open(`https://wa.me/${myNumber}?text=${fullMsg}`, '_blank');
     e.target.reset();
     alert(currentLang === 'en' ? 'Redirecting to WhatsApp...' : 'Redirection vers WhatsApp...');
