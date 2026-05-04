@@ -206,6 +206,7 @@
         <button class="close-modal"><i class="fas fa-times"></i></button>
         <div class="modal-header"><h2 id="modalTitle"></h2><p id="modalDesc"></p></div>
         <div class="modal-tech"><strong>Technical Description:</strong><br><span id="modalTech"></span></div>
+        <div class="modal-live-link" id="modalLiveLink" style="margin: 15px 0;"></div>
         <div class="album-slider-container" id="albumSliderContainer">
             <div class="slider-header"><span><i class="fas fa-images"></i> Project Gallery</span></div>
             <div class="slider-wrapper"><button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button><div class="slider-track" id="sliderTrack"></div><button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button></div>
@@ -217,16 +218,17 @@
 <div id="zoomModal" class="zoom-overlay"><span class="close-zoom">&times;</span><img class="zoom-img" id="zoomImage" src=""></div>
 
 <script>
-// Projects database - Realtime Chat has NO photos
+// Projects database - WITH LIVE LINKS
 const projectsData = [
-    { id: "fouusa", nameEn: "BI Platform (Fouusa)", nameFr: "Plateforme BI (Fouusa)", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`) },
-    { id: "cafe", nameEn: "Coffee Management System", nameFr: "Système de Gestion Café", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`) },
-    { id: "vitrine", nameEn: "Architect Showcase (Next.js)", nameFr: "Vitrine Architecte (Next.js)", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`) },
-    { id: "usermg", nameEn: "Django Angular User Manager", nameFr: "Gestion Utilisateurs Django/Angular", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`) },
-    { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [] } // NO PHOTOS
+    { id: "fouusa", nameEn: "BI Platform (Fouusa)", nameFr: "Plateforme BI (Fouusa)", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null },
+    { id: "cafe", nameEn: "Coffee Management System", nameFr: "Système de Gestion Café", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null },
+    { id: "vitrine", nameEn: "Architect Showcase (Next.js)", nameFr: "Vitrine Architecte (Next.js)", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/" },
+    { id: "petcare", nameEn: "Pet Care - Animal Clinic Vitrine", nameFr: "Pet Care - Vitrine Clinique Vétérinaire", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/" },
+    { id: "usermg", nameEn: "Django Angular User Manager", nameFr: "Gestion Utilisateurs Django/Angular", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null },
+    { id: "realtime", nameEn: "Realtime Chat App", nameFr: "Chat en Temps Réel", descEn: "Instant messaging platform with rooms, typing indicators, and message persistence.", descFr: "Plateforme de messagerie instantanée avec salons, indicateurs de saisie, persistance.", techEn: "Node.js, Socket.io, Express, MongoDB, vanilla frontend events.", techFr: "Node.js, Socket.io, Express, MongoDB, événements frontend vanilla.", photos: [], liveLink: null }
 ];
 
-// Community Albums - CORRECTED PATH for astrophilia
+// Community Albums
 const communityAlbums = [
     { id: "gdsc", name: "Google Developer Student Clubs (GDSC)", photos: ["assets/clubs/gdsc/1.jpg","assets/clubs/gdsc/2.jpg","assets/clubs/gdsc/3.jpg","assets/clubs/gdsc/4.jpg","assets/clubs/gdsc/5.jpg","assets/clubs/gdsc/7.jpg","assets/clubs/gdsc/8.jpg"], desc: "Technical workshops, hackathons and collaborative projects.", certs: ["assets/clubs/gdsc/cert1.jpg","assets/clubs/gdsc/cert2.jpg","assets/clubs/gdsc/cert3.jpg"] },
     { id: "astrophilia", name: "Club Astrophilia (Event Manager)", photos: ["assets/clubs/astrophilia/1.jpg","assets/clubs/astrophilia/2.jpg","assets/clubs/astrophilia/3.jpg","assets/clubs/astrophilia/4.jpg","assets/clubs/astrophilia/5.jpg","assets/clubs/astrophilia/6.jpg","assets/clubs/astrophilia/7.jpg","assets/clubs/astrophilia/8.jpg"], desc: "Led large-scale astronomy events, logistics and team coordination.", certs: [] },
@@ -263,9 +265,17 @@ function openProjectModal(proj) {
     document.getElementById('modalTitle').innerText = currentLang === 'en' ? proj.nameEn : proj.nameFr;
     document.getElementById('modalDesc').innerText = currentLang === 'en' ? proj.descEn : proj.descFr;
     document.getElementById('modalTech').innerText = currentLang === 'en' ? proj.techEn : proj.techFr;
-    currentGalleryImages = [...proj.photos];
     
-    // Hide album slider if no photos
+    // Add live link button if exists
+    const liveLinkDiv = document.getElementById('modalLiveLink');
+    if(proj.liveLink) {
+        liveLinkDiv.innerHTML = `<a href="${proj.liveLink}" target="_blank" class="btn-live-demo"><i class="fas fa-external-link-alt"></i> ${currentLang === 'en' ? 'Visit Live Website' : 'Visiter le Site'}</a>`;
+        liveLinkDiv.style.display = 'block';
+    } else {
+        liveLinkDiv.style.display = 'none';
+    }
+    
+    currentGalleryImages = [...proj.photos];
     const sliderContainer = document.getElementById('albumSliderContainer');
     if(proj.photos.length === 0) {
         sliderContainer.style.display = 'none';
@@ -346,14 +356,14 @@ function openCommunityAlbum(idx) {
     document.getElementById('modalTitle').innerText = album.name;
     document.getElementById('modalDesc').innerText = album.desc;
     document.getElementById('modalTech').innerHTML = "📸 Community moments & leadership activities" + (album.certs && album.certs.length ? `<br><br><strong>🏅 Certifications:</strong> ${album.certs.length} documents disponibles` : "");
-    
+    document.getElementById('modalLiveLink').style.display = 'none';
     const sliderContainer = document.getElementById('albumSliderContainer');
     sliderContainer.style.display = 'block';
     renderSliderTrack();
     document.getElementById('projectModal').classList.add('active');
 }
 
-// TOOLS - CORRECT PATHS
+// TOOLS
 const toolsList = [
     { name: "VS CODE", file: "VS CODE.jpeg" },
     { name: "NODE", file: "NODE.png" },
