@@ -579,6 +579,27 @@ section {
     border-left: 3px solid var(--primary);
 }
 
+/* ========== BUTTON LIVE DEMO ========== */
+.btn-live-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--accent), #059669);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    margin: 10px 0;
+}
+
+.btn-live-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* ========== SLIDER ========== */
 .slider-wrapper {
     display: flex;
     align-items: center;
