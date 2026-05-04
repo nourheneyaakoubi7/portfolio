@@ -226,7 +226,7 @@
 </div>
 
 <script>
-// Projects database - WITHOUT Realtime Chat
+// Projects database
 const projectsData = [
     { id: "petcare", nameEn: "PetCare Veterinary Clinic", nameFr: "Clinique Vétérinaire PetCare", shortDescEn: "Modern veterinary clinic showcase with appointment system", shortDescFr: "Vitrine moderne pour clinique vétérinaire avec système de rendez-vous", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/", coverIndex: 0 },
     { id: "vitrine", nameEn: "Architect Studio Showcase", nameFr: "Vitrine Studio d'Architecture", shortDescEn: "Modern SSR portfolio for architecture studio", shortDescFr: "Portfolio SSR moderne pour studio d'architecture", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/", coverIndex: 0 },
@@ -262,7 +262,9 @@ function renderProjects() {
         const hasLink = proj.liveLink !== null;
         return `
             <div class="project-card" data-id="${proj.id}">
-                <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
+                <div class="project-image-container">
+                    <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
+                </div>
                 <div class="project-info">
                     <h3 class="project-title">${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
                     <p class="project-short-desc">${shortDesc}</p>
@@ -311,7 +313,6 @@ function renderSliderTrack() {
         });
     });
     
-    // Navigation arrows for slider
     const leftArrow = document.getElementById('sliderLeft');
     const rightArrow = document.getElementById('sliderRight');
     
@@ -355,7 +356,7 @@ function navigateZoom(direction) {
     zoomImg.src = currentZoomImages[currentZoomIndex];
 }
 
-// Simple zoom for certificates (no navigation)
+// Simple zoom for certificates
 function openZoom(src) {
     const zoomModal = document.getElementById('zoomModal');
     const zoomImg = document.getElementById('zoomImage');
