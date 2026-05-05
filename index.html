@@ -102,10 +102,29 @@
         </div>
     </section>
 
-    <!-- PROJECTS GRID -->
+    <!-- PROJECTS SECTION WITH CATEGORIES -->
     <section id="projects">
         <h2 class="section-title" data-i18n="projects.title">Projects Showcase</h2>
-        <div class="projects-grid" id="projectsGrid"></div>
+        
+        <!-- Academic Projects Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h3 class="category-title">Academic Projects</h3>
+                <span class="category-line"></span>
+            </div>
+            <div class="projects-grid academic-grid" id="academicProjectsGrid"></div>
+        </div>
+        
+        <!-- Showcase Websites Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fab fa-nextjs"></i>
+                <h3 class="category-title">Next.js Showcase Websites</h3>
+                <span class="category-line"></span>
+            </div>
+            <div class="projects-grid showcase-grid" id="showcaseProjectsGrid"></div>
+        </div>
     </section>
 
     <!-- SERVICES -->
@@ -203,12 +222,28 @@
     </footer>
 </main>
 
-<!-- MODAL PROJECT -->
+<!-- ENHANCED MODAL PROJECT -->
 <div id="projectModal" class="modal-overlay">
     <div class="modal-container">
         <button class="close-modal"><i class="fas fa-times"></i></button>
-        <div class="modal-header"><h2 id="modalTitle"></h2><p id="modalDesc"></p></div>
-        <div class="modal-tech"><strong>Technical Description:</strong><br><span id="modalTech"></span></div>
+        <div class="modal-header-enhanced">
+            <div class="modal-icon" id="modalIcon"></div>
+            <div class="modal-title-section">
+                <h2 id="modalTitle"></h2>
+                <div class="modal-tech-badge" id="modalTechBadge"></div>
+            </div>
+        </div>
+        <div class="modal-divider"></div>
+        <div class="modal-body">
+            <div class="modal-description-card">
+                <h4><i class="fas fa-info-circle"></i> Project Overview</h4>
+                <p id="modalDesc"></p>
+            </div>
+            <div class="modal-features-card">
+                <h4><i class="fas fa-cogs"></i> Technical Features</h4>
+                <div id="modalTech" class="features-list"></div>
+            </div>
+        </div>
         <div class="album-slider-container" id="albumSliderContainer">
             <div class="slider-header"><span><i class="fas fa-images"></i> Project Gallery</span></div>
             <div class="slider-wrapper">
@@ -229,14 +264,21 @@
 </div>
 
 <script>
-// Projects database - WITH NEW DERMACLINIC PROJECT FIRST
-const projectsData = [
-    { id: "dermaclinic", nameEn: "DermaClinic - Dermatology Clinic", nameFr: "DermaClinic - Clinique Dermatologique", shortDescEn: "Modern dermatology clinic showcase with treatment presentation", shortDescFr: "Vitrine moderne pour clinique dermatologique avec présentation des traitements", descEn: "Modern showcase website for a dermatology clinic with elegant design, treatment presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique dermatologique avec design élégant, présentation des traitements et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 31}, (_,i)=>`assets/projects/DermaClinic/${i+1}.png`), liveLink: "https://dermaclinic-bice.vercel.app/", coverIndex: 0 },
-    { id: "petcare", nameEn: "PetCare Veterinary Clinic", nameFr: "Clinique Vétérinaire PetCare", shortDescEn: "Modern veterinary clinic showcase with appointment system", shortDescFr: "Vitrine moderne pour clinique vétérinaire avec système de rendez-vous", descEn: "Modern showcase website for an animal clinic with elegant design, service presentation, and appointment booking interface.", descFr: "Site vitrine moderne pour une clinique vétérinaire avec design élégant, présentation des services et interface de prise de rendez-vous.", techEn: "Next.js, TypeScript, TailwindCSS, Framer Motion, responsive design, SEO optimized.", techFr: "Next.js, TypeScript, TailwindCSS, Framer Motion, design responsive, optimisé SEO.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/", coverIndex: 0 },
-    { id: "vitrine", nameEn: "Architect Studio Showcase", nameFr: "Vitrine Studio d'Architecture", shortDescEn: "Modern SSR portfolio for architecture studio", shortDescFr: "Portfolio SSR moderne pour studio d'architecture", descEn: "Modern SSR portfolio, ultra-fast performance, TailwindCSS, full responsive UI/UX.", descFr: "Portfolio SSR moderne, performances ultra-rapides, TailwindCSS, UI/UX réactive.", techEn: "Next.js, TypeScript, Tailwind, Server Side Rendering, Framer Motion basics.", techFr: "Next.js, TypeScript, Tailwind, rendu côté serveur, bases Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/", coverIndex: 0 },
-    { id: "fouusa", nameEn: "Enterprise BI Analytics Platform", nameFr: "Plateforme BI Analytique", shortDescEn: "Business Intelligence dashboard with real-time analytics", shortDescFr: "Tableau de bord BI avec analyses en temps réel", descEn: "Full-stack Business Intelligence dashboard with interactive charts, KPI monitoring, and real-time data aggregation.", descFr: "Tableau de bord BI full-stack avec graphiques interactifs, suivi KPI et agrégation de données en temps réel.", techEn: "MERN Stack (MongoDB, Express, React, Node.js), JWT, REST API, Chart.js, MVC architecture, Agile Scrum.", techFr: "Stack MERN (MongoDB, Express, React, Node.js), JWT, API REST, Chart.js, architecture MVC, Scrum Agile.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null, coverIndex: 30 },
-    { id: "usermg", nameEn: "Django Angular Admin Panel", nameFr: "Panel Admin Django Angular", shortDescEn: "Complete user management system with JWT auth", shortDescFr: "Système complet de gestion utilisateurs avec authentification JWT", descEn: "Full CRUD admin panel with JWT, REST API integration between Django backend and Angular frontend.", descFr: "Panneau d'administration CRUD complet avec JWT, intégration API REST entre Django et Angular.", techEn: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", techFr: "Django REST Framework, Angular 15+, TypeScript, JWT, SQLite.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null, coverIndex: 0 },
-    { id: "cafe", nameEn: "Smart Coffee Management System", nameFr: "Smart Gestion Café", shortDescEn: "Complete coffee shop management solution", shortDescFr: "Solution complète de gestion pour coffee shop", descEn: "Complete management solution for coffee shops: orders, inventory, employee shifts and real-time analytics.", descFr: "Solution complète pour coffee shops : commandes, inventaire, plannings employés et analyses en temps réel.", techEn: "MERN, JWT authentication, secure CRUD, middleware, MongoDB mongoose, Scrum.", techFr: "MERN, authentification JWT, CRUD sécurisé, middleware, MongoDB mongoose, Scrum.", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null, coverIndex: 0 }
+// Projects database with detailed descriptions
+const academicProjects = [
+    { id: "fouusa", nameEn: "Enterprise BI Analytics Platform", nameFr: "Plateforme BI Analytique", shortDescEn: "Full-stack BI platform with data visualization, AI assistant, and multi-tenant architecture", shortDescFr: "Plateforme BI full-stack avec visualisation de données, assistant IA et architecture multi-tenant", category: "academic", techStack: "MERN Stack (MongoDB, Express, React, Node.js) • JWT • REST API • Chart.js • Ollama AI • CSV/XLSX Processing", descEn: "🎓 GRADUATION PROJECT (PFE) - A comprehensive Business Intelligence platform with two separate interfaces (Admin & User).\n\n🔧 ADMIN WEBSITE: SignIn/SignUp interface (shared with User website). Dashboard features: User Management (Add/Delete/Update users & roles), Chart Management (view/delete all user charts), File Management, Reports Management, Profile settings, and Settings (Dark/Light mode & Language switcher).\n\n👤 USER WEBSITE: Home Dashboard, Files section (Upload CSV/XLSX files with auto-generated editable tables), Charts section (Create charts from files with custom types), Reports section (Generate reports using 3 different models by selecting files + charts, download as PDF), AI Assistant (Chat with history using Ollama integration), Profile & Settings.\n\n📊 Key Features: Dynamic table generation from uploaded files, real-time chart visualization, multi-format report generation, AI-powered assistant, complete CRUD operations.", descFr: "🎓 PROJET DE FIN D'ÉTUDES (PFE) - Une plateforme BI complète avec deux interfaces séparées (Admin & Utilisateur).\n\n🔧 ADMIN : Connexion/Inscription, Gestion des utilisateurs (ajout/suppression/modification/rôles), Gestion des graphiques, Gestion des fichiers, Gestion des rapports, Profil, Paramètres (Mode sombre/clair, changement de langue).\n\n👤 UTILISATEUR : Tableau de bord, Fichiers (import CSV/XLSX avec tables éditables), Graphiques (création personnalisée), Rapports (génération avec 3 modèles, téléchargement PDF), Assistant IA (Chat avec Ollama), Profil et Paramètres.\n\n📊 Fonctionnalités : Génération dynamique de tables, visualisation de graphiques temps réel, génération multi-formats, assistant IA.", photos: Array.from({length: 32}, (_,i)=>`assets/projects/fouusa/${i+1}.png`), liveLink: null, coverIndex: 30, icon: "fas fa-chart-line", techBadge: "MERN Stack" },
+    
+    { id: "usermg", nameEn: "Django Angular Admin Panel", nameFr: "Panel Admin Django Angular", shortDescEn: "Complete user management system with email integration", shortDescFr: "Système complet de gestion utilisateurs avec intégration email", category: "academic", techStack: "Django • Angular • PostgreSQL • REST API • SMTP Email • Bootstrap", descEn: "📋 A complete user management interface developed with Django (backend) and Angular (frontend).\n\n📝 FORM: Contains fields for Name, Registration Number (Matricule), and Email. Two buttons: SUBMIT (save user) and CANCEL (clear form).\n\n📊 USER TABLE: Displays saved users with columns: Name, Registration Number, Email, and ACTIONS. Actions include: SEND EMAIL (automatically sends an email to the user with their own registration number) and DELETE (remove user from database).\n\n⚙️ No authentication required - clean, simple management interface. Built with PostgreSQL database.", descFr: "📋 Une interface complète de gestion d'utilisateurs développée avec Django (backend) et Angular (frontend).\n\n📝 FORMULAIRE : Champs pour Nom, Matricule et Email. Boutons : AJOUTER (enregistre) et ANNULER (efface).\n\n📊 TABLEAU UTILISATEURS : Colonnes : Nom, Matricule, Email, ACTIONS. Actions incluent : ENVOYER MAIL (envoi automatique d'un email avec le matricule) et SUPPRIMER.\n\n⚙️ Pas d'authentification requise - interface simple et propre. Base de données PostgreSQL.", photos: Array.from({length: 2}, (_,i)=>`assets/projects/UserManagement/${i+1}.png`), liveLink: null, coverIndex: 0, icon: "fas fa-users-cog", techBadge: "Django + Angular" },
+    
+    { id: "cafe", nameEn: "Smart Coffee Management System", nameFr: "Smart Gestion Café", shortDescEn: "Complete coffee shop management system with personnel, categories, menu and dashboard", shortDescFr: "Système complet de gestion de café avec personnel, catégories, menu et tableau de bord", category: "academic", techStack: "MERN Stack (MongoDB, Express, React, Node.js) • JWT Authentication • Mongoose • REST API", descEn: "☕ PFA PROJECT (Projet Fin d'Année) - A complete management system for coffee shops.\n\n🔐 LOGIN INTERFACE: SignIn/SignUp page with JWT authentication.\n\n📱 MAIN DASHBOARD: After login, navigation bar shows user name and logout button. Four main buttons:\n• MANAGE PERSONNEL - Add/Update/Delete employees (Name, Position, Email, Salary)\n• MANAGE CATEGORIES - Add/Update/Delete product categories\n• MANAGE MENU - Add/Update/Delete menu items linked to categories\n• DASHBOARD - Overview counters (Total Personnel, Categories, Menu Items)\n\nEach management page features: Left side form (add/edit), Right side table (display with Update/Delete actions).", descFr: "☕ PROJET PFA (Projet Fin d'Année) - Un système complet de gestion pour coffee shops.\n\n🔐 INTERFACE DE CONNEXION: Page SignIn/SignUp avec authentification JWT.\n\n📱 TABLEAU DE BORD PRINCIPAL: Après connexion, barre de navigation avec nom et déconnexion. Quatre boutons principaux:\n• GESTION PERSONNEL - Ajout/Modification/Suppression employés\n• GESTION CATÉGORIES - Ajout/Modification/Suppression catégories\n• GESTION MENU - Ajout/Modification/Suppression articles\n• TABLEAU DE BORD - Compteurs (Personnel, Catégories, Articles)\n\nChaque page de gestion : formulaire à gauche (ajout/modification), tableau à droite (affichage avec actions Modifier/Supprimer).", photos: Array.from({length: 7}, (_,i)=>`assets/projects/webup/${i+1}.png`), liveLink: null, coverIndex: 0, icon: "fas fa-mug-hot", techBadge: "MERN Stack" }
+];
+
+const showcaseProjects = [
+    { id: "petcare", nameEn: "PetCare Veterinary Clinic", nameFr: "Clinique Vétérinaire PetCare", shortDescEn: "Modern veterinary clinic website with appointment system", shortDescFr: "Site vitrine moderne pour clinique vétérinaire avec système de rendez-vous", category: "showcase", techStack: "Next.js • TypeScript • TailwindCSS • Framer Motion • Responsive Design • SEO Optimized", descEn: "🏥 Modern showcase website for a veterinary clinic.\n\n✨ Features: Elegant design with smooth animations (Framer Motion), complete service presentation, online appointment booking interface, responsive layout for all devices, SEO optimized for better visibility.\n\n🎯 Built with Next.js for server-side rendering, TypeScript for type safety, and TailwindCSS for modern styling.", descFr: "🏥 Site vitrine moderne pour une clinique vétérinaire.\n\n✨ Fonctionnalités : Design élégant avec animations fluides (Framer Motion), présentation complète des services, interface de prise de rendez-vous en ligne, mise en page responsive, optimisé SEO.\n\n🎯 Développé avec Next.js pour le rendu serveur, TypeScript pour la sécurité des types, et TailwindCSS pour le style moderne.", photos: Array.from({length: 26}, (_,i)=>`assets/projects/PetCare/${i+1}.png`), liveLink: "https://petcare-vitrine.vercel.app/", coverIndex: 0, icon: "fas fa-paw", techBadge: "Next.js" },
+    
+    { id: "vitrine", nameEn: "Architect Studio Showcase", nameFr: "Vitrine Studio d'Architecture", shortDescEn: "Modern SSR portfolio for architecture studio", shortDescFr: "Portfolio SSR moderne pour studio d'architecture", category: "showcase", techStack: "Next.js • TypeScript • TailwindCSS • Framer Motion • SSR • SEO", descEn: "🏛️ Modern SSR portfolio website for an architecture studio.\n\n✨ Features: Server-side rendering for optimal performance, ultra-fast page loading, complete responsive design, professional gallery section, project case studies, contact form integration.\n\n🎯 Built with Next.js for SSR, TypeScript, TailwindCSS, and Framer Motion animations.", descFr: "🏛️ Site portfolio SSR moderne pour un studio d'architecture.\n\n✨ Fonctionnalités : Rendu côté serveur pour performances optimales, chargement ultra-rapide, design responsive complet, galerie professionnelle, études de cas de projets, formulaire de contact intégré.\n\n🎯 Développé avec Next.js pour le SSR, TypeScript, TailwindCSS, et animations Framer Motion.", photos: Array.from({length: 19}, (_,i)=>`assets/projects/VITRINE/${i+1}.png`), liveLink: "https://architect-vitrine.vercel.app/", coverIndex: 0, icon: "fas fa-building", techBadge: "Next.js" },
+    
+    { id: "derma", nameEn: "DermaClinic - Dermatology Clinic", nameFr: "DermaClinic - Clinique Dermatologique", shortDescEn: "Modern dermatology clinic website with services and online booking", shortDescFr: "Site vitrine moderne pour clinique dermatologique avec services et réservation en ligne", category: "showcase", techStack: "Next.js • TypeScript • TailwindCSS • Framer Motion • SEO • Responsive", descEn: "🩺 Modern dermatology clinic showcase website.\n\n✨ Features: Professional medical services presentation, doctor profiles, online appointment system, skin condition information, before/after gallery, responsive design, SEO optimized for medical keywords.\n\n🎯 Built with Next.js for optimal performance, TypeScript, TailwindCSS, and smooth animations.", descFr: "🩺 Site vitrine moderne pour clinique dermatologique.\n\n✨ Fonctionnalités : Présentation professionnelle des services médicaux, profils des médecins, système de rendez-vous en ligne, informations sur les affections cutanées, galerie avant/après, design responsive, optimisé SEO.\n\n🎯 Développé avec Next.js pour performances optimales, TypeScript, TailwindCSS, et animations fluides.", photos: Array.from({length: 20}, (_,i)=>`assets/projects/DermaClinic/${i+1}.png`), liveLink: "https://dermaclinic.vercel.app/", coverIndex: 0, icon: "fas fa-hand-holding-heart", techBadge: "Next.js" }
 ];
 
 // Community Albums
@@ -251,25 +293,24 @@ let currentLang = 'en';
 let currentProject = null;
 let currentGalleryImages = [];
 let currentIndex = 0;
-
-// Zoom navigation variables
 let currentZoomImages = [];
 let currentZoomIndex = 0;
 
-// RENDER PROJECTS
-function renderProjects() {
-    const grid = document.getElementById('projectsGrid');
+// RENDER ACADEMIC PROJECTS
+function renderAcademicProjects() {
+    const grid = document.getElementById('academicProjectsGrid');
     if(!grid) return;
-    grid.innerHTML = projectsData.map(proj => {
+    grid.innerHTML = academicProjects.map(proj => {
         const coverPhoto = proj.photos.length > 0 ? proj.photos[proj.coverIndex] : 'assets/projects/placeholder.png';
         const shortDesc = currentLang === 'en' ? proj.shortDescEn : proj.shortDescFr;
         const hasLink = proj.liveLink !== null;
         return `
-            <div class="project-card" data-id="${proj.id}">
+            <div class="project-card" data-id="${proj.id}" data-category="academic">
                 <div class="project-image-container">
                     <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
                 </div>
                 <div class="project-info">
+                    <div class="project-tech-tag">${proj.techBadge}</div>
                     <h3 class="project-title">${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
                     <p class="project-short-desc">${shortDesc}</p>
                     ${hasLink ? `<a href="${proj.liveLink}" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Visit Website</a>` : ''}
@@ -277,11 +318,46 @@ function renderProjects() {
             </div>
         `;
     }).join('');
+    attachProjectEvents();
+}
+
+// RENDER SHOWCASE PROJECTS
+function renderShowcaseProjects() {
+    const grid = document.getElementById('showcaseProjectsGrid');
+    if(!grid) return;
+    grid.innerHTML = showcaseProjects.map(proj => {
+        const coverPhoto = proj.photos.length > 0 ? proj.photos[proj.coverIndex] : 'assets/projects/placeholder.png';
+        const shortDesc = currentLang === 'en' ? proj.shortDescEn : proj.shortDescFr;
+        const hasLink = proj.liveLink !== null;
+        return `
+            <div class="project-card" data-id="${proj.id}" data-category="showcase">
+                <div class="project-image-container">
+                    <img src="${coverPhoto}" class="project-cover" alt="${proj.nameEn}" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="project-tech-tag">${proj.techBadge}</div>
+                    <h3 class="project-title">${currentLang === 'en' ? proj.nameEn : proj.nameFr}</h3>
+                    <p class="project-short-desc">${shortDesc}</p>
+                    ${hasLink ? `<a href="${proj.liveLink}" target="_blank" class="project-link-btn" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i> Visit Website</a>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+    attachProjectEvents();
+}
+
+function attachProjectEvents() {
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', (e) => {
             if(e.target.classList.contains('project-link-btn') || e.target.closest('.project-link-btn')) return;
             const id = card.dataset.id;
-            const proj = projectsData.find(p => p.id === id);
+            const category = card.dataset.category;
+            let proj = null;
+            if(category === 'academic') {
+                proj = academicProjects.find(p => p.id === id);
+            } else {
+                proj = showcaseProjects.find(p => p.id === id);
+            }
             if(proj) openProjectModal(proj);
         });
     });
@@ -289,9 +365,21 @@ function renderProjects() {
 
 function openProjectModal(proj) {
     currentProject = proj;
+    
+    // Set modal icon
+    document.getElementById('modalIcon').innerHTML = `<i class="${proj.icon}"></i>`;
+    
+    // Set title and tech badge
     document.getElementById('modalTitle').innerText = currentLang === 'en' ? proj.nameEn : proj.nameFr;
-    document.getElementById('modalDesc').innerText = currentLang === 'en' ? proj.descEn : proj.descFr;
-    document.getElementById('modalTech').innerText = currentLang === 'en' ? proj.techEn : proj.techFr;
+    document.getElementById('modalTechBadge').innerHTML = `<i class="fas fa-code"></i> ${proj.techStack}`;
+    
+    // Set description (convert newlines to HTML)
+    const descText = currentLang === 'en' ? proj.descEn : proj.descFr;
+    document.getElementById('modalDesc').innerHTML = descText.replace(/\n/g, '<br>');
+    
+    // Set tech features as formatted list
+    const techFeatures = proj.techStack.split(' • ');
+    document.getElementById('modalTech').innerHTML = techFeatures.map(f => `<span class="feature-tag"><i class="fas fa-check-circle"></i> ${f}</span>`).join('');
     
     currentGalleryImages = [...proj.photos];
     const sliderContainer = document.getElementById('albumSliderContainer');
@@ -342,11 +430,9 @@ function scrollToIndex() {
     }
 }
 
-// ZOOM WITH NAVIGATION BETWEEN PHOTOS
 function openZoomWithNavigation(images, startIndex) {
     currentZoomImages = images;
     currentZoomIndex = startIndex;
-    
     const zoomModal = document.getElementById('zoomModal');
     const zoomImg = document.getElementById('zoomImage');
     zoomImg.src = currentZoomImages[currentZoomIndex];
@@ -360,7 +446,6 @@ function navigateZoom(direction) {
     zoomImg.src = currentZoomImages[currentZoomIndex];
 }
 
-// Simple zoom for certificates
 function openZoom(src) {
     const zoomModal = document.getElementById('zoomModal');
     const zoomImg = document.getElementById('zoomImage');
@@ -401,8 +486,10 @@ function openCommunityAlbum(idx) {
     currentGalleryImages = [...album.photos];
     currentIndex = 0;
     document.getElementById('modalTitle').innerText = album.name;
-    document.getElementById('modalDesc').innerText = album.desc;
-    document.getElementById('modalTech').innerHTML = "📸 Community moments & leadership activities" + (album.certs && album.certs.length ? `<br><br><strong>🏅 Certifications:</strong> ${album.certs.length} documents disponibles` : "");
+    document.getElementById('modalDesc').innerHTML = album.desc;
+    document.getElementById('modalTechBadge').innerHTML = '<i class="fas fa-users"></i> Community Leadership';
+    document.getElementById('modalIcon').innerHTML = '<i class="fas fa-users"></i>';
+    document.getElementById('modalTech').innerHTML = '<span class="feature-tag"><i class="fas fa-calendar-check"></i> Event Organization</span><span class="feature-tag"><i class="fas fa-handshake"></i> Team Coordination</span><span class="feature-tag"><i class="fas fa-chalkboard-user"></i> Workshop Facilitation</span>';
     const sliderContainer = document.getElementById('albumSliderContainer');
     sliderContainer.style.display = 'block';
     renderSliderTrack();
@@ -438,7 +525,8 @@ const translations = {
 function applyLanguage(lang) {
     currentLang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if(translations[lang][key]) el.innerText = translations[lang][key]; });
-    renderProjects();
+    renderAcademicProjects();
+    renderShowcaseProjects();
     if(currentProject) openProjectModal(currentProject);
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
@@ -493,7 +581,7 @@ document.getElementById('zoomPrev')?.addEventListener('click', (e) => { e.stopPr
 document.getElementById('zoomNext')?.addEventListener('click', (e) => { e.stopPropagation(); navigateZoom(1); });
 
 window.addEventListener('scroll', updateActiveLink);
-window.addEventListener('load', () => { updateActiveLink(); renderProjects(); renderCommunity(); renderTools(); applyLanguage('en'); });
+window.addEventListener('load', () => { updateActiveLink(); renderAcademicProjects(); renderShowcaseProjects(); renderCommunity(); renderTools(); applyLanguage('en'); });
 </script>
 </body>
 </html>
